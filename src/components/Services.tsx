@@ -11,8 +11,8 @@ const services = [
 ];
 
 const container = {
-  hidden: {},
-  show: {
+  initial: {},
+  animate: {
     transition: {
       staggerChildren: 0.15
     }
@@ -20,8 +20,8 @@ const container = {
 };
 
 const card = {
-  hidden: { opacity: 0, y: 40, scale: 0.95 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 60 } }
+  initial: { opacity: 0, y: 40, scale: 0.95 },
+  animate: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 60 } }
 };
 
 export default function Services() {
@@ -29,7 +29,7 @@ export default function Services() {
     <section className="relative min-h-screen flex flex-col justify-center items-center bg-gradient-to-bl from-sky-900/60 to-indigo-900/80 py-20">
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         className="text-3xl md:text-5xl font-bold text-white text-center mb-12 drop-shadow"
       >
@@ -37,12 +37,11 @@ export default function Services() {
       </motion.h2>
       <motion.div
         variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
+        initial="initial"
+        animate="animate"
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 z-10 w-full max-w-6xl px-4"
       >
-        {services.map((svc, i) => (
+        {services.map((svc) => (
           <motion.div
             key={svc.title}
             variants={card}
@@ -59,5 +58,3 @@ export default function Services() {
     </section>
   );
 }
-
-
