@@ -28,7 +28,7 @@ export default function Services() {
             key={svc.title}
             initial={{ opacity: 0, y: 40, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.7, delay: i * 0.17, type: "spring", stiffness: 60 }}
+            transition={{ duration: 0.7, delay: i * 0.14, type: "spring" as const, stiffness: 60 }}
             viewport={{ once: true }}
             className="backdrop-blur-2xl bg-white/10 border border-white/30 shadow-2xl rounded-2xl p-8 flex flex-col items-center justify-center hover:scale-105 hover:bg-white/20 transition duration-300"
           >
