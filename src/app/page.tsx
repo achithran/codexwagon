@@ -5,7 +5,7 @@ import Services from '../components/Services';
 import AdvancedAI from '../components/AdvancedAI';
 import WhyChoose from '../components/WhyChoose';
 import Testimonials from '../components/Testimonials';
-import CTA from '../components/CTA';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
@@ -29,7 +29,7 @@ export default function Home() {
         <Testimonials />
       </section>
       <section className="snap-start">
-        <CTA />
+        <Footer />
       </section>
     </main>
   );
