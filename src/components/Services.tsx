@@ -1,5 +1,5 @@
 'use client';
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const services = [
   { icon: "🤖", title: "AI Sales & Support Agents", desc: "24/7 smart assistants that engage prospects, qualify leads, and hand them off to your team." },
@@ -10,7 +10,8 @@ const services = [
   { icon: "⚙️", title: "Custom AI Integrations", desc: "Connect intelligent workflows into your CRM, marketing tools, and internal systems." },
 ];
 
-const container = {
+// Explicitly type the variants!
+const container: Variants = {
   initial: {},
   animate: {
     transition: {
@@ -19,7 +20,7 @@ const container = {
   }
 };
 
-const card = {
+const card: Variants = {
   initial: { opacity: 0, y: 40, scale: 0.95 },
   animate: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 60 } }
 };
