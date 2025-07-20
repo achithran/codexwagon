@@ -1,29 +1,46 @@
-import { NextRequest, NextResponse } from 'next/server'
-import OpenAI from 'openai'
-
-// Put your OpenAI API key in .env.local as OPENAI_API_KEY=sk-...
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
+import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
-  const { messages } = await req.json();
+  try {
+    const { messages } = await req.json();
 
-  // Add your business instructions to the system prompt
-  const systemPrompt = `
+    const systemPrompt = `
 You are CodexWagon AI Assistant. Answer only about CodexWagon's services, technologies, expertise, pricing, and values. CodexWagon is an Indian company specializing in AI automation, cloud, web/mobile, data, and digital transformation for clients in India, GCC, and worldwide. Be helpful, modern, and brief.
-  `;
+    `;
 
-  const chatMessages = [
-    { role: "system", content: systemPrompt },
-    ...messages,
-  ];
+    const chatMessages = [
+      { role: "system", content: systemPrompt },
+      ...messages,
+    ];
 
-  const completion = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo", // Or "gpt-4o" if your API key allows
-    messages: chatMessages,
-    temperature: 0.7,
-    max_tokens: 512,
-  });
+    const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
+        "Content-Type": "application/json",
+        "HTTP-Referer": "https://codexwagon.in/", // Optional but recommended if deployed
+        "X-Title": "CodexWagon GPT Chat"
+      },
+      body: JSON.stringify({
+        model: "openai/gpt-3.5-turbo", // or try "mistralai/mistral-large", "google/gemini-pro", "openai/gpt-4o", etc.
+        messages: chatMessages,
+        temperature: 0.7,
+        max_tokens: 512
+      })
+    });
 
-  const reply = completion.choices[0].message.content;
-  return NextResponse.json({ reply });
+    if (!res.ok) {
+      const err = await res.text();
+      throw new Error(err);
+    }
+    const data = await res.json();
+    const reply = data.choices?.[0]?.message?.content || "Sorry, I didn't get a valid answer from the AI.";
+    return NextResponse.json({ reply });
+  } catch (error: any) {
+    console.error("OpenRouter API ERROR:", error);
+    return NextResponse.json(
+      { reply: "Sorry, the AI is having trouble right now. Please try again later." },
+      { status: 500 }
+    );
+  }
 }
