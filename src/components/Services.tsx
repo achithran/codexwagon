@@ -12,7 +12,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center bg-gradient-to-bl from-sky-900/60 to-indigo-900/80 py-20">
+<section className="relative h-full flex flex-col justify-center items-center bg-gradient-to-bl from-sky-900/60 to-indigo-900/80">
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

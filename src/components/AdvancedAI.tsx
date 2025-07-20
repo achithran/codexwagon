@@ -1,25 +1,33 @@
-const advanced = [
-  { icon: "💡", title: "AI Strategy Consulting", desc: "Roadmap for AI integration across your organization." },
-  { icon: "🧠", title: "Custom Model Training", desc: "Develop proprietary AI models fine-tuned on your data." },
-  { icon: "📊", title: "AI Data Analytics", desc: "Turn raw data into actionable insights." },
-  { icon: "🤖", title: "Robotic Process Automation", desc: "Automate repetitive tasks like docs, reporting, approvals." },
-  { icon: "💬", title: "Omni-channel Conversational AI", desc: "Engage customers across WhatsApp, Messenger, SMS, web chat." },
-  { icon: "🛡️", title: "AI Compliance & Security", desc: "Enterprise-grade security and privacy compliance." },
-];
+'use client';
+import { motion } from "framer-motion";
 
 export default function AdvancedAI() {
   return (
-    <section className="max-w-7xl mx-auto my-16 px-4">
-      <h2 className="text-3xl font-bold text-blue-900 text-center mb-10">Advanced AI Solutions</h2>
-      <div className="grid md:grid-cols-3 gap-8">
-        {advanced.map((svc) => (
-          <div key={svc.title} className="bg-white rounded-2xl shadow p-8 text-center hover:shadow-xl transition">
-            <div className="text-4xl mb-3">{svc.icon}</div>
-            <h3 className="text-xl font-semibold mb-2 text-blue-900">{svc.title}</h3>
-            <p className="text-gray-600">{svc.desc}</p>
-          </div>
-        ))}
-      </div>
+    <section className="relative h-full flex items-center justify-center bg-gradient-to-br from-sky-900/80 to-indigo-900/90">
+      <motion.div
+        initial={{ opacity: 0, y: 60, scale: 0.97 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 1.1, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="relative z-10 bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl rounded-3xl px-8 py-14 max-w-2xl mx-auto text-center"
+      >
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.7 }}
+          className="text-3xl md:text-5xl font-bold text-white mb-4 drop-shadow"
+        >
+          Advanced AI. Human Results.
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          className="text-lg md:text-2xl text-white/80 mb-8"
+        >
+          From large language models to voice, vision, and agent frameworks, CodexWagon leverages the world's top AI to solve your business challenges—securely, ethically, and at scale.
+        </motion.p>
+      </motion.div>
     </section>
   );
 }

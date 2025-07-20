@@ -18,7 +18,7 @@ export default function Testimonials() {
   }, [idx]);
 
   return (
-    <section className="relative min-h-[50vh] flex flex-col justify-center items-center bg-gradient-to-tl from-sky-800/70 to-indigo-900/80 py-20">
+<section className="relative h-full flex flex-col justify-center items-center bg-gradient-to-bl from-sky-900/60 to-indigo-900/80">
       <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-10 drop-shadow">What Our Clients Say</h2>
       <div className="w-full max-w-2xl flex flex-col items-center px-4">
         <AnimatePresence mode="wait">
