@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodexWagon | Elite Digital Agency & Innovation Partners</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #0A2540;
+            --primary-light: #1A365D;
+            --secondary: #D4AF37;
+            --secondary-dark: #B8941F;
+            --accent: #7C3AED;
+            --dark: #0F172A;
+            --light: #F8FAFC;
+            --gray: #64748B;
+            --light-gray: #E2E8F0;
+            --success: #10B981;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.12);
+            --border-radius: 16px;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.7;
+            overflow-x: hidden;
+            font-weight: 400;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        /* Premium Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1.2rem 0;
+            transition: var(--transition);
+        }
+        
+        header.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-icon {
+            color: var(--secondary);
+            font-size: 2.2rem;
+        }
+        
+        .logo-text {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            transition: width 0.4s ease;
+            border-radius: 10px;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            box-shadow: 0 5px 15px rgba(10, 37, 64, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(10, 37, 64, 0.3);
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            color: var(--dark);
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.03);
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-btn:hover {
+            background-color: rgba(0, 0, 0, 0.06);
+        }
+        
+        /* Luxury Hero Section */
+        .hero {
+            padding: 12rem 0 8rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 50%, #e0f2fe 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .hero-bg-element {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0) 70%);
+        }
+        
+        .hero-bg-1 {
+            width: 600px;
+            height: 600px;
+            top: -300px;
+            right: -200px;
+        }
+        
+        .hero-bg-2 {
+            width: 400px;
+            height: 400px;
+            bottom: -200px;
+            left: -100px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, rgba(124, 58, 237, 0) 70%);
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            margin-bottom: 1.8rem;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -1px;
+        }
+        
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 2.8rem;
+            max-width: 90%;
+            font-weight: 400;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 1.1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            box-shadow: 0 10px 25px rgba(10, 37, 64, 0.25);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(10, 37, 64, 0.35);
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(10, 37, 64, 0.05);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-visual {
+            position: relative;
+        }
+        
+        .hero-image-container {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transform: perspective(1500px) rotateY(-15deg);
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 12px solid white;
+        }
+        
+        .hero-image-container:hover {
+            transform: perspective(1500px) rotateY(0deg);
+        }
+        
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .floating-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            color: var(--primary);
+            padding: 1.2rem 1.8rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            font-weight: 700;
+            font-size: 1.1rem;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 8rem 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            border-radius: 10px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 750px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.8rem;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+        
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+        
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        
+        .feature-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .feature-text p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            color: var(--gray);
+        }
+        
+        .about-visual {
+            position: relative;
+        }
+        
+        .about-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 10px solid white;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Services Section */
+        .services {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(10, 37, 64, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(124, 58, 237, 0.15) 100%);
+        }
+        
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            color: var(--primary);
+        }
+        
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 1.8rem;
+        }
+        
+        .service-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+        
+        .service-link:hover {
+            color: var(--accent);
+            gap: 12px;
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            background-color: white;
+        }
+        
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+        
+        .filter-btn {
+            padding: 0.8rem 2rem;
+            background-color: transparent;
+            border: 2px solid var(--light-gray);
+            border-radius: 50px;
+            color: var(--gray);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 5px 15px rgba(10, 37, 64, 0.2);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .portfolio-item {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            background-color: white;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .portfolio-img {
+            height: 280px;
+            background-color: #e2e8f0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .portfolio-item:hover .portfolio-img img {
+            transform: scale(1.08);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(10, 37, 64, 0.9), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-info {
+            padding: 2rem;
+            background-color: white;
+        }
+        
+        .portfolio-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .portfolio-info p {
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .portfolio-tag {
+            background-color: rgba(10, 37, 64, 0.08);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        /* Technologies Section */
+        .technologies {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+        
+        .tech-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+        
+        .tech-logo {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            font-size: 2.8rem;
+            color: var(--gray);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tech-logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .tech-logo:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: var(--shadow-lg);
+            color: var(--primary);
+        }
+        
+        .tech-logo:hover::before {
+            opacity: 1;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: white;
+        }
+        
+        .testimonial-slider {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 4rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            display: none;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 8rem;
+            color: rgba(10, 37, 64, 0.05);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .testimonial-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--dark);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        
+        .author-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .author-info h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-align: left;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            text-align: left;
+        }
+        
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-top: 3rem;
+        }
+        
+        .slider-btn {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .slider-btn.active {
+            background-color: var(--primary);
+            transform: scale(1.3);
+        }
+        
+        .slider-btn.active::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border: 2px solid rgba(10, 37, 64, 0.2);
+            border-radius: 50%;
+        }
+        
+        /* Contact CTA */
+        .contact-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            text-align: center;
+            padding: 6rem 4rem;
+            border-radius: var(--border-radius);
+            margin: 0 auto 8rem;
+            max-width: 1300px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,0V100H1000V0C750,50 500,100 250,50S0,0,0,0Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+            background-position: bottom;
+        }
+        
+        .contact-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-cta .btn {
+            background-color: white;
+            color: var(--primary);
+            padding: 1.2rem 3.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .contact-cta .btn:hover {
+            background-color: var(--light);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 5rem 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 4rem;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.8rem;
+            color: white;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--secondary);
+            border-radius: 10px;
+        }
+        
+        .footer-col p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.8rem;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .footer-links a i {
+            font-size: 0.8rem;
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 3.2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-cta h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .hero {
+                padding: 10rem 0 5rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .testimonial {
+                padding: 3rem 2rem;
+            }
+            
+            .testimonial-text {
+                font-size: 1.1rem;
+            }
+            
+            .contact-cta {
+                padding: 4rem 2rem;
+            }
+            
+            .contact-cta h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Animation for elements */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Premium Header -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-code logo-icon"></i>
+                <span class="logo-text">CodexWagon</span>
+            </a>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#technologies">Technologies</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+            
+            <a href="#contact" class="nav-cta">
+                <i class="fas fa-paper-plane"></i>
+                Start Project
+            </a>
+        </div>
+    </header>
+
+    <!-- Luxury Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-bg-element hero-bg-1"></div>
+            <div class="hero-bg-element hero-bg-2"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-text fade-in">
+                <h1>Elite Digital Solutions for Visionary Enterprises</h1>
+                <p>CodexWagon partners with forward-thinking businesses to craft transformative digital experiences that drive measurable growth and establish market leadership through innovative technology and strategic design.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Launch Your Vision
+                    </a>
+                    <a href="#portfolio" class="btn btn-secondary">
+                        <i class="fas fa-eye"></i>
+                        View Masterpieces
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual fade-in">
+                <div class="hero-image-container">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Digital Innovation">
+                </div>
+                <div class="floating-badge">
+                    <i class="fas fa-award"></i>
+                    Award-Winning Agency
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Crafting Digital Excellence</h2>
+                <p>We are an elite collective of strategists, designers, and engineers dedicated to transforming business challenges into competitive advantages through digital innovation.</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3>Architects of Digital Transformation Since 2015</h3>
+                    <p>CodexWagon represents the convergence of strategic thinking, technical excellence, and aesthetic mastery. Our multidisciplinary team operates at the intersection of business strategy and digital innovation to create solutions that don't just meet expectations—they redefine them.</p>
+                    <p>We believe that exceptional digital experiences begin with deep understanding and culminate in flawless execution. Every project benefits from our rigorous methodology, which balances creative exploration with analytical precision.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-chess-queen"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Strategic Vision</h4>
+                                <p>Business-first approach to digital solutions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Award-Winning</h4>
+                                <p>Recognized for innovation and excellence</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Global Reach</h4>
+                                <p>Delivering solutions across 15+ countries</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Enterprise Grade</h4>
+                                <p>Scalable solutions for growing businesses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual fade-in">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="CodexWagon Executive Team">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Premium Services</h2>
+                <p>Our comprehensive suite of digital services is designed to address every facet of your online presence, from strategic conception to technical execution.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Enterprise Web Solutions</h3>
+                    <p>Architecturally sound, scalable web platforms engineered for performance, security, and exceptional user experiences that drive business objectives.</p>
+                    <a href="#" class="service-link">
+                        Explore <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Premium Mobile Experiences</h3>
+                    <p>Native and cross-platform mobile applications with elegant interfaces, seamless performance, and sophisticated functionality for today's discerning users.</p>
+                    <a href="#" class="service-link">
+                        Explore <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Luxury E-commerce</h3>
+                    <p>High-conversion digital storefronts with sophisticated product presentation, seamless checkout experiences, and integrated omnichannel capabilities.</p>
+                    <a href="#" class="service-link">
+                        Explore <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Strategic UI/UX Design</h3>
+                    <p>User-centered design methodologies that combine aesthetic elegance with intuitive functionality to create memorable digital interactions.</p>
+                    <a href="#" class="service-link">
+                        Explore <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-network"></i>
+                    </div>
+                    <h3>Digital Growth Strategy</h3>
+                    <p>Data-informed marketing strategies that amplify brand visibility, engage target audiences, and convert interest into measurable business outcomes.</p>
+                    <a href="#" class="service-link">
+                        Explore <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Managed Excellence</h3>
+                    <p>Comprehensive maintenance, optimization, and enhancement services to ensure your digital assets continue to perform at their peak potential.</p>
+                    <a href="#" class="service-link">
+                        Explore <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Signature Projects</h2>
+                <p>A curated selection of our most impactful work, demonstrating our commitment to innovation, craftsmanship, and transformative results.</p>
+            </div>
+            
+            <div class="portfolio-filter fade-in">
+                <button class="filter-btn active" data-filter="all">All Masterpieces</button>
+                <button class="filter-btn" data-filter="web">Web Platforms</button>
+                <button class="filter-btn" data-filter="ecommerce">Digital Commerce</button>
+                <button class="filter-btn" data-filter="mobile">Mobile Experiences</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in" data-category="web">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Global Finance Platform">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="btn btn-primary" style="background: white; color: var(--primary);">View Case Study</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Global Finance Corp Platform</h3>
+                        <p>A sophisticated financial services portal with real-time analytics, secure client management, and interactive investment dashboards.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Enterprise</span>
+                            <span class="portfolio-tag">FinTech</span>
+                            <span class="portfolio-tag">Security</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="ecommerce">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Luxury Fashion E-commerce">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="btn btn-primary" style="background: white; color: var(--primary);">View Case Study</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Ethereal Fashion House</h3>
+                        <p>An immersive luxury fashion e-commerce experience with 360° product visualization, virtual try-on, and personalized styling services.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Luxury</span>
+                            <span class="portfolio-tag">E-commerce</span>
+                            <span class="portfolio-tag">AR Integration</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="mobile">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Wellness Mobile Application">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="btn btn-primary" style="background: white; color: var(--primary);">View Case Study</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Vitality Wellness Ecosystem</h3>
+                        <p>A comprehensive health and wellness application featuring personalized fitness plans, nutrition tracking, and mindfulness exercises.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">HealthTech</span>
+                            <span class="portfolio-tag">Mobile</span>
+                            <span class="portfolio-tag">AI Personalization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="technologies" id="technologies">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Technology Excellence</h2>
+                <p>We leverage a carefully curated stack of cutting-edge technologies to build robust, scalable, and high-performance digital solutions.</p>
+            </div>
+            
+            <div class="tech-logos">
+                <div class="tech-logo fade-in"><i class="fab fa-react"></i></div>
+                <div class="tech-logo fade-in"><i class="fab fa-vuejs"></i></div>
+                <div class="tech-logo fade-in"><i class="fab fa-angular"></i></div>
+                <div class="tech-logo fade-in"><i class="fab fa-node-js"></i></div>
+                <div class="tech-logo fade-in"><i class="fab fa-python"></i></div>
+                <div class="tech-logo fade-in"><i class="fab fa-laravel"></i></div>
+                <div class="tech-logo fade-in"><i class="fab fa-aws"></i></div>
+                <div class="tech-logo fade-in"><i class="fas fa-database"></i></div>
+                <div class="tech-logo fade-in"><i class="fab fa-docker"></i></div>
+                <div class="tech-logo fade-in"><i class="fab fa-swift"></i></div>
+                <div class="tech-logo fade-in"><i class="fab fa-android"></i></div>
+                <div class="tech-logo fade-in"><i class="fab fa-wordpress"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Client Excellence</h2>
+                <p>Our greatest measure of success is the lasting impact we create for our clients and the relationships we build along the way.</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial active" id="testimonial-1">
+                    <p class="testimonial-text">"CodexWagon delivered not just a website, but a comprehensive digital transformation that has elevated our brand perception and increased qualified leads by 240%. Their strategic approach combined with flawless execution makes them an invaluable partner for any organization serious about digital excellence."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">JR</div>
+                        <div class="author-info">
+                            <h4>Jayaprakash R</h4>
+                            <p>Chief Manager-IT, AVS Kottakkal</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial" id="testimonial-2">
+                    <p class="testimonial-text">"The collaboration with CodexWagon has been nothing short of transformative. They demonstrated an exceptional ability to translate our complex business requirements into an elegant, intuitive platform that our clients love. Their team operates with the precision of engineers and the vision of artists."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">TJ</div>
+                        <div class="author-info">
+                            <h4>Thomas Joseph Nellissery</h4>
+                            <p>Director, Geepas Academy, IIM-A Former CEO</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial" id="testimonial-3">
+                    <p class="testimonial-text">"From conception to launch, CodexWagon demonstrated a level of professionalism and expertise that exceeded our highest expectations. They didn't just build an application—they crafted an experience that has fundamentally changed how we engage with our audience. A true partnership in every sense."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">AS</div>
+                        <div class="author-info">
+                            <h4>Arjun R Shanker</h4>
+                            <p>IAS Mentor, CEO & Founder, LearnStroke</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-btn active" data-slide="0"></button>
+                    <button class="slider-btn" data-slide="1"></button>
+                    <button class="slider-btn" data-slide="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <div class="container">
+        <section class="contact-cta fade-in" id="contact">
+            <h2>Begin Your Digital Transformation</h2>
+            <p>Partner with CodexWagon to architect a digital presence that reflects your vision, engages your audience, and drives sustainable growth. Let's craft excellence together.</p>
+            <a href="mailto:executive@codexwagon.com" class="btn">
+                <i class="fas fa-paper-plane"></i>
+                Engage Our Experts
+            </a>
+        </section>
+    </div>
+
+    <!-- Premium Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="color:white; margin-bottom:1.8rem; display:inline-block;">
+                        <i class="fas fa-code logo-icon"></i>
+                        <span style="background:linear-gradient(to right, #fff, var(--secondary)); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:800;">CodexWagon</span>
+                    </a>
+                    <p>Architects of digital transformation, crafting exceptional experiences that redefine possibilities and drive meaningful business outcomes for visionary enterprises worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
+                        <li><a href="#technologies"><i class="fas fa-chevron-right"></i> Technologies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Expertise</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Mobile Applications</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> E-commerce Solutions</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Digital Strategy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Innovation District, Kochi</a></li>
+                        <li><a href="tel:+911234567890"><i class="fas fa-phone"></i> +91 123 456 7890</a></li>
+                        <li><a href="mailto:hello@codexwagon.com"><i class="fas fa-envelope"></i> executive@codexwagon.com</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 CodexWagon Digital Partners. All rights reserved. | Crafted with <i class="fas fa-heart" style="color:var(--secondary);"></i> for visionary enterprises</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = navLinks.style.display === 'flex';
+            navLinks.style.display = isOpen ? 'none' : 'flex';
+            
+            if (!isOpen) {
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                navLinks.style.backdropFilter = 'blur(10px)';
+                navLinks.style.padding = '2rem';
+                navLinks.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.1)';
+                navLinks.style.gap = '1.5rem';
+                navLinks.style.zIndex = '1000';
+            }
+        });
+
+        // Testimonial slider
+        const testimonialSlides = document.querySelectorAll('.testimonial');
+        const sliderButtons = document.querySelectorAll('.slider-btn');
+        let currentSlide = 0;
+        let slideInterval;
+        
+        function showSlide(n) {
+            testimonialSlides.forEach(slide => slide.classList.remove('active'));
+            sliderButtons.forEach(button => button.classList.remove('active'));
+            
+            testimonialSlides[n].classList.add('active');
+            sliderButtons[n].classList.add('active');
+            currentSlide = n;
+        }
+        
+        sliderButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                showSlide(index);
+                startSlideInterval();
+            });
+        });
+        
+        function startSlideInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => {
+                currentSlide = (currentSlide + 1) % testimonialSlides.length;
+                showSlide(currentSlide);
+            }, 6000);
+        }
+        
+        startSlideInterval();
+
+        // Portfolio filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    if (window.innerWidth <= 768) {
+                        navLinks.style.display = 'none';
+                    }
+                }
+            });
+        });
+
+        // Scroll animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        function checkScroll() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        // Initial check
+        checkScroll();
+        window.addEventListener('scroll', checkScroll);
+
+        // Add floating elements animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const bgElements = document.querySelectorAll('.hero-bg-element');
+            bgElements.forEach(el => {
+                el.style.animation = `float 20s infinite ease-in-out`;
+                el.style.animationDelay = `${Math.random() * 5}s`;
+            });
+            
+            // Add CSS for floating animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes float {
+                    0%, 100% { transform: translateY(0) rotate(0deg); }
+                    50% { transform: translateY(-20px) rotate(5deg); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
