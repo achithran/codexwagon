@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodexWagon | Kerala's Premier Web, Mobile & AI Solutions | Kochi, Trivandrum, Bangalore</title>
-    <meta name="description" content="Kerala's #1 Web Development, Mobile Apps, Cloud & AI Solutions Company with offices in Kochi, Trivandrum, and Bangalore. Premium digital transformation services.">
-    <meta name="keywords" content="web development kochi, mobile app development trivandrum, AI solutions kerala, cloud services bangalore, digital agency kerala, seo company kerala">
+    <title>CodexWagon | Enterprise Web, Mobile, Cloud & AI Solutions | Global Digital Agency</title>
+    <meta name="description" content="Global digital transformation agency specializing in enterprise web development, mobile applications, cloud solutions, AI integration, and custom web applications. Premium digital solutions for visionary businesses.">
+    <meta name="keywords" content="enterprise web development, custom mobile apps, cloud solutions, AI integration, digital transformation, custom web applications, premium digital agency">
     <meta name="author" content="CodexWagon">
-    <meta property="og:title" content="CodexWagon | Kerala's Premier Digital Solutions Agency">
-    <meta property="og:description" content="Premium Web, Mobile, Cloud & AI Solutions with offices in Kochi, Trivandrum, and Bangalore">
+    <meta property="og:title" content="CodexWagon | Global Premium Digital Solutions Agency">
+    <meta property="og:description" content="Enterprise-grade web, mobile, cloud, and AI solutions for global businesses. Premium digital transformation services.">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -26,7 +26,6 @@
             --secondary-dark: #B8941F;
             --accent: #7C3AED;
             --accent-light: #8B5CF6;
-            --accent-gold: #FFD700;
             --dark: #0F172A;
             --light: #F8FAFC;
             --gray: #64748B;
@@ -35,9 +34,8 @@
             --transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             --shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
             --shadow-lg: 0 25px 70px rgba(0, 0, 0, 0.12);
-            --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.2);
-            --border-radius: 20px;
-            --border-radius-sm: 12px;
+            --border-radius: 24px;
+            --border-radius-sm: 16px;
         }
         
         body {
@@ -59,33 +57,17 @@
             font-weight: 700;
         }
         
-        .section-bg {
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            position: relative;
-        }
-        
-        .section-bg::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 37, 64, 0.85);
-            z-index: 0;
-        }
-        
-        .section-bg > .container {
-            position: relative;
-            z-index: 1;
+        .gradient-text {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         /* Premium Header */
         header {
             background-color: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px);
             box-shadow: 0 5px 40px rgba(0, 0, 0, 0.05);
             position: fixed;
             width: 100%;
@@ -118,7 +100,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 900;
             color: var(--primary);
             text-decoration: none;
@@ -127,7 +109,7 @@
         
         .logo-icon {
             color: var(--secondary);
-            font-size: 2.3rem;
+            font-size: 2.5rem;
             position: relative;
         }
         
@@ -136,11 +118,11 @@
             position: absolute;
             top: -5px;
             right: -5px;
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             background-color: var(--accent);
             border-radius: 50%;
-            border: 2px solid white;
+            border: 3px solid white;
         }
         
         .logo-text {
@@ -152,7 +134,7 @@
         
         .nav-links {
             display: flex;
-            gap: 2.2rem;
+            gap: 2.5rem;
             list-style: none;
         }
         
@@ -160,7 +142,7 @@
             text-decoration: none;
             color: var(--dark);
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 1.05rem;
             transition: var(--transition);
             position: relative;
             padding: 0.5rem 0;
@@ -190,16 +172,16 @@
         .nav-cta {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: white;
-            padding: 1rem 2.2rem;
+            padding: 1rem 2.5rem;
             border-radius: 50px;
             font-weight: 700;
             text-decoration: none;
             transition: var(--transition);
             border: none;
-            box-shadow: 0 8px 20px rgba(10, 37, 64, 0.2);
+            box-shadow: 0 8px 25px rgba(10, 37, 64, 0.2);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             letter-spacing: 0.5px;
             position: relative;
             overflow: hidden;
@@ -222,7 +204,7 @@
         
         .nav-cta:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(10, 37, 64, 0.3);
+            box-shadow: 0 15px 35px rgba(10, 37, 64, 0.3);
             background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
         }
         
@@ -244,11 +226,11 @@
             background-color: rgba(0, 0, 0, 0.06);
         }
         
-        /* Luxury Hero Section with Kerala Background */
+        /* Luxury Hero Section */
         .hero {
             padding: 14rem 0 10rem;
-            background: linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.9)), 
-                        url('https://images.unsplash.com/photo-1580651214613-f4692d6d138f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(135deg, rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.9)), 
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -270,7 +252,7 @@
         }
         
         .hero-text h1 {
-            font-size: 4.2rem;
+            font-size: 4.5rem;
             line-height: 1.1;
             margin-bottom: 2rem;
             color: white;
@@ -278,14 +260,14 @@
         }
         
         .hero-text .playfair {
-            font-size: 4.5rem;
+            font-size: 4.8rem;
             color: var(--secondary);
             margin-bottom: 0.5rem;
             display: block;
         }
         
         .hero-text p {
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             color: rgba(255, 255, 255, 0.9);
             margin-bottom: 3rem;
             max-width: 90%;
@@ -301,7 +283,7 @@
         }
         
         .btn {
-            padding: 1.2rem 2.8rem;
+            padding: 1.3rem 3rem;
             border-radius: 50px;
             font-weight: 700;
             text-decoration: none;
@@ -312,7 +294,7 @@
             transition: var(--transition);
             border: none;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 1.05rem;
             letter-spacing: 0.5px;
             position: relative;
             overflow: hidden;
@@ -336,12 +318,12 @@
         .btn-primary {
             background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
             color: var(--primary);
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.25);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.25);
         }
         
         .btn-primary:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.35);
+            box-shadow: 0 20px 45px rgba(212, 175, 55, 0.35);
             background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--secondary) 100%);
         }
         
@@ -354,18 +336,18 @@
         .btn-secondary:hover {
             background-color: rgba(255, 255, 255, 0.1);
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
         
         .btn-accent {
             background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
             color: white;
-            box-shadow: 0 12px 30px rgba(124, 58, 237, 0.25);
+            box-shadow: 0 12px 35px rgba(124, 58, 237, 0.25);
         }
         
         .btn-accent:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.35);
+            box-shadow: 0 20px 45px rgba(124, 58, 237, 0.35);
             background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
         }
         
@@ -380,7 +362,7 @@
             box-shadow: var(--shadow-lg);
             transform: perspective(1500px) rotateY(-10deg);
             transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 15px solid white;
+            border: 18px solid white;
         }
         
         .hero-image-container:hover {
@@ -395,19 +377,19 @@
         
         .floating-badge {
             position: absolute;
-            bottom: -25px;
-            right: -25px;
+            bottom: -30px;
+            right: -30px;
             background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
             color: var(--primary);
-            padding: 1.5rem 2rem;
+            padding: 1.8rem 2.5rem;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-lg);
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             z-index: 2;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
             letter-spacing: 0.5px;
         }
         
@@ -424,7 +406,7 @@
         }
         
         .stat-number {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 800;
             color: var(--secondary);
             display: block;
@@ -434,32 +416,32 @@
         
         .stat-label {
             color: rgba(255, 255, 255, 0.8);
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1.5px;
         }
         
-        /* Location Badge */
-        .location-badge {
+        /* Premium Badge */
+        .premium-badge {
             display: inline-flex;
             align-items: center;
             gap: 10px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
             border-radius: 50px;
             margin-bottom: 2rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
-        .location-badge i {
+        .premium-badge i {
             color: var(--secondary);
         }
         
         /* Section Styling */
         section {
-            padding: 9rem 0;
+            padding: 10rem 0;
             position: relative;
         }
         
@@ -470,7 +452,7 @@
         }
         
         .section-title h2 {
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
             color: var(--primary);
             position: relative;
@@ -478,7 +460,7 @@
         }
         
         .section-title .playfair {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             color: var(--primary);
             display: block;
         }
@@ -486,39 +468,39 @@
         .section-title h2::after {
             content: '';
             position: absolute;
-            bottom: -12px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 5px;
+            width: 120px;
+            height: 6px;
             background: linear-gradient(to right, var(--secondary), var(--accent));
             border-radius: 10px;
         }
         
         .section-title p {
             color: var(--gray);
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             max-width: 800px;
             margin: 0 auto;
             font-weight: 400;
             line-height: 1.8;
         }
         
-        /* Services Section with Kerala Focus */
+        /* Services Section - Global Focus */
         .services {
             background-color: white;
         }
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3.5rem;
         }
         
         .service-card {
             background-color: white;
             border-radius: var(--border-radius);
-            padding: 3.5rem;
+            padding: 4rem;
             box-shadow: var(--shadow);
             transition: var(--transition);
             border: 1px solid rgba(0, 0, 0, 0.03);
@@ -539,31 +521,31 @@
         }
         
         .service-card:hover {
-            transform: translateY(-15px);
+            transform: translateY(-20px);
             box-shadow: var(--shadow-lg);
         }
         
         .service-icon {
-            width: 90px;
-            height: 90px;
+            width: 100px;
+            height: 100px;
             background: linear-gradient(135deg, rgba(10, 37, 64, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
-            border-radius: 20px;
+            border-radius: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 2.5rem;
             color: var(--primary);
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             transition: var(--transition);
         }
         
         .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.15) rotate(5deg);
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(124, 58, 237, 0.15) 100%);
         }
         
         .service-card h3 {
-            font-size: 1.7rem;
+            font-size: 1.8rem;
             margin-bottom: 1.5rem;
             color: var(--primary);
         }
@@ -572,6 +554,7 @@
             color: var(--gray);
             margin-bottom: 2rem;
             line-height: 1.8;
+            font-size: 1.1rem;
         }
         
         .service-features {
@@ -582,82 +565,226 @@
         .service-features li {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 0.8rem;
+            gap: 12px;
+            margin-bottom: 1rem;
             color: var(--gray);
+            font-size: 1.05rem;
         }
         
         .service-features li i {
             color: var(--secondary);
+            font-size: 1.2rem;
         }
         
-        /* NEW: Kerala Focus Section */
-        .kerala-focus {
-            background: linear-gradient(rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.95)), 
-                        url('https://images.unsplash.com/photo-1588416389635-44e28522658d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+        /* NEW: Enterprise Solutions Section */
+        .enterprise {
+            background: linear-gradient(135deg, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.95)), 
+                        url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: white;
         }
         
-        .kerala-focus .section-title h2,
-        .kerala-focus .section-title p {
+        .enterprise .section-title h2,
+        .enterprise .section-title p {
             color: white;
         }
         
-        .kerala-grid {
+        .enterprise-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3.5rem;
             margin-top: 4rem;
         }
         
-        .kerala-card {
+        .enterprise-card {
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
             border-radius: var(--border-radius);
-            padding: 3rem;
+            padding: 3.5rem;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: var(--transition);
         }
         
-        .kerala-card:hover {
+        .enterprise-card:hover {
             background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-10px);
+            transform: translateY(-15px);
             border-color: var(--secondary);
         }
         
-        .kerala-icon {
-            font-size: 3rem;
+        .enterprise-icon {
+            font-size: 3.5rem;
             color: var(--secondary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
         
-        .kerala-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .enterprise-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 1.2rem;
         }
         
-        .kerala-card p {
+        .enterprise-card p {
             opacity: 0.9;
             line-height: 1.7;
+            font-size: 1.1rem;
         }
         
-        /* NEW: Locations Section */
-        .locations {
+        /* NEW: Organic SEO Focus */
+        .seo-focus {
             background-color: white;
         }
         
-        .locations-grid {
+        .seo-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+        
+        .seo-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .seo-content .playfair {
+            font-size: 2.8rem;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .seo-content p {
+            color: var(--gray);
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .seo-features {
+            list-style: none;
+            margin-top: 2rem;
+        }
+        
+        .seo-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .seo-feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .seo-feature-text h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .seo-feature-text p {
+            color: var(--gray);
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+        
+        .seo-visual {
+            position: relative;
+        }
+        
+        .seo-image-container {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 15px solid white;
+        }
+        
+        .seo-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* NEW: Custom Web Apps Section */
+        .custom-apps {
+            background: linear-gradient(135deg, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.95)), 
+                        url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+        
+        .custom-apps .section-title h2,
+        .custom-apps .section-title p {
+            color: white;
+        }
+        
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3.5rem;
+            margin-top: 4rem;
+        }
+        
+        .app-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: var(--border-radius);
+            padding: 3.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .app-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-15px);
+            border-color: var(--secondary);
+        }
+        
+        .app-icon {
+            font-size: 3.5rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .app-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        .app-card p {
+            opacity: 0.9;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        
+        /* NEW: Global Presence */
+        .global-presence {
+            background-color: white;
+        }
+        
+        .global-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 3rem;
             margin-top: 4rem;
         }
         
-        .location-card {
+        .global-card {
             background-color: white;
             border-radius: var(--border-radius);
             overflow: hidden;
@@ -665,125 +792,72 @@
             transition: var(--transition);
         }
         
-        .location-card:hover {
-            transform: translateY(-10px);
+        .global-card:hover {
+            transform: translateY(-15px);
             box-shadow: var(--shadow-lg);
         }
         
-        .location-image {
-            height: 200px;
+        .global-image {
+            height: 250px;
             overflow: hidden;
         }
         
-        .location-image img {
+        .global-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.8s ease;
         }
         
-        .location-card:hover .location-image img {
+        .global-card:hover .global-image img {
             transform: scale(1.05);
         }
         
-        .location-content {
-            padding: 2.5rem;
+        .global-content {
+            padding: 3rem;
         }
         
-        .location-header {
+        .global-header {
             display: flex;
             align-items: center;
             gap: 15px;
             margin-bottom: 1.5rem;
         }
         
-        .location-icon {
-            width: 60px;
-            height: 60px;
+        .global-icon {
+            width: 70px;
+            height: 70px;
             background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
-            border-radius: 15px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
         }
         
-        .location-header h3 {
-            font-size: 1.5rem;
+        .global-header h3 {
+            font-size: 1.6rem;
             color: var(--primary);
         }
         
-        .location-details {
+        .global-details {
             list-style: none;
             margin-bottom: 1.5rem;
         }
         
-        .location-details li {
+        .global-details li {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 0.8rem;
+            gap: 12px;
+            margin-bottom: 1rem;
             color: var(--gray);
+            font-size: 1.05rem;
         }
         
-        .location-details li i {
+        .global-details li i {
             color: var(--secondary);
             margin-top: 3px;
-        }
-        
-        /* NEW: SEO Services Section */
-        .seo-services {
-            background: linear-gradient(rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.95)), 
-                        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-        }
-        
-        .seo-services .section-title h2,
-        .seo-services .section-title p {
-            color: white;
-        }
-        
-        .seo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-        
-        .seo-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: var(--border-radius);
-            padding: 3rem;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: var(--transition);
-        }
-        
-        .seo-card:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-10px);
-            border-color: var(--secondary);
-        }
-        
-        .seo-icon {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-        }
-        
-        .seo-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .seo-card p {
-            opacity: 0.9;
-            line-height: 1.7;
         }
         
         /* Contact Section */
@@ -807,18 +881,18 @@
         .contact-card {
             background-color: rgba(10, 37, 64, 0.03);
             border-radius: var(--border-radius);
-            padding: 2.5rem;
+            padding: 3rem;
             transition: var(--transition);
         }
         
         .contact-card:hover {
             background-color: rgba(10, 37, 64, 0.05);
-            transform: translateY(-5px);
+            transform: translateY(-8px);
         }
         
         .contact-icon {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
             border-radius: 20px;
             display: flex;
@@ -826,11 +900,11 @@
             justify-content: center;
             margin-bottom: 1.5rem;
             color: var(--primary);
-            font-size: 1.8rem;
+            font-size: 2rem;
         }
         
         .contact-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--primary);
         }
@@ -842,9 +916,10 @@
         .contact-details li {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 0.8rem;
+            gap: 12px;
+            margin-bottom: 1rem;
             color: var(--gray);
+            font-size: 1.05rem;
         }
         
         .contact-details li i {
@@ -865,51 +940,52 @@
         .contact-form-container {
             background-color: white;
             border-radius: var(--border-radius);
-            padding: 3.5rem;
-            box-shadow: var(--shadow);
+            padding: 4rem;
+            box-shadow: var(--shadow-lg);
         }
         
         .contact-form h3 {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
             color: var(--primary);
         }
         
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             color: var(--primary);
             font-weight: 600;
+            font-size: 1.05rem;
         }
         
         .form-control {
             width: 100%;
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
+            padding: 1.2rem 1.8rem;
+            border-radius: var(--border-radius-sm);
             border: 1px solid var(--light-gray);
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+            font-size: 1.05rem;
             transition: var(--transition);
         }
         
         .form-control:focus {
             outline: none;
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+            box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
         }
         
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            gap: 2rem;
         }
         
         textarea.form-control {
-            min-height: 150px;
+            min-height: 180px;
             resize: vertical;
         }
         
@@ -917,7 +993,7 @@
         footer {
             background-color: var(--primary);
             color: white;
-            padding: 6rem 0 2.5rem;
+            padding: 7rem 0 3rem;
             position: relative;
             overflow: hidden;
         }
@@ -942,7 +1018,7 @@
         }
         
         .footer-col h3 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 2rem;
             color: white;
             position: relative;
@@ -952,10 +1028,10 @@
         .footer-col h3::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -12px;
             left: 0;
-            width: 50px;
-            height: 3px;
+            width: 60px;
+            height: 4px;
             background-color: var(--secondary);
             border-radius: 10px;
         }
@@ -965,6 +1041,7 @@
             margin-bottom: 2rem;
             line-height: 1.8;
             font-weight: 400;
+            font-size: 1.05rem;
         }
         
         .footer-links {
@@ -982,6 +1059,7 @@
             display: inline-flex;
             align-items: center;
             gap: 12px;
+            font-size: 1.05rem;
         }
         
         .footer-links a:hover {
@@ -1001,8 +1079,8 @@
         }
         
         .social-links a {
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
@@ -1024,21 +1102,23 @@
         
         .newsletter p {
             margin-bottom: 1.5rem;
+            font-size: 1.05rem;
         }
         
         .newsletter-form {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.8rem;
         }
         
         .newsletter-input {
             flex: 1;
-            padding: 1rem 1.5rem;
+            padding: 1.2rem 1.8rem;
             border-radius: 50px;
             border: none;
             background-color: rgba(255, 255, 255, 0.1);
             color: white;
             font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
         }
         
         .newsletter-input::placeholder {
@@ -1046,7 +1126,7 @@
         }
         
         .newsletter-btn {
-            padding: 1rem 1.8rem;
+            padding: 1.2rem 2rem;
             border-radius: 50px;
             border: none;
             background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
@@ -1054,11 +1134,12 @@
             font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
+            font-size: 1.05rem;
         }
         
         .newsletter-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
         }
         
         .footer-bottom {
@@ -1066,7 +1147,7 @@
             padding-top: 3rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.6);
-            font-size: 1rem;
+            font-size: 1.05rem;
             position: relative;
             z-index: 1;
             display: flex;
@@ -1098,26 +1179,31 @@
             }
             
             .hero-text h1 {
-                font-size: 3.5rem;
+                font-size: 3.8rem;
             }
             
             .services-grid {
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             }
             
             .contact-container {
                 grid-template-columns: 1fr;
                 gap: 4rem;
             }
+            
+            .seo-container {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
         }
         
         @media (max-width: 992px) {
-            .portfolio-grid {
+            .global-grid {
                 grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             }
             
             .section-title h2 {
-                font-size: 2.8rem;
+                font-size: 3rem;
             }
             
             .footer-bottom {
@@ -1146,7 +1232,7 @@
             }
             
             .hero-text h1 {
-                font-size: 2.8rem;
+                font-size: 3rem;
             }
             
             .hero-btns {
@@ -1160,7 +1246,7 @@
             }
             
             .section-title h2 {
-                font-size: 2.3rem;
+                font-size: 2.5rem;
             }
             
             .hero-stats {
@@ -1190,8 +1276,8 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
             color: var(--primary);
             border-radius: 50%;
@@ -1200,7 +1286,7 @@
             justify-content: center;
             font-size: 1.5rem;
             text-decoration: none;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 35px rgba(212, 175, 55, 0.3);
             transition: var(--transition);
             z-index: 999;
             opacity: 0;
@@ -1214,26 +1300,26 @@
         
         .back-to-top:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 15px 45px rgba(212, 175, 55, 0.4);
             background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--secondary) 100%);
         }
         
         /* SEO Badge */
         .seo-badge {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 25px;
+            right: 25px;
             background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
             color: var(--primary);
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
             border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
+            font-weight: 800;
+            font-size: 1rem;
             z-index: 2;
             display: flex;
             align-items: center;
-            gap: 8px;
-            box-shadow: var(--shadow-gold);
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
         }
     </style>
 </head>
@@ -1253,82 +1339,82 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#kerala-focus">Kerala Focus</a></li>
-                <li><a href="#locations">Our Offices</a></li>
-                <li><a href="#seo-services">SEO Services</a></li>
+                <li><a href="#enterprise">Enterprise</a></li>
+                <li><a href="#custom-apps">Custom Apps</a></li>
+                <li><a href="#seo-focus">Organic SEO</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             
             <a href="tel:9961959788" class="nav-cta">
                 <i class="fas fa-phone"></i>
-                Call: 9961959788
+                9961959788
             </a>
         </div>
     </header>
 
-    <!-- Luxury Hero Section with Kerala Background -->
+    <!-- Luxury Hero Section - Global Focus -->
     <section class="hero" id="home">
         <div class="container hero-content">
             <div class="hero-text fade-in">
-                <div class="location-badge">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Kerala's Premier Digital Agency</span>
+                <div class="premium-badge">
+                    <i class="fas fa-crown"></i>
+                    <span>Global Digital Excellence</span>
                 </div>
                 <span class="playfair">Digital Transformation</span>
-                <h1>Kerala's #1 Web, Mobile, Cloud & AI Solutions Company</h1>
-                <p>With strategic offices in Kochi, Trivandrum, and Bangalore, we deliver premium digital solutions that drive business growth. Specializing in cutting-edge web development, mobile applications, cloud services, and AI solutions for businesses across Kerala and beyond.</p>
+                <h1>Enterprise-Grade Web, Mobile, Cloud & AI Solutions</h1>
+                <p>CodexWagon delivers premium digital transformation services for visionary businesses worldwide. Specializing in enterprise web development, custom mobile applications, cloud architecture, and AI integration that drive measurable business outcomes.</p>
                 <div class="hero-btns">
                     <a href="#contact" class="btn btn-primary">
                         <i class="fas fa-rocket"></i>
-                        Get Free Consultation
+                        Start Your Project
                     </a>
                     <a href="tel:9961959788" class="btn btn-secondary">
                         <i class="fas fa-phone"></i>
-                        Call: 9961959788
+                        9961959788
                     </a>
                 </div>
                 <div class="hero-stats">
                     <div class="stat-item">
                         <span class="stat-number">500+</span>
-                        <span class="stat-label">Kerala Clients</span>
+                        <span class="stat-label">Enterprise Clients</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">98%</span>
-                        <span class="stat-label">Client Satisfaction</span>
+                        <span class="stat-number">99%</span>
+                        <span class="stat-label">Client Retention</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">50+</span>
+                        <span class="stat-number">75+</span>
                         <span class="stat-label">AI Projects</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">3</span>
-                        <span class="stat-label">Strategic Offices</span>
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Countries Served</span>
                     </div>
                 </div>
             </div>
             <div class="hero-visual fade-in">
                 <div class="seo-badge">
                     <i class="fas fa-search"></i>
-                    SEO Optimized
+                    Organic SEO Focus
                 </div>
                 <div class="hero-image-container">
-                    <img src="https://images.unsplash.com/photo-1527474305487-b87b222841cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="CodexWagon Kerala Office">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Enterprise Digital Solutions">
                 </div>
                 <div class="floating-badge">
                     <i class="fas fa-award"></i>
-                    Best in Kerala 2024
+                    Award-Winning Agency
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section with Kerala Focus -->
+    <!-- Services Section - Global Enterprise Focus -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-title fade-in">
-                <span class="playfair">Our Core Services</span>
-                <h2>Premium Digital Solutions for Kerala Businesses</h2>
-                <p>Comprehensive digital services tailored for businesses in Kerala, with specialized expertise in web development, mobile apps, cloud solutions, and AI integration.</p>
+                <span class="playfair">Core Services</span>
+                <h2>Premium Digital Solutions</h2>
+                <p>Comprehensive digital services designed for enterprise-scale businesses seeking transformative technology solutions and measurable ROI.</p>
             </div>
             
             <div class="services-grid">
@@ -1336,13 +1422,13 @@
                     <div class="service-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h3>Web Development (Kerala Focus)</h3>
-                    <p>Custom web development solutions optimized for Kerala businesses, including responsive websites, e-commerce platforms, and enterprise web applications with local SEO optimization.</p>
+                    <h3>Enterprise Web Development</h3>
+                    <p>Scalable, secure web applications and platforms built with cutting-edge technologies, designed for high-performance, security, and seamless user experiences across all devices.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Kerala Market Optimization</li>
-                        <li><i class="fas fa-check"></i> Local SEO Integration</li>
-                        <li><i class="fas fa-check"></i> Malayalam Language Support</li>
-                        <li><i class="fas fa-check"></i> Kerala Payment Gateway Integration</li>
+                        <li><i class="fas fa-check"></i> Scalable Architecture</li>
+                        <li><i class="fas fa-check"></i> Enterprise Security</li>
+                        <li><i class="fas fa-check"></i> Performance Optimization</li>
+                        <li><i class="fas fa-check"></i> SEO-First Development</li>
                     </ul>
                 </div>
                 
@@ -1351,12 +1437,12 @@
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <h3>Mobile App Development</h3>
-                    <p>Native and cross-platform mobile applications for iOS and Android, with special focus on Kerala user behavior, local integrations, and regional market penetration strategies.</p>
+                    <p>Native and cross-platform mobile applications for iOS and Android, engineered for performance, intuitive user experiences, and seamless integration with enterprise systems.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> iOS & Android Development</li>
-                        <li><i class="fas fa-check"></i> Kerala-specific App Features</li>
-                        <li><i class="fas fa-check"></i> Local Notification Systems</li>
-                        <li><i class="fas fa-check"></i> Regional Payment Integration</li>
+                        <li><i class="fas fa-check"></i> iOS & Android Native</li>
+                        <li><i class="fas fa-check"></i> React Native & Flutter</li>
+                        <li><i class="fas fa-check"></i> Enterprise Integration</li>
+                        <li><i class="fas fa-check"></i> App Store Optimization</li>
                     </ul>
                 </div>
                 
@@ -1364,13 +1450,13 @@
                     <div class="service-icon">
                         <i class="fas fa-cloud"></i>
                     </div>
-                    <h3>Cloud Solutions</h3>
-                    <p>Comprehensive cloud migration, management, and optimization services with data centers optimized for Kerala businesses, ensuring low latency and high availability.</p>
+                    <h3>Cloud Solutions & Architecture</h3>
+                    <p>Comprehensive cloud strategy, migration, and management services across AWS, Azure, and Google Cloud platforms, optimized for scalability, security, and cost-efficiency.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> AWS, Azure & Google Cloud</li>
-                        <li><i class="fas fa-check"></i> Kerala Data Optimization</li>
-                        <li><i class="fas fa-check"></i> Disaster Recovery Plans</li>
-                        <li><i class="fas fa-check"></i> Cost Optimization for Kerala Market</li>
+                        <li><i class="fas fa-check"></i> AWS, Azure, GCP</li>
+                        <li><i class="fas fa-check"></i> Cloud Migration</li>
+                        <li><i class="fas fa-check"></i> DevOps & CI/CD</li>
+                        <li><i class="fas fa-check"></i> Cost Optimization</li>
                     </ul>
                 </div>
                 
@@ -1379,11 +1465,11 @@
                         <i class="fas fa-robot"></i>
                     </div>
                     <h3>AI & Machine Learning</h3>
-                    <p>Advanced AI solutions including chatbots, predictive analytics, computer vision, and machine learning models tailored for Kerala's unique business landscape and consumer behavior.</p>
+                    <p>Advanced artificial intelligence solutions including predictive analytics, natural language processing, computer vision, and custom machine learning models for business intelligence.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> AI Chatbots with Malayalam NLP</li>
-                        <li><i class="fas fa-check"></i> Predictive Analytics for Kerala Market</li>
-                        <li><i class="fas fa-check"></i> Computer Vision Solutions</li>
+                        <li><i class="fas fa-check"></i> Predictive Analytics</li>
+                        <li><i class="fas fa-check"></i> NLP & Chatbots</li>
+                        <li><i class="fas fa-check"></i> Computer Vision</li>
                         <li><i class="fas fa-check"></i> Custom ML Models</li>
                     </ul>
                 </div>
@@ -1392,13 +1478,13 @@
                     <div class="service-icon">
                         <i class="fas fa-search"></i>
                     </div>
-                    <h3>SEO & Digital Marketing</h3>
-                    <p>Comprehensive SEO services specifically optimized for Kerala businesses, including local SEO, Malayalam keyword research, and Kerala-focused digital marketing campaigns.</p>
+                    <h3>Organic SEO Strategy</h3>
+                    <p>Comprehensive organic SEO services focusing on technical optimization, content strategy, and sustainable growth tactics that deliver long-term visibility and organic traffic growth.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Kerala Local SEO</li>
-                        <li><i class="fas fa-check"></i> Malayalam Content Optimization</li>
-                        <li><i class="fas fa-check"></i> Google My Business Optimization</li>
-                        <li><i class="fas fa-check"></i> Kerala Social Media Marketing</li>
+                        <li><i class="fas fa-check"></i> Technical SEO Audits</li>
+                        <li><i class="fas fa-check"></i> Content Strategy</li>
+                        <li><i class="fas fa-check"></i> E-E-A-T Optimization</li>
+                        <li><i class="fas fa-check"></i> Sustainable Growth</li>
                     </ul>
                 </div>
                 
@@ -1406,254 +1492,234 @@
                     <div class="service-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Cybersecurity</h3>
-                    <p>Enterprise-grade cybersecurity solutions protecting Kerala businesses from digital threats, with compliance for Indian data protection regulations and local security requirements.</p>
+                    <h3>Cybersecurity Solutions</h3>
+                    <p>Enterprise-grade cybersecurity services including penetration testing, security audits, compliance management, and incident response to protect digital assets and data.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Kerala Business Security</li>
-                        <li><i class="fas fa-check"></i> Data Protection Compliance</li>
-                        <li><i class="fas fa-check"></i> Network Security</li>
-                        <li><i class="fas fa-check"></i> Security Audits & Pen Testing</li>
+                        <li><i class="fas fa-check"></i> Security Audits</li>
+                        <li><i class="fas fa-check"></i> Penetration Testing</li>
+                        <li><i class="fas fa-check"></i> Compliance Management</li>
+                        <li><i class="fas fa-check"></i> 24/7 Monitoring</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW: Kerala Focus Section -->
-    <section class="kerala-focus section-bg" id="kerala-focus">
+    <!-- NEW: Enterprise Solutions Section -->
+    <section class="enterprise" id="enterprise">
         <div class="container">
             <div class="section-title fade-in">
-                <span class="playfair">Why Choose CodexWagon in Kerala</span>
-                <h2>Kerala's Digital Transformation Partner</h2>
-                <p>As Kerala's premier digital agency, we understand the unique business landscape, consumer behavior, and market dynamics of God's Own Country.</p>
+                <span class="playfair">Enterprise Excellence</span>
+                <h2>Global Enterprise Solutions</h2>
+                <p>Tailored digital transformation services for large organizations seeking scalable, secure, and innovative technology solutions that drive business growth.</p>
             </div>
             
-            <div class="kerala-grid">
-                <div class="kerala-card fade-in">
-                    <div class="kerala-icon">
-                        <i class="fas fa-users"></i>
+            <div class="enterprise-grid">
+                <div class="enterprise-card fade-in">
+                    <div class="enterprise-icon">
+                        <i class="fas fa-server"></i>
                     </div>
-                    <h3>Local Expertise</h3>
-                    <p>Deep understanding of Kerala's business culture, consumer preferences, and market dynamics. Our team includes experts who understand Malayalam and regional nuances.</p>
+                    <h3>Digital Infrastructure</h3>
+                    <p>Scalable digital infrastructure solutions designed for enterprise needs, ensuring reliability, security, and performance at global scale.</p>
                 </div>
                 
-                <div class="kerala-card fade-in">
-                    <div class="kerala-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                <div class="enterprise-card fade-in">
+                    <div class="enterprise-icon">
+                        <i class="fas fa-chart-network"></i>
                     </div>
-                    <h3>Strategic Kerala Offices</h3>
-                    <p>Physical offices in Technopark (Trivandrum), Infopark (Kochi), and Electronic City (Bangalore) ensuring easy access and personalized service for Kerala businesses.</p>
+                    <h3>Business Intelligence</h3>
+                    <p>Advanced analytics and business intelligence platforms that transform data into actionable insights for strategic decision-making.</p>
                 </div>
                 
-                <div class="kerala-card fade-in">
-                    <div class="kerala-icon">
-                        <i class="fas fa-language"></i>
+                <div class="enterprise-card fade-in">
+                    <div class="enterprise-icon">
+                        <i class="fas fa-cogs"></i>
                     </div>
-                    <h3>Malayalam Support</h3>
-                    <p>Full support in Malayalam including content creation, customer service, and documentation. We develop solutions that resonate with Kerala's linguistic diversity.</p>
+                    <h3>Process Automation</h3>
+                    <p>Intelligent automation solutions that streamline business processes, reduce operational costs, and improve efficiency across departments.</p>
                 </div>
                 
-                <div class="kerala-card fade-in">
-                    <div class="kerala-icon">
-                        <i class="fas fa-chart-line"></i>
+                <div class="enterprise-card fade-in">
+                    <div class="enterprise-icon">
+                        <i class="fas fa-users-cog"></i>
                     </div>
-                    <h3>Kerala Market Focus</h3>
-                    <p>Tailored solutions for Kerala's key industries: tourism, healthcare, education, spices, fisheries, and traditional industries undergoing digital transformation.</p>
+                    <h3>Enterprise Integration</h3>
+                    <p>Seamless integration of legacy systems with modern applications, creating unified digital ecosystems that enhance productivity.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW: Locations Section -->
-    <section class="locations" id="locations">
+    <!-- NEW: Organic SEO Focus Section -->
+    <section class="seo-focus" id="seo-focus">
         <div class="container">
             <div class="section-title fade-in">
-                <span class="playfair">Our Strategic Offices</span>
-                <h2>Visit Us Across Kerala & Beyond</h2>
-                <p>With offices in Kerala's major IT hubs and Bangalore, we're strategically positioned to serve businesses across South India and beyond.</p>
+                <span class="playfair">Organic SEO Excellence</span>
+                <h2>Sustainable Search Visibility</h2>
+                <p>Our organic SEO approach focuses on sustainable growth, technical excellence, and content strategies that deliver lasting results in search rankings.</p>
             </div>
             
-            <div class="locations-grid">
-                <div class="location-card fade-in">
-                    <div class="location-image">
-                        <img src="https://images.unsplash.com/photo-1580651214613-f4692d6d138f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Technopark Trivandrum">
-                    </div>
-                    <div class="location-content">
-                        <div class="location-header">
-                            <div class="location-icon">
-                                <i class="fas fa-building"></i>
+            <div class="seo-container">
+                <div class="seo-content fade-in">
+                    <span class="playfair">SEO-First Approach</span>
+                    <h3>Building Sustainable Search Presence</h3>
+                    <p>We implement comprehensive organic SEO strategies that prioritize sustainable growth, technical excellence, and user-centric content. Our approach focuses on long-term visibility rather than short-term gains.</p>
+                    
+                    <div class="seo-features">
+                        <div class="seo-feature">
+                            <div class="seo-feature-icon">
+                                <i class="fas fa-search"></i>
                             </div>
-                            <h3>Technopark, Trivandrum</h3>
-                        </div>
-                        <ul class="location-details">
-                            <li><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Technopark Campus, Phase 3, Trivandrum, Kerala 695581</li>
-                            <li><i class="fas fa-phone"></i> <strong>Phone:</strong> 9961959788</li>
-                            <li><i class="fas fa-envelope"></i> <strong>Email:</strong> trivandrum@codexwagon.in</li>
-                            <li><i class="fas fa-clock"></i> <strong>Hours:</strong> Mon-Sat: 9AM-6PM</li>
-                        </ul>
-                        <a href="https://goo.gl/maps/example" target="_blank" class="btn btn-accent" style="width: 100%; text-align: center;">
-                            <i class="fas fa-directions"></i>
-                            Get Directions
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="location-card fade-in">
-                    <div class="location-image">
-                        <img src="https://images.unsplash.com/photo-1584473457406-6240486418bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Infopark Kochi">
-                    </div>
-                    <div class="location-content">
-                        <div class="location-header">
-                            <div class="location-icon">
-                                <i class="fas fa-building"></i>
+                            <div class="seo-feature-text">
+                                <h4>Technical SEO Foundation</h4>
+                                <p>Comprehensive technical audits, site architecture optimization, and performance enhancements that create a solid foundation for search visibility.</p>
                             </div>
-                            <h3>Infopark, Kochi</h3>
                         </div>
-                        <ul class="location-details">
-                            <li><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Infopark Campus, Phase 2, Kochi, Kerala 682030</li>
-                            <li><i class="fas fa-phone"></i> <strong>Phone:</strong> 9961959788</li>
-                            <li><i class="fas fa-envelope"></i> <strong>Email:</strong> kochi@codexwagon.in</li>
-                            <li><i class="fas fa-clock"></i> <strong>Hours:</strong> Mon-Sat: 9AM-6PM</li>
-                        </ul>
-                        <a href="https://goo.gl/maps/example" target="_blank" class="btn btn-accent" style="width: 100%; text-align: center;">
-                            <i class="fas fa-directions"></i>
-                            Get Directions
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="location-card fade-in">
-                    <div class="location-image">
-                        <img src="https://images.unsplash.com/photo-1527474305487-b87b222841cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Bangalore Electronic City">
-                    </div>
-                    <div class="location-content">
-                        <div class="location-header">
-                            <div class="location-icon">
-                                <i class="fas fa-building"></i>
+                        
+                        <div class="seo-feature">
+                            <div class="seo-feature-icon">
+                                <i class="fas fa-file-alt"></i>
                             </div>
-                            <h3>Electronic City, Bangalore</h3>
-                        </div>
-                        <ul class="location-details">
-                            <li><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Electronic City Phase 1, Bangalore, Karnataka 560100</li>
-                            <li><i class="fas fa-phone"></i> <strong>Phone:</strong> 9961959788</li>
-                            <li><i class="fas fa-envelope"></i> <strong>Email:</strong> bangalore@codexwagon.in</li>
-                            <li><i class="fas fa-clock"></i> <strong>Hours:</strong> Mon-Sat: 9AM-6PM</li>
-                        </ul>
-                        <a href="https://goo.gl/maps/example" target="_blank" class="btn btn-accent" style="width: 100%; text-align: center;">
-                            <i class="fas fa-directions"></i>
-                            Get Directions
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- International Offices -->
-                <div class="location-card fade-in">
-                    <div class="location-image">
-                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Dubai Office">
-                    </div>
-                    <div class="location-content">
-                        <div class="location-header">
-                            <div class="location-icon">
-                                <i class="fas fa-globe"></i>
+                            <div class="seo-feature-text">
+                                <h4>Content Strategy & E-E-A-T</h4>
+                                <p>Expert-driven content strategies focusing on Experience, Expertise, Authoritativeness, and Trustworthiness - Google's core ranking factors.</p>
                             </div>
-                            <h3>Dubai, UAE</h3>
                         </div>
-                        <ul class="location-details">
-                            <li><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Dubai Internet City, Dubai, UAE</li>
-                            <li><i class="fas fa-phone"></i> <strong>Phone:</strong> +971 4 123 4567</li>
-                            <li><i class="fas fa-envelope"></i> <strong>Email:</strong> dubai@codexwagon.in</li>
-                            <li><i class="fas fa-clock"></i> <strong>Hours:</strong> Sun-Thu: 9AM-6PM</li>
-                        </ul>
-                        <div class="btn btn-secondary" style="width: 100%; text-align: center; cursor: default;">
-                            <i class="fas fa-globe"></i>
-                            International Office
+                        
+                        <div class="seo-feature">
+                            <div class="seo-feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="seo-feature-text">
+                                <h4>Sustainable Growth Metrics</h4>
+                                <p>Focus on sustainable growth metrics including organic traffic quality, conversion rates, and long-term keyword positioning rather than vanity metrics.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="location-card fade-in">
-                    <div class="location-image">
-                        <img src="https://images.unsplash.com/photo-1540324155971-4c8ae78c44a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Riyadh Office">
-                    </div>
-                    <div class="location-content">
-                        <div class="location-header">
-                            <div class="location-icon">
-                                <i class="fas fa-globe"></i>
-                            </div>
-                            <h3>Riyadh, KSA</h3>
-                        </div>
-                        <ul class="location-details">
-                            <li><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> King Abdullah Financial District, Riyadh, KSA</li>
-                            <li><i class="fas fa-phone"></i> <strong>Phone:</strong> +966 11 123 4567</li>
-                            <li><i class="fas fa-envelope"></i> <strong>Email:</strong> riyadh@codexwagon.in</li>
-                            <li><i class="fas fa-clock"></i> <strong>Hours:</strong> Sun-Thu: 9AM-6PM</li>
-                        </ul>
-                        <div class="btn btn-secondary" style="width: 100%; text-align: center; cursor: default;">
-                            <i class="fas fa-globe"></i>
-                            International Office
-                        </div>
+                <div class="seo-visual fade-in">
+                    <div class="seo-image-container">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="SEO Analytics Dashboard">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW: SEO Services Section -->
-    <section class="seo-services section-bg" id="seo-services">
+    <!-- NEW: Custom Web Apps Section -->
+    <section class="custom-apps" id="custom-apps">
         <div class="container">
             <div class="section-title fade-in">
-                <span class="playfair">SEO Services for Kerala Businesses</span>
-                <h2>Rank #1 in Kerala Search Results</h2>
-                <p>Specialized SEO services optimized for Kerala's competitive digital landscape, helping businesses dominate local search results and attract more customers.</p>
+                <span class="playfair">Custom Development</span>
+                <h2>Bespoke Web Applications</h2>
+                <p>Tailor-made web applications designed to solve unique business challenges, streamline operations, and create competitive advantages.</p>
             </div>
             
-            <div class="seo-grid">
-                <div class="seo-card fade-in">
-                    <div class="seo-icon">
-                        <i class="fas fa-search-location"></i>
-                    </div>
-                    <h3>Kerala Local SEO</h3>
-                    <p>Optimize your website for local Kerala searches, Google My Business listings, and location-based keywords specific to cities like Kochi, Trivandrum, and Calicut.</p>
-                </div>
-                
-                <div class="seo-card fade-in">
-                    <div class="seo-icon">
-                        <i class="fas fa-language"></i>
-                    </div>
-                    <h3>Malayalam SEO</h3>
-                    <p>Malayalam keyword research, content optimization, and local language SEO strategies to reach Kerala's native Malayalam-speaking audience effectively.</p>
-                </div>
-                
-                <div class="seo-card fade-in">
-                    <div class="seo-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3>Technical SEO</h3>
-                    <p>Comprehensive technical SEO audits, site speed optimization for Kerala's internet infrastructure, and mobile optimization for high mobile usage in Kerala.</p>
-                </div>
-                
-                <div class="seo-card fade-in">
-                    <div class="seo-icon">
+            <div class="apps-grid">
+                <div class="app-card fade-in">
+                    <div class="app-icon">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
-                    <h3>E-commerce SEO</h3>
-                    <p>Specialized SEO for Kerala's growing e-commerce sector, optimizing product pages, category structures, and local delivery area targeting.</p>
+                    <h3>E-commerce Platforms</h3>
+                    <p>Custom e-commerce solutions with advanced features, personalized shopping experiences, and seamless payment integrations.</p>
                 </div>
                 
-                <div class="seo-card fade-in">
-                    <div class="seo-icon">
-                        <i class="fas fa-newspaper"></i>
+                <div class="app-card fade-in">
+                    <div class="app-icon">
+                        <i class="fas fa-chart-bar"></i>
                     </div>
-                    <h3>Content Marketing</h3>
-                    <p>Kerala-focused content creation including blog posts, articles, and guides tailored to local interests, festivals, and business trends in Malayalam and English.</p>
+                    <h3>Business Dashboards</h3>
+                    <p>Custom business intelligence dashboards that consolidate data from multiple sources into actionable insights and visualizations.</p>
                 </div>
                 
-                <div class="seo-card fade-in">
-                    <div class="seo-icon">
-                        <i class="fas fa-analytics"></i>
+                <div class="app-card fade-in">
+                    <div class="app-icon">
+                        <i class="fas fa-tasks"></i>
                     </div>
-                    <h3>SEO Analytics</h3>
-                    <p>Comprehensive tracking and reporting of SEO performance specifically for Kerala market, with insights on local competitor analysis and market trends.</p>
+                    <h3>Workflow Automation</h3>
+                    <p>Custom workflow automation applications that streamline business processes, reduce manual work, and improve operational efficiency.</p>
+                </div>
+                
+                <div class="app-card fade-in">
+                    <div class="app-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>CRM & ERP Systems</h3>
+                    <p>Custom customer relationship management and enterprise resource planning systems tailored to specific business needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Global Presence -->
+    <section class="global-presence" id="global-presence">
+        <div class="container">
+            <div class="section-title fade-in">
+                <span class="playfair">Global Reach</span>
+                <h2>International Presence</h2>
+                <p>With strategic offices across key global markets, we deliver premium digital solutions to businesses worldwide.</p>
+            </div>
+            
+            <div class="global-grid">
+                <div class="global-card fade-in">
+                    <div class="global-image">
+                        <img src="https://images.unsplash.com/photo-1580651214613-f4692d6d138f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="India Office">
+                    </div>
+                    <div class="global-content">
+                        <div class="global-header">
+                            <div class="global-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h3>India Operations</h3>
+                        </div>
+                        <ul class="global-details">
+                            <li><i class="fas fa-map-marker-alt"></i> <strong>Bangalore:</strong> Electronic City Phase 1</li>
+                            <li><i class="fas fa-phone"></i> <strong>Phone:</strong> 9961959788</li>
+                            <li><i class="fas fa-envelope"></i> <strong>Email:</strong> india@codexwagon.in</li>
+                            <li><i class="fas fa-clock"></i> <strong>Hours:</strong> Mon-Sat: 9AM-7PM</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="global-card fade-in">
+                    <div class="global-image">
+                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="UAE Office">
+                    </div>
+                    <div class="global-content">
+                        <div class="global-header">
+                            <div class="global-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3>Middle East Hub</h3>
+                        </div>
+                        <ul class="global-details">
+                            <li><i class="fas fa-map-marker-alt"></i> <strong>Dubai:</strong> Dubai Internet City</li>
+                            <li><i class="fas fa-phone"></i> <strong>Phone:</strong> +971 4 123 4567</li>
+                            <li><i class="fas fa-envelope"></i> <strong>Email:</strong> uae@codexwagon.in</li>
+                            <li><i class="fas fa-clock"></i> <strong>Hours:</strong> Sun-Thu: 9AM-6PM</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="global-card fade-in">
+                    <div class="global-image">
+                        <img src="https://images.unsplash.com/photo-1540324155971-4c8ae78c44a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="KSA Office">
+                    </div>
+                    <div class="global-content">
+                        <div class="global-header">
+                            <div class="global-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3>Saudi Arabia Operations</h3>
+                        </div>
+                        <ul class="global-details">
+                            <li><i class="fas fa-map-marker-alt"></i> <strong>Riyadh:</strong> King Abdullah Financial District</li>
+                            <li><i class="fas fa-phone"></i> <strong>Phone:</strong> +966 11 123 4567</li>
+                            <li><i class="fas fa-envelope"></i> <strong>Email:</strong> ksa@codexwagon.in</li>
+                            <li><i class="fas fa-clock"></i> <strong>Hours:</strong> Sun-Thu: 9AM-6PM</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1664,8 +1730,8 @@
         <div class="container">
             <div class="section-title fade-in">
                 <span class="playfair">Get In Touch</span>
-                <h2>Contact CodexWagon Today</h2>
-                <p>Reach out to our Kerala offices for premium web development, mobile apps, cloud solutions, and AI services tailored for your business.</p>
+                <h2>Start Your Digital Transformation</h2>
+                <p>Contact our global team to discuss your enterprise web development, mobile app, cloud, or AI project requirements.</p>
             </div>
             
             <div class="contact-container">
@@ -1674,11 +1740,11 @@
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
                         </div>
-                        <h3>Call Us Directly</h3>
+                        <h3>Global Contact</h3>
                         <ul class="contact-details">
-                            <li><i class="fas fa-mobile-alt"></i> <strong>Primary Contact:</strong> <a href="tel:9961959788">9961959788</a></li>
+                            <li><i class="fas fa-mobile-alt"></i> <strong>Primary:</strong> <a href="tel:9961959788">9961959788</a></li>
                             <li><i class="fas fa-headset"></i> <strong>Support:</strong> <a href="tel:9961959788">9961959788</a></li>
-                            <li><i class="fas fa-clock"></i> <strong>Hours:</strong> Mon-Sat: 9AM-8PM</li>
+                            <li><i class="fas fa-clock"></i> <strong>Hours:</strong> 24/7 Enterprise Support</li>
                         </ul>
                     </div>
                     
@@ -1686,9 +1752,9 @@
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <h3>Email Us</h3>
+                        <h3>Email Communications</h3>
                         <ul class="contact-details">
-                            <li><i class="fas fa-user"></i> <strong>Founder:</strong> <a href="mailto:arun@codexwagon.in">arun@codexwagon.in</a></li>
+                            <li><i class="fas fa-user"></i> <strong>Executive:</strong> <a href="mailto:arun@codexwagon.in">arun@codexwagon.in</a></li>
                             <li><i class="fas fa-building"></i> <strong>Business:</strong> <a href="mailto:info@codexwagon.in">info@codexwagon.in</a></li>
                             <li><i class="fas fa-question-circle"></i> <strong>Support:</strong> <a href="mailto:support@codexwagon.in">support@codexwagon.in</a></li>
                         </ul>
@@ -1698,22 +1764,22 @@
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <h3>Visit Our Offices</h3>
+                        <h3>Global Offices</h3>
                         <ul class="contact-details">
-                            <li><i class="fas fa-location-dot"></i> <strong>Trivandrum:</strong> Technopark Campus</li>
-                            <li><i class="fas fa-location-dot"></i> <strong>Kochi:</strong> Infopark Campus</li>
-                            <li><i class="fas fa-location-dot"></i> <strong>Bangalore:</strong> Electronic City</li>
+                            <li><i class="fas fa-location-dot"></i> <strong>India:</strong> Bangalore Electronic City</li>
+                            <li><i class="fas fa-location-dot"></i> <strong>UAE:</strong> Dubai Internet City</li>
+                            <li><i class="fas fa-location-dot"></i> <strong>KSA:</strong> Riyadh Financial District</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="contact-form-container fade-in">
                     <div class="contact-form">
-                        <h3>Get a Free Consultation</h3>
+                        <h3>Request Enterprise Consultation</h3>
                         <form id="contactForm">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="name">Your Name *</label>
+                                    <label for="name">Full Name *</label>
                                     <input type="text" id="name" class="form-control" required>
                                 </div>
                                 <div class="form-group">
@@ -1722,43 +1788,32 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email Address *</label>
+                                <label for="email">Business Email *</label>
                                 <input type="email" id="email" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="location">Your Location in Kerala</label>
-                                <select id="location" class="form-control">
-                                    <option value="">Select Location</option>
-                                    <option value="kochi">Kochi / Ernakulam</option>
-                                    <option value="trivandrum">Trivandrum</option>
-                                    <option value="calicut">Calicut</option>
-                                    <option value="thrissur">Thrissur</option>
-                                    <option value="kannur">Kannur</option>
-                                    <option value="kollam">Kollam</option>
-                                    <option value="other">Other Kerala Location</option>
-                                    <option value="outside">Outside Kerala</option>
-                                </select>
+                                <label for="company">Company Name</label>
+                                <input type="text" id="company" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="service">Service Interested In</label>
+                                <label for="service">Primary Interest</label>
                                 <select id="service" class="form-control">
                                     <option value="">Select Service</option>
-                                    <option value="web">Web Development</option>
+                                    <option value="web">Enterprise Web Development</option>
                                     <option value="mobile">Mobile App Development</option>
                                     <option value="cloud">Cloud Solutions</option>
                                     <option value="ai">AI & Machine Learning</option>
-                                    <option value="seo">SEO & Digital Marketing</option>
-                                    <option value="cybersecurity">Cybersecurity</option>
-                                    <option value="multiple">Multiple Services</option>
+                                    <option value="seo">Organic SEO Strategy</option>
+                                    <option value="custom">Custom Web Applications</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="message">Project Details *</label>
+                                <label for="message">Project Requirements *</label>
                                 <textarea id="message" class="form-control" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary" style="width: 100%;">
                                 <i class="fas fa-paper-plane"></i>
-                                Send Message
+                                Request Consultation
                             </button>
                         </form>
                     </div>
@@ -1774,54 +1829,52 @@
                 <div class="footer-col">
                     <a href="#" class="logo" style="color:white; margin-bottom:2rem; display:inline-block;">
                         <i class="fas fa-code logo-icon"></i>
-                        <span style="background:linear-gradient(to right, #fff, var(--secondary)); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:900; font-size:2rem;">CodexWagon</span>
+                        <span style="background:linear-gradient(to right, #fff, var(--secondary)); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:900; font-size:2.2rem;">CodexWagon</span>
                     </a>
-                    <p>Kerala's premier digital solutions agency specializing in web development, mobile apps, cloud services, and AI solutions. With offices in Trivandrum, Kochi, and Bangalore, we serve businesses across Kerala and beyond.</p>
+                    <p>Global digital transformation agency specializing in enterprise web development, mobile applications, cloud solutions, AI integration, and custom web applications for visionary businesses worldwide.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
                         <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-col">
-                    <h3>Kerala Services</h3>
+                    <h3>Enterprise Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Web Development Kerala</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Mobile Apps Kerala</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Cloud Solutions Kerala</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> AI Solutions Kerala</a></li>
-                        <li><a href="#seo-services"><i class="fas fa-chevron-right"></i> SEO Services Kerala</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Cybersecurity Kerala</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Cloud Solutions</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> AI & ML Integration</a></li>
+                        <li><a href="#seo-focus"><i class="fas fa-chevron-right"></i> Organic SEO</a></li>
+                        <li><a href="#custom-apps"><i class="fas fa-chevron-right"></i> Custom Applications</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h3>Our Offices</h3>
+                    <h3>Global Offices</h3>
                     <ul class="footer-links">
-                        <li><a href="#locations"><i class="fas fa-chevron-right"></i> Technopark, Trivandrum</a></li>
-                        <li><a href="#locations"><i class="fas fa-chevron-right"></i> Infopark, Kochi</a></li>
-                        <li><a href="#locations"><i class="fas fa-chevron-right"></i> Electronic City, Bangalore</a></li>
-                        <li><a href="#locations"><i class="fas fa-chevron-right"></i> Dubai, UAE</a></li>
-                        <li><a href="#locations"><i class="fas fa-chevron-right"></i> Riyadh, KSA</a></li>
+                        <li><a href="#global-presence"><i class="fas fa-chevron-right"></i> Bangalore, India</a></li>
+                        <li><a href="#global-presence"><i class="fas fa-chevron-right"></i> Dubai, UAE</a></li>
+                        <li><a href="#global-presence"><i class="fas fa-chevron-right"></i> Riyadh, KSA</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h3>Contact Info</h3>
+                    <h3>Contact Information</h3>
                     <ul class="footer-links">
                         <li><a href="tel:9961959788"><i class="fas fa-phone"></i> 9961959788</a></li>
                         <li><a href="mailto:arun@codexwagon.in"><i class="fas fa-envelope"></i> arun@codexwagon.in</a></li>
                         <li><a href="mailto:info@codexwagon.in"><i class="fas fa-envelope"></i> info@codexwagon.in</a></li>
-                        <li><i class="fas fa-clock"></i> Mon-Sat: 9AM-8PM</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Enterprise Support</li>
                     </ul>
                     
                     <div class="newsletter">
-                        <p>Subscribe for Kerala Tech Insights</p>
+                        <p>Subscribe to Digital Insights</p>
                         <div class="newsletter-form">
-                            <input type="email" class="newsletter-input" placeholder="Your email address">
+                            <input type="email" class="newsletter-input" placeholder="Business email">
                             <button class="newsletter-btn">
                                 <i class="fas fa-paper-plane"></i>
                             </button>
@@ -1831,12 +1884,12 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 CodexWagon Digital Solutions. Kerala's Premier Web, Mobile & AI Agency. All rights reserved.</p>
+                <p>&copy; 2024 CodexWagon Global Digital Solutions. Enterprise Web, Mobile, Cloud & AI Agency. All rights reserved.</p>
                 <div class="footer-bottom-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
                     <a href="#">Cookie Policy</a>
-                    <a href="#">Sitemap</a>
+                    <a href="#">GDPR Compliance</a>
                 </div>
             </div>
         </div>
@@ -1882,7 +1935,7 @@
                 navLinks.style.left = '0';
                 navLinks.style.width = '100%';
                 navLinks.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-                navLinks.style.backdropFilter = 'blur(15px)';
+                navLinks.style.backdropFilter = 'blur(20px)';
                 navLinks.style.padding = '2.5rem';
                 navLinks.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.1)';
                 navLinks.style.gap = '1.8rem';
@@ -1939,13 +1992,13 @@
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
             const email = document.getElementById('email').value;
-            const location = document.getElementById('location').value;
+            const company = document.getElementById('company').value;
             const service = document.getElementById('service').value;
             const message = document.getElementById('message').value;
             
             // In a real application, you would send this data to your server
             // For demo purposes, we'll just show an alert
-            alert(`Thank you ${name}! Your consultation request has been received. We will contact you at ${phone} or ${email} within 24 hours.`);
+            alert(`Thank you ${name}! Your enterprise consultation request has been received. Our team will contact you at ${phone} or ${email} within 24 hours.`);
             
             // Reset form
             this.reset();
@@ -1958,13 +2011,13 @@
                 e.preventDefault();
                 const emailInput = this.querySelector('.newsletter-input');
                 if (emailInput.value) {
-                    alert('Thank you for subscribing to CodexWagon Kerala Tech Insights!');
+                    alert('Thank you for subscribing to CodexWagon Digital Insights!');
                     emailInput.value = '';
                 }
             });
         }
 
-        // Add Kerala-focused animations
+        // Add premium animations
         document.addEventListener('DOMContentLoaded', () => {
             // Add parallax effect to hero background
             window.addEventListener('scroll', () => {
@@ -1973,20 +2026,17 @@
                 if (hero) {
                     hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
                 }
+                
+                const enterprise = document.querySelector('.enterprise');
+                if (enterprise) {
+                    enterprise.style.backgroundPositionY = scrolled * 0.3 + 'px';
+                }
+                
+                const customApps = document.querySelector('.custom-apps');
+                if (customApps) {
+                    customApps.style.backgroundPositionY = scrolled * 0.4 + 'px';
+                }
             });
-            
-            // Auto-typing effect for Kerala locations
-            const keralaLocations = ['Kochi', 'Trivandrum', 'Calicut', 'Thrissur', 'Kannur'];
-            let currentLocationIndex = 0;
-            const locationElement = document.querySelector('.location-badge span');
-            const originalText = locationElement ? locationElement.textContent : '';
-            
-            if (locationElement) {
-                setInterval(() => {
-                    locationElement.textContent = `Serving ${keralaLocations[currentLocationIndex]}, Kerala`;
-                    currentLocationIndex = (currentLocationIndex + 1) % keralaLocations.length;
-                }, 3000);
-            }
         });
     </script>
     
@@ -1996,70 +2046,81 @@
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "CodexWagon",
-        "description": "Kerala's premier web development, mobile app development, cloud solutions, and AI services company with offices in Kochi, Trivandrum, and Bangalore.",
+        "description": "Global digital transformation agency specializing in enterprise web development, mobile applications, cloud solutions, AI integration, and custom web applications.",
         "url": "https://codexwagon.in",
         "logo": "https://codexwagon.in/logo.png",
         "telephone": "+91-9961959788",
         "email": "arun@codexwagon.in",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Technopark Campus, Phase 3",
-            "addressLocality": "Trivandrum",
-            "addressRegion": "Kerala",
-            "postalCode": "695581",
+            "streetAddress": "Electronic City Phase 1",
+            "addressLocality": "Bangalore",
+            "addressRegion": "Karnataka",
+            "postalCode": "560100",
             "addressCountry": "IN"
         },
         "geo": {
             "@type": "GeoCoordinates",
-            "latitude": "8.5241",
-            "longitude": "76.9366"
+            "latitude": "12.9716",
+            "longitude": "77.5946"
         },
-        "openingHours": "Mo-Sa 09:00-20:00",
+        "openingHours": "Mo-Sa 09:00-19:00",
         "sameAs": [
-            "https://facebook.com/codexwagon",
-            "https://twitter.com/codexwagon",
             "https://linkedin.com/company/codexwagon",
-            "https://instagram.com/codexwagon"
+            "https://twitter.com/codexwagon",
+            "https://github.com/codexwagon",
+            "https://dribbble.com/codexwagon"
         ],
-        "areaServed": {
-            "@type": "State",
-            "name": "Kerala",
-            "sameAs": "https://en.wikipedia.org/wiki/Kerala"
-        },
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Digital Services",
+            "name": "Digital Transformation Services",
             "itemListElement": [
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Web Development Kerala",
-                        "description": "Custom web development solutions for Kerala businesses"
+                        "name": "Enterprise Web Development",
+                        "description": "Scalable, secure web applications for enterprise businesses"
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Mobile App Development Kerala",
-                        "description": "Native and cross-platform mobile apps for Kerala market"
+                        "name": "Mobile App Development",
+                        "description": "Native and cross-platform mobile applications"
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Cloud Solutions Kerala",
-                        "description": "Cloud migration and management for Kerala businesses"
+                        "name": "Cloud Solutions",
+                        "description": "AWS, Azure, and Google Cloud migration and management"
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "AI Solutions Kerala",
-                        "description": "Artificial Intelligence and Machine Learning solutions"
+                        "name": "AI & Machine Learning",
+                        "description": "Artificial intelligence and machine learning solutions"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Organic SEO Strategy",
+                        "description": "Sustainable organic SEO services for long-term growth"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Custom Web Applications",
+                        "description": "Bespoke web applications for unique business needs"
                     }
                 }
             ]
