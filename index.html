@@ -631,51 +631,51 @@
             font-size: 1.1rem;
         }
         
-        /* NEW: Organic SEO Focus */
-        .seo-focus {
+        /* NEW: AI & ML Solutions Section */
+        .ai-solutions {
             background-color: white;
         }
         
-        .seo-container {
+        .ai-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 6rem;
             align-items: center;
         }
         
-        .seo-content h3 {
+        .ai-content h3 {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
             color: var(--primary);
         }
         
-        .seo-content .playfair {
+        .ai-content .playfair {
             font-size: 2.8rem;
             color: var(--primary);
             display: block;
             margin-bottom: 0.5rem;
         }
         
-        .seo-content p {
+        .ai-content p {
             color: var(--gray);
             margin-bottom: 2.5rem;
             font-size: 1.1rem;
             line-height: 1.8;
         }
         
-        .seo-features {
+        .ai-features {
             list-style: none;
             margin-top: 2rem;
         }
         
-        .seo-features li {
+        .ai-features li {
             display: flex;
             align-items: flex-start;
             gap: 15px;
             margin-bottom: 1.5rem;
         }
         
-        .seo-feature-icon {
+        .ai-feature-icon {
             width: 60px;
             height: 60px;
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
@@ -688,48 +688,254 @@
             flex-shrink: 0;
         }
         
-        .seo-feature-text h4 {
+        .ai-feature-text h4 {
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
             color: var(--primary);
         }
         
-        .seo-feature-text p {
+        .ai-feature-text p {
             color: var(--gray);
             margin-bottom: 0;
             line-height: 1.6;
         }
         
-        .seo-visual {
+        .ai-visual {
             position: relative;
         }
         
-        .seo-image-container {
+        .ai-image-container {
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow-lg);
             border: 15px solid white;
         }
         
-        .seo-image-container img {
+        .ai-image-container img {
             width: 100%;
             height: auto;
             display: block;
         }
         
-        /* NEW: Custom Web Apps Section */
-        .custom-apps {
+        /* NEW: Tech Stack Showcase */
+        .tech-stack {
             background: linear-gradient(135deg, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.95)), 
-                        url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+                        url('https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: white;
         }
         
-        .custom-apps .section-title h2,
-        .custom-apps .section-title p {
+        .tech-stack .section-title h2,
+        .tech-stack .section-title p {
             color: white;
+        }
+        
+        .tech-carousel {
+            position: relative;
+            max-width: 1000px;
+            margin: 4rem auto 0;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .tech-slides {
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .tech-slide {
+            min-width: 100%;
+            padding: 5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .tech-icon {
+            font-size: 4rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .tech-slide h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-slide p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            line-height: 1.8;
+            max-width: 700px;
+        }
+        
+        .tech-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .tech-control {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .tech-control.active {
+            background: var(--secondary);
+            transform: scale(1.3);
+        }
+        
+        /* NEW: Image Carousel Section */
+        .image-carousel-section {
+            background-color: white;
+        }
+        
+        .image-carousel {
+            position: relative;
+            max-width: 1200px;
+            margin: 4rem auto 0;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            height: 600px;
+            position: relative;
+        }
+        
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .carousel-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(10, 37, 64, 0.9), transparent);
+            color: white;
+            padding: 4rem;
+        }
+        
+        .carousel-overlay h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .carousel-overlay p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .carousel-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+        
+        .carousel-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        /* NEW: DevOps & Automation */
+        .devops {
+            background: linear-gradient(135deg, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.95)), 
+                        url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+        
+        .devops .section-title h2,
+        .devops .section-title p {
+            color: white;
+        }
+        
+        .devops-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3.5rem;
+            margin-top: 4rem;
+        }
+        
+        .devops-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: var(--border-radius);
+            padding: 3.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .devops-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-15px);
+            border-color: var(--secondary);
+        }
+        
+        .devops-icon {
+            font-size: 3.5rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .devops-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        .devops-card p {
+            opacity: 0.9;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        
+        /* NEW: Custom Web Apps Section */
+        .custom-apps {
+            background-color: white;
         }
         
         .apps-grid {
@@ -740,41 +946,63 @@
         }
         
         .app-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
+            background-color: white;
             border-radius: var(--border-radius);
-            padding: 3.5rem;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            box-shadow: var(--shadow);
             transition: var(--transition);
         }
         
         .app-card:hover {
-            background: rgba(255, 255, 255, 0.15);
             transform: translateY(-15px);
-            border-color: var(--secondary);
+            box-shadow: var(--shadow-lg);
         }
         
-        .app-icon {
-            font-size: 3.5rem;
-            color: var(--secondary);
-            margin-bottom: 2rem;
+        .app-image {
+            height: 250px;
+            overflow: hidden;
         }
         
-        .app-card h3 {
-            font-size: 1.7rem;
-            margin-bottom: 1.2rem;
+        .app-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
         }
         
-        .app-card p {
-            opacity: 0.9;
+        .app-card:hover .app-image img {
+            transform: scale(1.05);
+        }
+        
+        .app-content {
+            padding: 3rem;
+        }
+        
+        .app-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .app-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
             line-height: 1.7;
-            font-size: 1.1rem;
         }
         
         /* NEW: Global Presence */
         .global-presence {
-            background-color: white;
+            background: linear-gradient(135deg, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.95)), 
+                        url('https://images.unsplash.com/photo-1527474305487-b87b222841cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+        
+        .global-presence .section-title h2,
+        .global-presence .section-title p {
+            color: white;
         }
         
         .global-grid {
@@ -785,79 +1013,35 @@
         }
         
         .global-card {
-            background-color: white;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
             border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
+            padding: 3.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: var(--transition);
         }
         
         .global-card:hover {
-            transform: translateY(-15px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .global-image {
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .global-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-        
-        .global-card:hover .global-image img {
-            transform: scale(1.05);
-        }
-        
-        .global-content {
-            padding: 3rem;
-        }
-        
-        .global-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-10px);
+            border-color: var(--secondary);
         }
         
         .global-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.8rem;
-        }
-        
-        .global-header h3 {
-            font-size: 1.6rem;
-            color: var(--primary);
-        }
-        
-        .global-details {
-            list-style: none;
+            font-size: 3rem;
+            color: var(--secondary);
             margin-bottom: 1.5rem;
         }
         
-        .global-details li {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
+        .global-card h3 {
+            font-size: 1.6rem;
             margin-bottom: 1rem;
-            color: var(--gray);
-            font-size: 1.05rem;
         }
         
-        .global-details li i {
-            color: var(--secondary);
-            margin-top: 3px;
+        .global-card p {
+            opacity: 0.9;
+            line-height: 1.7;
         }
         
         /* Contact Section */
@@ -1191,9 +1375,13 @@
                 gap: 4rem;
             }
             
-            .seo-container {
+            .ai-container {
                 grid-template-columns: 1fr;
                 gap: 4rem;
+            }
+            
+            .carousel-slide {
+                height: 500px;
             }
         }
         
@@ -1213,6 +1401,10 @@
             
             .form-row {
                 grid-template-columns: 1fr;
+            }
+            
+            .carousel-slide {
+                height: 400px;
             }
         }
         
@@ -1256,6 +1448,18 @@
             
             .newsletter-form {
                 flex-direction: column;
+            }
+            
+            .tech-slide {
+                padding: 3rem 2rem;
+            }
+            
+            .carousel-slide {
+                height: 350px;
+            }
+            
+            .carousel-overlay {
+                padding: 2rem;
             }
         }
         
@@ -1304,8 +1508,8 @@
             background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--secondary) 100%);
         }
         
-        /* SEO Badge */
-        .seo-badge {
+        /* Premium Badge */
+        .premium-badge {
             position: absolute;
             top: 25px;
             right: 25px;
@@ -1339,9 +1543,9 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#enterprise">Enterprise</a></li>
-                <li><a href="#custom-apps">Custom Apps</a></li>
-                <li><a href="#seo-focus">Organic SEO</a></li>
+                <li><a href="#ai-solutions">AI & ML</a></li>
+                <li><a href="#tech-stack">Tech Stack</a></li>
+                <li><a href="#devops">DevOps</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             
@@ -1393,9 +1597,9 @@
                 </div>
             </div>
             <div class="hero-visual fade-in">
-                <div class="seo-badge">
-                    <i class="fas fa-search"></i>
-                    Organic SEO Focus
+                <div class="premium-badge">
+                    <i class="fas fa-bolt"></i>
+                    Cutting-Edge Technology
                 </div>
                 <div class="hero-image-container">
                     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Enterprise Digital Solutions">
@@ -1425,10 +1629,10 @@
                     <h3>Enterprise Web Development</h3>
                     <p>Scalable, secure web applications and platforms built with cutting-edge technologies, designed for high-performance, security, and seamless user experiences across all devices.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Scalable Architecture</li>
-                        <li><i class="fas fa-check"></i> Enterprise Security</li>
-                        <li><i class="fas fa-check"></i> Performance Optimization</li>
-                        <li><i class="fas fa-check"></i> SEO-First Development</li>
+                        <li><i class="fas fa-check"></i> React, Angular, Vue.js</li>
+                        <li><i class="fas fa-check"></i> Node.js, Python, Java</li>
+                        <li><i class="fas fa-check"></i> Microservices Architecture</li>
+                        <li><i class="fas fa-check"></i> Real-time Applications</li>
                     </ul>
                 </div>
                 
@@ -1439,10 +1643,10 @@
                     <h3>Mobile App Development</h3>
                     <p>Native and cross-platform mobile applications for iOS and Android, engineered for performance, intuitive user experiences, and seamless integration with enterprise systems.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> iOS & Android Native</li>
+                        <li><i class="fas fa-check"></i> iOS Swift & Android Kotlin</li>
                         <li><i class="fas fa-check"></i> React Native & Flutter</li>
-                        <li><i class="fas fa-check"></i> Enterprise Integration</li>
-                        <li><i class="fas fa-check"></i> App Store Optimization</li>
+                        <li><i class="fas fa-check"></i> PWA Development</li>
+                        <li><i class="fas fa-check"></i> AR/VR Integration</li>
                     </ul>
                 </div>
                 
@@ -1454,9 +1658,9 @@
                     <p>Comprehensive cloud strategy, migration, and management services across AWS, Azure, and Google Cloud platforms, optimized for scalability, security, and cost-efficiency.</p>
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> AWS, Azure, GCP</li>
-                        <li><i class="fas fa-check"></i> Cloud Migration</li>
-                        <li><i class="fas fa-check"></i> DevOps & CI/CD</li>
-                        <li><i class="fas fa-check"></i> Cost Optimization</li>
+                        <li><i class="fas fa-check"></i> Kubernetes & Docker</li>
+                        <li><i class="fas fa-check"></i> Serverless Architecture</li>
+                        <li><i class="fas fa-check"></i> Multi-cloud Strategy</li>
                     </ul>
                 </div>
                 
@@ -1467,24 +1671,24 @@
                     <h3>AI & Machine Learning</h3>
                     <p>Advanced artificial intelligence solutions including predictive analytics, natural language processing, computer vision, and custom machine learning models for business intelligence.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Predictive Analytics</li>
+                        <li><i class="fas fa-check"></i> TensorFlow & PyTorch</li>
                         <li><i class="fas fa-check"></i> NLP & Chatbots</li>
                         <li><i class="fas fa-check"></i> Computer Vision</li>
-                        <li><i class="fas fa-check"></i> Custom ML Models</li>
+                        <li><i class="fas fa-check"></i> Predictive Analytics</li>
                     </ul>
                 </div>
                 
                 <div class="service-card fade-in">
                     <div class="service-icon">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-cogs"></i>
                     </div>
-                    <h3>Organic SEO Strategy</h3>
-                    <p>Comprehensive organic SEO services focusing on technical optimization, content strategy, and sustainable growth tactics that deliver long-term visibility and organic traffic growth.</p>
+                    <h3>Custom Web Applications</h3>
+                    <p>Bespoke web applications tailored to specific business needs, from complex dashboards to workflow automation systems that transform business operations.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Technical SEO Audits</li>
-                        <li><i class="fas fa-check"></i> Content Strategy</li>
-                        <li><i class="fas fa-check"></i> E-E-A-T Optimization</li>
-                        <li><i class="fas fa-check"></i> Sustainable Growth</li>
+                        <li><i class="fas fa-check"></i> CRM & ERP Systems</li>
+                        <li><i class="fas fa-check"></i> Business Intelligence</li>
+                        <li><i class="fas fa-check"></i> Workflow Automation</li>
+                        <li><i class="fas fa-check"></i> E-commerce Platforms</li>
                     </ul>
                 </div>
                 
@@ -1505,103 +1709,213 @@
         </div>
     </section>
 
-    <!-- NEW: Enterprise Solutions Section -->
-    <section class="enterprise" id="enterprise">
+    <!-- NEW: AI & ML Solutions Section -->
+    <section class="ai-solutions" id="ai-solutions">
         <div class="container">
             <div class="section-title fade-in">
-                <span class="playfair">Enterprise Excellence</span>
-                <h2>Global Enterprise Solutions</h2>
-                <p>Tailored digital transformation services for large organizations seeking scalable, secure, and innovative technology solutions that drive business growth.</p>
+                <span class="playfair">Artificial Intelligence</span>
+                <h2>Advanced AI & ML Solutions</h2>
+                <p>Harness the power of artificial intelligence and machine learning to transform your business operations and gain competitive advantage.</p>
             </div>
             
-            <div class="enterprise-grid">
-                <div class="enterprise-card fade-in">
-                    <div class="enterprise-icon">
-                        <i class="fas fa-server"></i>
+            <div class="ai-container">
+                <div class="ai-content fade-in">
+                    <span class="playfair">AI Innovation</span>
+                    <h3>Transformative Machine Learning Solutions</h3>
+                    <p>Our AI specialists develop custom machine learning models, neural networks, and deep learning solutions that solve complex business challenges and unlock new opportunities.</p>
+                    
+                    <div class="ai-features">
+                        <div class="ai-feature">
+                            <div class="ai-feature-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="ai-feature-text">
+                                <h4>Neural Networks & Deep Learning</h4>
+                                <p>Custom neural network architectures for image recognition, natural language processing, and predictive modeling using TensorFlow and PyTorch.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="ai-feature">
+                            <div class="ai-feature-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="ai-feature-text">
+                                <h4>Natural Language Processing</h4>
+                                <p>Advanced NLP solutions including sentiment analysis, chatbots, language translation, and text summarization using transformer models like GPT and BERT.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="ai-feature">
+                            <div class="ai-feature-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="ai-feature-text">
+                                <h4>Computer Vision Systems</h4>
+                                <p>Object detection, facial recognition, image classification, and video analytics solutions for security, retail, healthcare, and manufacturing applications.</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Digital Infrastructure</h3>
-                    <p>Scalable digital infrastructure solutions designed for enterprise needs, ensuring reliability, security, and performance at global scale.</p>
                 </div>
                 
-                <div class="enterprise-card fade-in">
-                    <div class="enterprise-icon">
-                        <i class="fas fa-chart-network"></i>
+                <div class="ai-visual fade-in">
+                    <div class="ai-image-container">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="AI & Machine Learning">
                     </div>
-                    <h3>Business Intelligence</h3>
-                    <p>Advanced analytics and business intelligence platforms that transform data into actionable insights for strategic decision-making.</p>
-                </div>
-                
-                <div class="enterprise-card fade-in">
-                    <div class="enterprise-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Process Automation</h3>
-                    <p>Intelligent automation solutions that streamline business processes, reduce operational costs, and improve efficiency across departments.</p>
-                </div>
-                
-                <div class="enterprise-card fade-in">
-                    <div class="enterprise-icon">
-                        <i class="fas fa-users-cog"></i>
-                    </div>
-                    <h3>Enterprise Integration</h3>
-                    <p>Seamless integration of legacy systems with modern applications, creating unified digital ecosystems that enhance productivity.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW: Organic SEO Focus Section -->
-    <section class="seo-focus" id="seo-focus">
+    <!-- NEW: Tech Stack Showcase -->
+    <section class="tech-stack" id="tech-stack">
         <div class="container">
             <div class="section-title fade-in">
-                <span class="playfair">Organic SEO Excellence</span>
-                <h2>Sustainable Search Visibility</h2>
-                <p>Our organic SEO approach focuses on sustainable growth, technical excellence, and content strategies that deliver lasting results in search rankings.</p>
+                <span class="playfair">Technology Excellence</span>
+                <h2>Cutting-Edge Tech Stack</h2>
+                <p>We leverage the latest technologies and frameworks to build robust, scalable, and high-performance digital solutions.</p>
             </div>
             
-            <div class="seo-container">
-                <div class="seo-content fade-in">
-                    <span class="playfair">SEO-First Approach</span>
-                    <h3>Building Sustainable Search Presence</h3>
-                    <p>We implement comprehensive organic SEO strategies that prioritize sustainable growth, technical excellence, and user-centric content. Our approach focuses on long-term visibility rather than short-term gains.</p>
+            <div class="tech-carousel">
+                <div class="tech-slides" id="techSlides">
+                    <div class="tech-slide">
+                        <div class="tech-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h3>React & Next.js Ecosystem</h3>
+                        <p>Modern frontend development with React, Next.js, TypeScript, and state management libraries. We build performant, SEO-friendly applications with server-side rendering and static generation.</p>
+                    </div>
                     
-                    <div class="seo-features">
-                        <div class="seo-feature">
-                            <div class="seo-feature-icon">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <div class="seo-feature-text">
-                                <h4>Technical SEO Foundation</h4>
-                                <p>Comprehensive technical audits, site architecture optimization, and performance enhancements that create a solid foundation for search visibility.</p>
-                            </div>
+                    <div class="tech-slide">
+                        <div class="tech-icon">
+                            <i class="fab fa-node-js"></i>
                         </div>
-                        
-                        <div class="seo-feature">
-                            <div class="seo-feature-icon">
-                                <i class="fas fa-file-alt"></i>
-                            </div>
-                            <div class="seo-feature-text">
-                                <h4>Content Strategy & E-E-A-T</h4>
-                                <p>Expert-driven content strategies focusing on Experience, Expertise, Authoritativeness, and Trustworthiness - Google's core ranking factors.</p>
-                            </div>
+                        <h3>Node.js & Backend Technologies</h3>
+                        <p>Scalable backend solutions using Node.js, Express, NestJS, Python Django, and Java Spring Boot. We implement microservices architecture, GraphQL APIs, and real-time features.</p>
+                    </div>
+                    
+                    <div class="tech-slide">
+                        <div class="tech-icon">
+                            <i class="fab fa-aws"></i>
                         </div>
-                        
-                        <div class="seo-feature">
-                            <div class="seo-feature-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="seo-feature-text">
-                                <h4>Sustainable Growth Metrics</h4>
-                                <p>Focus on sustainable growth metrics including organic traffic quality, conversion rates, and long-term keyword positioning rather than vanity metrics.</p>
-                            </div>
+                        <h3>Cloud & DevOps</h3>
+                        <p>Comprehensive cloud infrastructure on AWS, Azure, and Google Cloud with Kubernetes, Docker, Terraform, and CI/CD pipelines for automated deployment and scaling.</p>
+                    </div>
+                    
+                    <div class="tech-slide">
+                        <div class="tech-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Databases & Data Engineering</h3>
+                        <p>Modern database solutions including PostgreSQL, MongoDB, Redis, and Elasticsearch. We design scalable data architectures, data lakes, and real-time analytics pipelines.</p>
+                    </div>
+                </div>
+                
+                <div class="tech-controls">
+                    <button class="tech-control active" data-slide="0"></button>
+                    <button class="tech-control" data-slide="1"></button>
+                    <button class="tech-control" data-slide="2"></button>
+                    <button class="tech-control" data-slide="3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Image Carousel Section -->
+    <section class="image-carousel-section" id="image-carousel">
+        <div class="container">
+            <div class="section-title fade-in">
+                <span class="playfair">Project Excellence</span>
+                <h2>Our Digital Masterpieces</h2>
+                <p>A showcase of our premium digital solutions that have transformed businesses across industries.</p>
+            </div>
+            
+            <div class="image-carousel">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Enterprise Dashboard">
+                        <div class="carousel-overlay">
+                            <h3>Enterprise Business Intelligence Dashboard</h3>
+                            <p>Real-time analytics platform with interactive visualizations, predictive insights, and AI-powered recommendations for Fortune 500 clients.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Mobile Banking App">
+                        <div class="carousel-overlay">
+                            <h3>Next-Gen Mobile Banking Application</h3>
+                            <p>Secure, feature-rich banking app with biometric authentication, AI-powered financial insights, and seamless payment integration for global banks.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="E-commerce Platform">
+                        <div class="carousel-overlay">
+                            <h3>Premium E-commerce Platform</h3>
+                            <p>Scalable online marketplace with AI-driven personalization, AR product visualization, and omnichannel integration for luxury retail brands.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Healthcare Platform">
+                        <div class="carousel-overlay">
+                            <h3>Healthcare Telemedicine Platform</h3>
+                            <p>HIPAA-compliant telehealth solution with video consultations, AI diagnostics, and patient management for healthcare networks.</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="seo-visual fade-in">
-                    <div class="seo-image-container">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="SEO Analytics Dashboard">
+                <div class="carousel-controls">
+                    <button class="carousel-btn" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: DevOps & Automation -->
+    <section class="devops" id="devops">
+        <div class="container">
+            <div class="section-title fade-in">
+                <span class="playfair">DevOps Excellence</span>
+                <h2>Modern DevOps & Automation</h2>
+                <p>Streamlined development pipelines, infrastructure as code, and automated deployment for rapid, reliable software delivery.</p>
+            </div>
+            
+            <div class="devops-grid">
+                <div class="devops-card fade-in">
+                    <div class="devops-icon">
+                        <i class="fas fa-code-branch"></i>
                     </div>
+                    <h3>CI/CD Pipelines</h3>
+                    <p>Automated continuous integration and deployment pipelines using Jenkins, GitLab CI, GitHub Actions, and CircleCI for rapid, reliable software delivery.</p>
+                </div>
+                
+                <div class="devops-card fade-in">
+                    <div class="devops-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Infrastructure as Code</h3>
+                    <p>Automated infrastructure provisioning and management using Terraform, Ansible, and CloudFormation for consistent, repeatable environments.</p>
+                </div>
+                
+                <div class="devops-card fade-in">
+                    <div class="devops-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <h3>Container Orchestration</h3>
+                    <p>Scalable container management with Kubernetes, Docker Swarm, and AWS ECS for efficient deployment, scaling, and management of containerized applications.</p>
+                </div>
+                
+                <div class="devops-card fade-in">
+                    <div class="devops-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Monitoring & Observability</h3>
+                    <p>Comprehensive monitoring solutions with Prometheus, Grafana, ELK stack, and New Relic for real-time insights into application performance and infrastructure health.</p>
                 </div>
             </div>
         </div>
@@ -1618,35 +1932,36 @@
             
             <div class="apps-grid">
                 <div class="app-card fade-in">
-                    <div class="app-icon">
-                        <i class="fas fa-shopping-cart"></i>
+                    <div class="app-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="E-commerce Platform">
                     </div>
-                    <h3>E-commerce Platforms</h3>
-                    <p>Custom e-commerce solutions with advanced features, personalized shopping experiences, and seamless payment integrations.</p>
+                    <div class="app-content">
+                        <h3>Enterprise E-commerce Platforms</h3>
+                        <p>Custom online storefronts with advanced inventory management, personalized shopping experiences, and seamless payment gateway integrations.</p>
+                        <a href="#contact" class="btn btn-accent">Learn More</a>
+                    </div>
                 </div>
                 
                 <div class="app-card fade-in">
-                    <div class="app-icon">
-                        <i class="fas fa-chart-bar"></i>
+                    <div class="app-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Business Dashboard">
                     </div>
-                    <h3>Business Dashboards</h3>
-                    <p>Custom business intelligence dashboards that consolidate data from multiple sources into actionable insights and visualizations.</p>
+                    <div class="app-content">
+                        <h3>Business Intelligence Dashboards</h3>
+                        <p>Custom analytics platforms that consolidate data from multiple sources into actionable insights with real-time visualizations and reporting.</p>
+                        <a href="#contact" class="btn btn-accent">Learn More</a>
+                    </div>
                 </div>
                 
                 <div class="app-card fade-in">
-                    <div class="app-icon">
-                        <i class="fas fa-tasks"></i>
+                    <div class="app-image">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Healthcare System">
                     </div>
-                    <h3>Workflow Automation</h3>
-                    <p>Custom workflow automation applications that streamline business processes, reduce manual work, and improve operational efficiency.</p>
-                </div>
-                
-                <div class="app-card fade-in">
-                    <div class="app-icon">
-                        <i class="fas fa-database"></i>
+                    <div class="app-content">
+                        <h3>Healthcare Management Systems</h3>
+                        <p>HIPAA-compliant healthcare platforms with patient management, appointment scheduling, telemedicine, and electronic health records.</p>
+                        <a href="#contact" class="btn btn-accent">Learn More</a>
                     </div>
-                    <h3>CRM & ERP Systems</h3>
-                    <p>Custom customer relationship management and enterprise resource planning systems tailored to specific business needs.</p>
                 </div>
             </div>
         </div>
@@ -1663,63 +1978,27 @@
             
             <div class="global-grid">
                 <div class="global-card fade-in">
-                    <div class="global-image">
-                        <img src="https://images.unsplash.com/photo-1580651214613-f4692d6d138f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="India Office">
+                    <div class="global-icon">
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <div class="global-content">
-                        <div class="global-header">
-                            <div class="global-icon">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <h3>India Operations</h3>
-                        </div>
-                        <ul class="global-details">
-                            <li><i class="fas fa-map-marker-alt"></i> <strong>Bangalore:</strong> Electronic City Phase 1</li>
-                            <li><i class="fas fa-phone"></i> <strong>Phone:</strong> 9961959788</li>
-                            <li><i class="fas fa-envelope"></i> <strong>Email:</strong> india@codexwagon.in</li>
-                            <li><i class="fas fa-clock"></i> <strong>Hours:</strong> Mon-Sat: 9AM-7PM</li>
-                        </ul>
-                    </div>
+                    <h3>India Operations</h3>
+                    <p>Bangalore Electronic City - Our primary development hub with 150+ engineers specializing in enterprise solutions.</p>
                 </div>
                 
                 <div class="global-card fade-in">
-                    <div class="global-image">
-                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="UAE Office">
+                    <div class="global-icon">
+                        <i class="fas fa-globe-asia"></i>
                     </div>
-                    <div class="global-content">
-                        <div class="global-header">
-                            <div class="global-icon">
-                                <i class="fas fa-globe"></i>
-                            </div>
-                            <h3>Middle East Hub</h3>
-                        </div>
-                        <ul class="global-details">
-                            <li><i class="fas fa-map-marker-alt"></i> <strong>Dubai:</strong> Dubai Internet City</li>
-                            <li><i class="fas fa-phone"></i> <strong>Phone:</strong> +971 4 123 4567</li>
-                            <li><i class="fas fa-envelope"></i> <strong>Email:</strong> uae@codexwagon.in</li>
-                            <li><i class="fas fa-clock"></i> <strong>Hours:</strong> Sun-Thu: 9AM-6PM</li>
-                        </ul>
-                    </div>
+                    <h3>Middle East Hub</h3>
+                    <p>Dubai Internet City - Strategic location serving Middle Eastern markets with localized digital solutions.</p>
                 </div>
                 
                 <div class="global-card fade-in">
-                    <div class="global-image">
-                        <img src="https://images.unsplash.com/photo-1540324155971-4c8ae78c44a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="KSA Office">
+                    <div class="global-icon">
+                        <i class="fas fa-globe-americas"></i>
                     </div>
-                    <div class="global-content">
-                        <div class="global-header">
-                            <div class="global-icon">
-                                <i class="fas fa-globe"></i>
-                            </div>
-                            <h3>Saudi Arabia Operations</h3>
-                        </div>
-                        <ul class="global-details">
-                            <li><i class="fas fa-map-marker-alt"></i> <strong>Riyadh:</strong> King Abdullah Financial District</li>
-                            <li><i class="fas fa-phone"></i> <strong>Phone:</strong> +966 11 123 4567</li>
-                            <li><i class="fas fa-envelope"></i> <strong>Email:</strong> ksa@codexwagon.in</li>
-                            <li><i class="fas fa-clock"></i> <strong>Hours:</strong> Sun-Thu: 9AM-6PM</li>
-                        </ul>
-                    </div>
+                    <h3>North America</h3>
+                    <p>Remote teams across US and Canada delivering 24/7 support and development for North American clients.</p>
                 </div>
             </div>
         </div>
@@ -1768,7 +2047,7 @@
                         <ul class="contact-details">
                             <li><i class="fas fa-location-dot"></i> <strong>India:</strong> Bangalore Electronic City</li>
                             <li><i class="fas fa-location-dot"></i> <strong>UAE:</strong> Dubai Internet City</li>
-                            <li><i class="fas fa-location-dot"></i> <strong>KSA:</strong> Riyadh Financial District</li>
+                            <li><i class="fas fa-location-dot"></i> <strong>Remote:</strong> Global Development Teams</li>
                         </ul>
                     </div>
                 </div>
@@ -1803,7 +2082,7 @@
                                     <option value="mobile">Mobile App Development</option>
                                     <option value="cloud">Cloud Solutions</option>
                                     <option value="ai">AI & Machine Learning</option>
-                                    <option value="seo">Organic SEO Strategy</option>
+                                    <option value="devops">DevOps & Automation</option>
                                     <option value="custom">Custom Web Applications</option>
                                 </select>
                             </div>
@@ -1847,18 +2126,20 @@
                         <li><a href="#services"><i class="fas fa-chevron-right"></i> Web Development</a></li>
                         <li><a href="#services"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
                         <li><a href="#services"><i class="fas fa-chevron-right"></i> Cloud Solutions</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> AI & ML Integration</a></li>
-                        <li><a href="#seo-focus"><i class="fas fa-chevron-right"></i> Organic SEO</a></li>
+                        <li><a href="#ai-solutions"><i class="fas fa-chevron-right"></i> AI & ML Integration</a></li>
+                        <li><a href="#devops"><i class="fas fa-chevron-right"></i> DevOps & Automation</a></li>
                         <li><a href="#custom-apps"><i class="fas fa-chevron-right"></i> Custom Applications</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h3>Global Offices</h3>
+                    <h3>Technology Stack</h3>
                     <ul class="footer-links">
-                        <li><a href="#global-presence"><i class="fas fa-chevron-right"></i> Bangalore, India</a></li>
-                        <li><a href="#global-presence"><i class="fas fa-chevron-right"></i> Dubai, UAE</a></li>
-                        <li><a href="#global-presence"><i class="fas fa-chevron-right"></i> Riyadh, KSA</a></li>
+                        <li><a href="#tech-stack"><i class="fas fa-chevron-right"></i> React & Next.js</a></li>
+                        <li><a href="#tech-stack"><i class="fas fa-chevron-right"></i> Node.js & Backend</a></li>
+                        <li><a href="#tech-stack"><i class="fas fa-chevron-right"></i> Cloud & DevOps</a></li>
+                        <li><a href="#tech-stack"><i class="fas fa-chevron-right"></i> Databases</a></li>
+                        <li><a href="#ai-solutions"><i class="fas fa-chevron-right"></i> AI & ML Tools</a></li>
                     </ul>
                 </div>
                 
@@ -1872,7 +2153,7 @@
                     </ul>
                     
                     <div class="newsletter">
-                        <p>Subscribe to Digital Insights</p>
+                        <p>Subscribe to Tech Insights</p>
                         <div class="newsletter-form">
                             <input type="email" class="newsletter-input" placeholder="Business email">
                             <button class="newsletter-btn">
@@ -2011,11 +2292,69 @@
                 e.preventDefault();
                 const emailInput = this.querySelector('.newsletter-input');
                 if (emailInput.value) {
-                    alert('Thank you for subscribing to CodexWagon Digital Insights!');
+                    alert('Thank you for subscribing to CodexWagon Tech Insights!');
                     emailInput.value = '';
                 }
             });
         }
+
+        // Tech Stack Carousel
+        const techSlides = document.getElementById('techSlides');
+        const techControls = document.querySelectorAll('.tech-control');
+        let currentTechSlide = 0;
+        let techInterval;
+        
+        function showTechSlide(index) {
+            techSlides.style.transform = `translateX(-${index * 100}%)`;
+            techControls.forEach(control => control.classList.remove('active'));
+            techControls[index].classList.add('active');
+            currentTechSlide = index;
+        }
+        
+        techControls.forEach((control, index) => {
+            control.addEventListener('click', () => {
+                clearInterval(techInterval);
+                showTechSlide(index);
+                startTechInterval();
+            });
+        });
+        
+        function startTechInterval() {
+            clearInterval(techInterval);
+            techInterval = setInterval(() => {
+                currentTechSlide = (currentTechSlide + 1) % techControls.length;
+                showTechSlide(currentTechSlide);
+            }, 5000);
+        }
+        
+        startTechInterval();
+
+        // Image Carousel
+        const carouselTrack = document.getElementById('carouselTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentCarouselSlide = 0;
+        const totalCarouselSlides = document.querySelectorAll('.carousel-slide').length;
+        
+        function updateCarousel() {
+            carouselTrack.style.transform = `translateX(-${currentCarouselSlide * 100}%)`;
+        }
+        
+        nextBtn.addEventListener('click', () => {
+            currentCarouselSlide = (currentCarouselSlide + 1) % totalCarouselSlides;
+            updateCarousel();
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            currentCarouselSlide = (currentCarouselSlide - 1 + totalCarouselSlides) % totalCarouselSlides;
+            updateCarousel();
+        });
+        
+        // Auto-advance carousel
+        setInterval(() => {
+            currentCarouselSlide = (currentCarouselSlide + 1) % totalCarouselSlides;
+            updateCarousel();
+        }, 7000);
 
         // Add premium animations
         document.addEventListener('DOMContentLoaded', () => {
@@ -2032,9 +2371,19 @@
                     enterprise.style.backgroundPositionY = scrolled * 0.3 + 'px';
                 }
                 
-                const customApps = document.querySelector('.custom-apps');
-                if (customApps) {
-                    customApps.style.backgroundPositionY = scrolled * 0.4 + 'px';
+                const techStack = document.querySelector('.tech-stack');
+                if (techStack) {
+                    techStack.style.backgroundPositionY = scrolled * 0.4 + 'px';
+                }
+                
+                const devops = document.querySelector('.devops');
+                if (devops) {
+                    devops.style.backgroundPositionY = scrolled * 0.3 + 'px';
+                }
+                
+                const globalPresence = document.querySelector('.global-presence');
+                if (globalPresence) {
+                    globalPresence.style.backgroundPositionY = scrolled * 0.4 + 'px';
                 }
             });
         });
@@ -2064,7 +2413,7 @@
             "latitude": "12.9716",
             "longitude": "77.5946"
         },
-        "openingHours": "Mo-Sa 09:00-19:00",
+        "openingHours": "24/7",
         "sameAs": [
             "https://linkedin.com/company/codexwagon",
             "https://twitter.com/codexwagon",
@@ -2111,8 +2460,8 @@
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Organic SEO Strategy",
-                        "description": "Sustainable organic SEO services for long-term growth"
+                        "name": "DevOps & Automation",
+                        "description": "CI/CD pipelines, container orchestration, and infrastructure automation"
                     }
                 },
                 {
