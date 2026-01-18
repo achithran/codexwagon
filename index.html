@@ -45,6 +45,7 @@
             line-height: 1.7;
             overflow-x: hidden;
             font-weight: 400;
+            -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -64,7 +65,7 @@
             color: transparent;
         }
         
-        /* Premium Header */
+        /* Premium Header - Mobile Optimized */
         header {
             background-color: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
@@ -73,13 +74,13 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            padding: 1.2rem 0;
+            padding: 1rem 0;
             transition: var(--transition);
             border-bottom: 1px solid rgba(0, 0, 0, 0.03);
         }
         
         header.scrolled {
-            padding: 0.8rem 0;
+            padding: 0.7rem 0;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
         
@@ -87,42 +88,44 @@
             width: 92%;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 16px;
         }
         
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
         
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 2.2rem;
+            gap: 10px;
+            font-size: 1.8rem;
             font-weight: 900;
             color: var(--primary);
             text-decoration: none;
             letter-spacing: -0.5px;
+            z-index: 1001;
         }
         
         .logo-icon {
             color: var(--secondary);
-            font-size: 2.5rem;
+            font-size: 2rem;
             position: relative;
         }
         
         .logo-icon::after {
             content: '';
             position: absolute;
-            top: -5px;
-            right: -5px;
-            width: 14px;
-            height: 14px;
+            top: -4px;
+            right: -4px;
+            width: 12px;
+            height: 12px;
             background-color: var(--accent);
             border-radius: 50%;
-            border: 3px solid white;
+            border: 2px solid white;
         }
         
         .logo-text {
@@ -132,47 +135,61 @@
             color: transparent;
         }
         
+        /* Improved Mobile Navigation */
         .nav-links {
-            display: flex;
-            gap: 2.5rem;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
             list-style: none;
+            flex-direction: column;
+            gap: 1.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.03);
+            z-index: 1000;
+            max-height: calc(100vh - 70px);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .nav-links.active {
+            display: flex;
         }
         
         .nav-links a {
             text-decoration: none;
             color: var(--dark);
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1.2rem;
             transition: var(--transition);
             position: relative;
-            padding: 0.5rem 0;
+            padding: 0.8rem 0;
+            display: block;
             letter-spacing: 0.3px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-links li:last-child a {
+            border-bottom: none;
         }
         
         .nav-links a:hover {
             color: var(--primary);
+            padding-left: 10px;
         }
         
         .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
-            transition: width 0.4s ease;
-            border-radius: 10px;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
+            display: none;
         }
         
         .nav-cta {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: white;
-            padding: 1rem 2.5rem;
+            padding: 0.9rem 1.8rem;
             border-radius: 50px;
             font-weight: 700;
             text-decoration: none;
@@ -181,10 +198,12 @@
             box-shadow: 0 8px 25px rgba(10, 37, 64, 0.2);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             letter-spacing: 0.5px;
             position: relative;
             overflow: hidden;
+            font-size: 0.95rem;
+            white-space: nowrap;
         }
         
         .nav-cta::before {
@@ -209,10 +228,12 @@
         }
         
         .mobile-menu-btn {
-            display: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: none;
             border: none;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: var(--dark);
             cursor: pointer;
             width: 50px;
@@ -220,70 +241,80 @@
             border-radius: 50%;
             background-color: rgba(0, 0, 0, 0.03);
             transition: var(--transition);
+            z-index: 1001;
         }
         
         .mobile-menu-btn:hover {
             background-color: rgba(0, 0, 0, 0.06);
         }
         
-        /* Luxury Hero Section */
+        .mobile-menu-btn.active i:before {
+            content: "\f00d";
+        }
+        
+        /* Luxury Hero Section - Mobile Optimized */
         .hero {
-            padding: 14rem 0 10rem;
+            padding: 8rem 0 5rem;
             background: linear-gradient(135deg, rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.9)), 
                         url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            background-attachment: scroll; /* Changed from fixed for mobile performance */
             position: relative;
             overflow: hidden;
-            min-height: 100vh;
+            min-height: auto;
             display: flex;
             align-items: center;
             color: white;
         }
         
         .hero-content {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3.5rem;
             align-items: center;
             position: relative;
             z-index: 1;
         }
         
+        .hero-text {
+            width: 100%;
+        }
+        
         .hero-text h1 {
-            font-size: 4.5rem;
-            line-height: 1.1;
-            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
             color: white;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
         }
         
         .hero-text .playfair {
-            font-size: 4.8rem;
+            font-size: 2.8rem;
             color: var(--secondary);
             margin-bottom: 0.5rem;
             display: block;
         }
         
         .hero-text p {
-            font-size: 1.35rem;
+            font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 3rem;
-            max-width: 90%;
+            margin-bottom: 2.5rem;
+            width: 100%;
             font-weight: 400;
-            line-height: 1.8;
+            line-height: 1.6;
         }
         
         .hero-btns {
             display: flex;
-            gap: 1.5rem;
-            align-items: center;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 1.2rem;
+            align-items: stretch;
+            width: 100%;
         }
         
         .btn {
-            padding: 1.3rem 3rem;
+            padding: 1.2rem 2.5rem;
             border-radius: 50px;
             font-weight: 700;
             text-decoration: none;
@@ -298,6 +329,8 @@
             letter-spacing: 0.5px;
             position: relative;
             overflow: hidden;
+            text-align: center;
+            width: 100%;
         }
         
         .btn::before {
@@ -353,6 +386,8 @@
         
         .hero-visual {
             position: relative;
+            width: 100%;
+            margin-top: 2rem;
         }
         
         .hero-image-container {
@@ -360,9 +395,9 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow-lg);
-            transform: perspective(1500px) rotateY(-10deg);
+            transform: perspective(1500px) rotateY(-5deg);
             transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 18px solid white;
+            border: 12px solid white;
         }
         
         .hero-image-container:hover {
@@ -373,31 +408,35 @@
             width: 100%;
             height: auto;
             display: block;
+            min-height: 250px;
+            object-fit: cover;
         }
         
         .floating-badge {
             position: absolute;
-            bottom: -30px;
-            right: -30px;
+            bottom: -20px;
+            right: 10px;
             background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
             color: var(--primary);
-            padding: 1.8rem 2.5rem;
+            padding: 1.2rem 1.8rem;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-lg);
             font-weight: 800;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             z-index: 2;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             letter-spacing: 0.5px;
+            max-width: calc(100% - 20px);
         }
         
         .hero-stats {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 4rem;
-            padding-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            padding-top: 2.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
@@ -406,7 +445,7 @@
         }
         
         .stat-number {
-            font-size: 3.2rem;
+            font-size: 2.5rem;
             font-weight: 800;
             color: var(--secondary);
             display: block;
@@ -416,10 +455,10 @@
         
         .stat-label {
             color: rgba(255, 255, 255, 0.8);
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
         }
         
         /* Premium Badge */
@@ -429,38 +468,48 @@
             gap: 10px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
+            padding: 0.9rem 1.5rem;
             border-radius: 50px;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            position: relative;
+            top: 0;
+            right: 0;
+            left: 0;
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
+            width: fit-content;
         }
         
         .premium-badge i {
             color: var(--secondary);
         }
         
-        /* Section Styling */
+        /* Section Styling - Mobile Optimized */
         section {
-            padding: 10rem 0;
+            padding: 5rem 0;
             position: relative;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 6rem;
+            margin-bottom: 3.5rem;
             position: relative;
+            padding: 0 1rem;
         }
         
         .section-title h2 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
             color: var(--primary);
             position: relative;
             display: inline-block;
         }
         
         .section-title .playfair {
-            font-size: 3.8rem;
+            font-size: 2.5rem;
             color: var(--primary);
             display: block;
         }
@@ -468,39 +517,39 @@
         .section-title h2::after {
             content: '';
             position: absolute;
-            bottom: -15px;
+            bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
-            width: 120px;
-            height: 6px;
+            width: 100px;
+            height: 5px;
             background: linear-gradient(to right, var(--secondary), var(--accent));
             border-radius: 10px;
         }
         
         .section-title p {
             color: var(--gray);
-            font-size: 1.3rem;
-            max-width: 800px;
+            font-size: 1.1rem;
+            width: 100%;
             margin: 0 auto;
             font-weight: 400;
-            line-height: 1.8;
+            line-height: 1.6;
         }
         
-        /* Services Section - Global Focus */
+        /* Services Section - Mobile Optimized */
         .services {
             background-color: white;
         }
         
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
         }
         
         .service-card {
             background-color: white;
             border-radius: var(--border-radius);
-            padding: 4rem;
+            padding: 2.5rem;
             box-shadow: var(--shadow);
             transition: var(--transition);
             border: 1px solid rgba(0, 0, 0, 0.03);
@@ -521,136 +570,81 @@
         }
         
         .service-card:hover {
-            transform: translateY(-20px);
+            transform: translateY(-10px);
             box-shadow: var(--shadow-lg);
         }
         
         .service-icon {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, rgba(10, 37, 64, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
-            border-radius: 25px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.8rem;
             color: var(--primary);
-            font-size: 2.5rem;
+            font-size: 2rem;
             transition: var(--transition);
         }
         
         .service-card:hover .service-icon {
-            transform: scale(1.15) rotate(5deg);
+            transform: scale(1.1) rotate(5deg);
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(124, 58, 237, 0.15) 100%);
         }
         
         .service-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
             color: var(--primary);
         }
         
         .service-card p {
             color: var(--gray);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-size: 1rem;
         }
         
         .service-features {
             list-style: none;
-            margin-top: 1.5rem;
+            margin-top: 1.2rem;
         }
         
         .service-features li {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 1rem;
+            gap: 10px;
+            margin-bottom: 0.9rem;
             color: var(--gray);
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
         
         .service-features li i {
             color: var(--secondary);
-            font-size: 1.2rem;
-        }
-        
-        /* NEW: Enterprise Solutions Section */
-        .enterprise {
-            background: linear-gradient(135deg, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.95)), 
-                        url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-        }
-        
-        .enterprise .section-title h2,
-        .enterprise .section-title p {
-            color: white;
-        }
-        
-        .enterprise-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3.5rem;
-            margin-top: 4rem;
-        }
-        
-        .enterprise-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border-radius: var(--border-radius);
-            padding: 3.5rem;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: var(--transition);
-        }
-        
-        .enterprise-card:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-15px);
-            border-color: var(--secondary);
-        }
-        
-        .enterprise-icon {
-            font-size: 3.5rem;
-            color: var(--secondary);
-            margin-bottom: 2rem;
-        }
-        
-        .enterprise-card h3 {
-            font-size: 1.7rem;
-            margin-bottom: 1.2rem;
-        }
-        
-        .enterprise-card p {
-            opacity: 0.9;
-            line-height: 1.7;
             font-size: 1.1rem;
         }
         
-        /* NEW: AI & ML Solutions Section */
+        /* AI Solutions Section - Mobile Optimized */
         .ai-solutions {
             background-color: white;
         }
         
         .ai-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
             align-items: center;
         }
         
         .ai-content h3 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
             color: var(--primary);
         }
         
         .ai-content .playfair {
-            font-size: 2.8rem;
+            font-size: 2rem;
             color: var(--primary);
             display: block;
             margin-bottom: 0.5rem;
@@ -658,38 +652,38 @@
         
         .ai-content p {
             color: var(--gray);
-            margin-bottom: 2.5rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.6;
         }
         
         .ai-features {
             list-style: none;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
         
         .ai-features li {
             display: flex;
             align-items: flex-start;
-            gap: 15px;
+            gap: 12px;
             margin-bottom: 1.5rem;
         }
         
         .ai-feature-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
-            border-radius: 15px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--secondary);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             flex-shrink: 0;
         }
         
         .ai-feature-text h4 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: var(--primary);
         }
@@ -698,32 +692,36 @@
             color: var(--gray);
             margin-bottom: 0;
             line-height: 1.6;
+            font-size: 1rem;
         }
         
         .ai-visual {
             position: relative;
+            width: 100%;
         }
         
         .ai-image-container {
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow-lg);
-            border: 15px solid white;
+            border: 12px solid white;
         }
         
         .ai-image-container img {
             width: 100%;
             height: auto;
             display: block;
+            min-height: 250px;
+            object-fit: cover;
         }
         
-        /* NEW: Tech Stack Showcase */
+        /* Tech Stack Showcase - Mobile Optimized */
         .tech-stack {
             background: linear-gradient(135deg, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.95)), 
                         url('https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            background-attachment: scroll; /* Changed from fixed for mobile */
             color: white;
         }
         
@@ -734,8 +732,8 @@
         
         .tech-carousel {
             position: relative;
-            max-width: 1000px;
-            margin: 4rem auto 0;
+            width: 100%;
+            margin: 3rem auto 0;
             overflow: hidden;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-lg);
@@ -748,7 +746,7 @@
         
         .tech-slide {
             min-width: 100%;
-            padding: 5rem;
+            padding: 3rem 2rem;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px);
             display: flex;
@@ -759,38 +757,39 @@
         }
         
         .tech-icon {
-            font-size: 4rem;
+            font-size: 3rem;
             color: var(--secondary);
-            margin-bottom: 2rem;
-        }
-        
-        .tech-slide h3 {
-            font-size: 2rem;
             margin-bottom: 1.5rem;
         }
         
+        .tech-slide h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+        }
+        
         .tech-slide p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             opacity: 0.9;
-            line-height: 1.8;
-            max-width: 700px;
+            line-height: 1.6;
+            width: 100%;
         }
         
         .tech-controls {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 3rem;
+            gap: 1rem;
+            margin-top: 2rem;
         }
         
         .tech-control {
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.3);
             border: none;
             cursor: pointer;
             transition: var(--transition);
+            -webkit-tap-highlight-color: transparent;
         }
         
         .tech-control.active {
@@ -798,15 +797,15 @@
             transform: scale(1.3);
         }
         
-        /* NEW: Image Carousel Section */
+        /* Image Carousel Section - Mobile Optimized */
         .image-carousel-section {
             background-color: white;
         }
         
         .image-carousel {
             position: relative;
-            max-width: 1200px;
-            margin: 4rem auto 0;
+            width: 100%;
+            margin: 3rem auto 0;
             overflow: hidden;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-lg);
@@ -819,7 +818,7 @@
         
         .carousel-slide {
             min-width: 100%;
-            height: 600px;
+            height: 350px;
             position: relative;
         }
         
@@ -836,30 +835,31 @@
             right: 0;
             background: linear-gradient(to top, rgba(10, 37, 64, 0.9), transparent);
             color: white;
-            padding: 4rem;
+            padding: 2rem;
         }
         
         .carousel-overlay h3 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
         }
         
         .carousel-overlay p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             opacity: 0.9;
-            max-width: 600px;
+            width: 100%;
+            line-height: 1.5;
         }
         
         .carousel-controls {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
         
         .carousel-btn {
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             background: var(--primary);
             color: white;
@@ -867,10 +867,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             cursor: pointer;
             transition: var(--transition);
             box-shadow: var(--shadow);
+            -webkit-tap-highlight-color: transparent;
         }
         
         .carousel-btn:hover {
@@ -878,13 +879,13 @@
             transform: translateY(-5px);
         }
         
-        /* NEW: DevOps & Automation */
+        /* DevOps Section - Mobile Optimized */
         .devops {
             background: linear-gradient(135deg, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.95)), 
                         url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            background-attachment: scroll; /* Changed from fixed for mobile */
             color: white;
         }
         
@@ -894,17 +895,17 @@
         }
         
         .devops-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3.5rem;
-            margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 3rem;
         }
         
         .devops-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px);
             border-radius: var(--border-radius);
-            padding: 3.5rem;
+            padding: 2.5rem;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: var(--transition);
@@ -912,37 +913,37 @@
         
         .devops-card:hover {
             background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-15px);
+            transform: translateY(-10px);
             border-color: var(--secondary);
         }
         
         .devops-icon {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             color: var(--secondary);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         
         .devops-card h3 {
-            font-size: 1.7rem;
-            margin-bottom: 1.2rem;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
         
         .devops-card p {
             opacity: 0.9;
-            line-height: 1.7;
-            font-size: 1.1rem;
+            line-height: 1.6;
+            font-size: 1rem;
         }
         
-        /* NEW: Custom Web Apps Section */
+        /* Custom Web Apps Section - Mobile Optimized */
         .custom-apps {
             background-color: white;
         }
         
         .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3.5rem;
-            margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 3rem;
         }
         
         .app-card {
@@ -954,12 +955,12 @@
         }
         
         .app-card:hover {
-            transform: translateY(-15px);
+            transform: translateY(-10px);
             box-shadow: var(--shadow-lg);
         }
         
         .app-image {
-            height: 250px;
+            height: 220px;
             overflow: hidden;
         }
         
@@ -975,28 +976,29 @@
         }
         
         .app-content {
-            padding: 3rem;
+            padding: 2.2rem;
         }
         
         .app-content h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            margin-bottom: 0.9rem;
             color: var(--primary);
         }
         
         .app-content p {
             color: var(--gray);
             margin-bottom: 1.5rem;
-            line-height: 1.7;
+            line-height: 1.6;
+            font-size: 1rem;
         }
         
-        /* NEW: Global Presence */
+        /* Global Presence - Mobile Optimized */
         .global-presence {
             background: linear-gradient(135deg, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.95)), 
                         url('https://images.unsplash.com/photo-1527474305487-b87b222841cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            background-attachment: scroll; /* Changed from fixed for mobile */
             color: white;
         }
         
@@ -1006,17 +1008,17 @@
         }
         
         .global-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 3rem;
         }
         
         .global-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px);
             border-radius: var(--border-radius);
-            padding: 3.5rem;
+            padding: 2.5rem;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: var(--transition);
@@ -1024,72 +1026,74 @@
         
         .global-card:hover {
             background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             border-color: var(--secondary);
         }
         
         .global-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--secondary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
         
         .global-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            margin-bottom: 0.9rem;
         }
         
         .global-card p {
             opacity: 0.9;
-            line-height: 1.7;
+            line-height: 1.6;
+            font-size: 1rem;
         }
         
-        /* Contact Section */
+        /* Contact Section - Mobile Optimized */
         .contact {
             background-color: white;
         }
         
         .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: start;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            align-items: stretch;
         }
         
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 2.5rem;
+            gap: 1.8rem;
+            order: 2;
         }
         
         .contact-card {
             background-color: rgba(10, 37, 64, 0.03);
             border-radius: var(--border-radius);
-            padding: 3rem;
+            padding: 2.2rem;
             transition: var(--transition);
         }
         
         .contact-card:hover {
             background-color: rgba(10, 37, 64, 0.05);
-            transform: translateY(-8px);
+            transform: translateY(-5px);
         }
         
         .contact-icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
-            border-radius: 20px;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             color: var(--primary);
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
         
         .contact-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.9rem;
             color: var(--primary);
         }
         
@@ -1100,21 +1104,22 @@
         .contact-details li {
             display: flex;
             align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 1rem;
+            gap: 10px;
+            margin-bottom: 0.9rem;
             color: var(--gray);
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
         
         .contact-details li i {
             color: var(--secondary);
-            margin-top: 3px;
+            margin-top: 2px;
         }
         
         .contact-details li a {
             color: var(--primary);
             text-decoration: none;
             transition: var(--transition);
+            word-break: break-all;
         }
         
         .contact-details li a:hover {
@@ -1124,60 +1129,71 @@
         .contact-form-container {
             background-color: white;
             border-radius: var(--border-radius);
-            padding: 4rem;
+            padding: 2.5rem;
             box-shadow: var(--shadow-lg);
+            order: 1;
         }
         
         .contact-form h3 {
-            font-size: 2rem;
-            margin-bottom: 2.5rem;
+            font-size: 1.7rem;
+            margin-bottom: 1.8rem;
             color: var(--primary);
         }
         
         .form-group {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
             color: var(--primary);
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
         
         .form-control {
             width: 100%;
-            padding: 1.2rem 1.8rem;
+            padding: 1rem 1.4rem;
             border-radius: var(--border-radius-sm);
             border: 1px solid var(--light-gray);
             font-family: 'Inter', sans-serif;
-            font-size: 1.05rem;
+            font-size: 1rem;
             transition: var(--transition);
+            -webkit-appearance: none;
+            appearance: none;
         }
         
         .form-control:focus {
             outline: none;
             border-color: var(--accent);
-            box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
         }
         
         .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
         
         textarea.form-control {
-            min-height: 180px;
+            min-height: 150px;
             resize: vertical;
         }
         
-        /* Footer */
+        select.form-control {
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A2540' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1.4rem center;
+            background-size: 1.2rem;
+            padding-right: 3.5rem;
+        }
+        
+        /* Footer - Mobile Optimized */
         footer {
             background-color: var(--primary);
             color: white;
-            padding: 7rem 0 3rem;
+            padding: 4rem 0 2rem;
             position: relative;
             overflow: hidden;
         }
@@ -1193,17 +1209,17 @@
         }
         
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 5rem;
-            margin-bottom: 5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin-bottom: 3rem;
             position: relative;
             z-index: 1;
         }
         
         .footer-col h3 {
-            font-size: 1.6rem;
-            margin-bottom: 2rem;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
             color: white;
             position: relative;
             display: inline-block;
@@ -1212,20 +1228,20 @@
         .footer-col h3::after {
             content: '';
             position: absolute;
-            bottom: -12px;
+            bottom: -10px;
             left: 0;
-            width: 60px;
-            height: 4px;
+            width: 50px;
+            height: 3px;
             background-color: var(--secondary);
             border-radius: 10px;
         }
         
         .footer-col p {
             color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 2rem;
-            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
             font-weight: 400;
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
         
         .footer-links {
@@ -1233,7 +1249,7 @@
         }
         
         .footer-links li {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
         
         .footer-links a {
@@ -1242,8 +1258,8 @@
             transition: var(--transition);
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            font-size: 1.05rem;
+            gap: 10px;
+            font-size: 1rem;
         }
         
         .footer-links a:hover {
@@ -1258,13 +1274,14 @@
         
         .social-links {
             display: flex;
-            gap: 1.5rem;
-            margin-top: 2.5rem;
+            gap: 1.2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
         }
         
         .social-links a {
-            width: 55px;
-            height: 55px;
+            width: 50px;
+            height: 50px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
@@ -1273,6 +1290,7 @@
             color: white;
             text-decoration: none;
             transition: var(--transition);
+            -webkit-tap-highlight-color: transparent;
         }
         
         .social-links a:hover {
@@ -1281,28 +1299,29 @@
         }
         
         .newsletter {
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
         
         .newsletter p {
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
         }
         
         .newsletter-form {
             display: flex;
-            gap: 0.8rem;
+            flex-direction: column;
+            gap: 1rem;
         }
         
         .newsletter-input {
-            flex: 1;
-            padding: 1.2rem 1.8rem;
+            width: 100%;
+            padding: 1rem 1.4rem;
             border-radius: 50px;
             border: none;
             background-color: rgba(255, 255, 255, 0.1);
             color: white;
             font-family: 'Inter', sans-serif;
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
         
         .newsletter-input::placeholder {
@@ -1310,7 +1329,7 @@
         }
         
         .newsletter-btn {
-            padding: 1.2rem 2rem;
+            padding: 1rem 2rem;
             border-radius: 50px;
             border: none;
             background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
@@ -1318,7 +1337,11 @@
             font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
-            font-size: 1.05rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
         
         .newsletter-btn:hover {
@@ -1328,139 +1351,34 @@
         
         .footer-bottom {
             text-align: center;
-            padding-top: 3rem;
+            padding-top: 2.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.6);
-            font-size: 1.05rem;
+            font-size: 1rem;
             position: relative;
             z-index: 1;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 1.5rem;
             align-items: center;
-            flex-wrap: wrap;
         }
         
         .footer-bottom-links {
             display: flex;
-            gap: 2rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
         }
         
         .footer-bottom-links a {
             color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
             transition: var(--transition);
+            font-size: 0.95rem;
         }
         
         .footer-bottom-links a:hover {
             color: white;
-        }
-        
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 5rem;
-            }
-            
-            .hero-text h1 {
-                font-size: 3.8rem;
-            }
-            
-            .services-grid {
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 4rem;
-            }
-            
-            .ai-container {
-                grid-template-columns: 1fr;
-                gap: 4rem;
-            }
-            
-            .carousel-slide {
-                height: 500px;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .global-grid {
-                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            }
-            
-            .section-title h2 {
-                font-size: 3rem;
-            }
-            
-            .footer-bottom {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            
-            .carousel-slide {
-                height: 400px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            
-            .hero {
-                padding: 12rem 0 6rem;
-            }
-            
-            .hero-text h1 {
-                font-size: 3rem;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .section-title h2 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-stats {
-                flex-wrap: wrap;
-                gap: 2rem;
-            }
-            
-            .newsletter-form {
-                flex-direction: column;
-            }
-            
-            .tech-slide {
-                padding: 3rem 2rem;
-            }
-            
-            .carousel-slide {
-                height: 350px;
-            }
-            
-            .carousel-overlay {
-                padding: 2rem;
-            }
         }
         
         /* Animation for elements */
@@ -1475,26 +1393,27 @@
             transform: translateY(0);
         }
         
-        /* Back to Top Button */
+        /* Back to Top Button - Mobile Optimized */
         .back-to-top {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 65px;
-            height: 65px;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
             background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
             color: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             text-decoration: none;
             box-shadow: 0 10px 35px rgba(212, 175, 55, 0.3);
             transition: var(--transition);
             z-index: 999;
             opacity: 0;
             visibility: hidden;
+            -webkit-tap-highlight-color: transparent;
         }
         
         .back-to-top.visible {
@@ -1508,27 +1427,273 @@
             background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--secondary) 100%);
         }
         
-        /* Premium Badge */
-        .premium-badge {
-            position: absolute;
-            top: 25px;
-            right: 25px;
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
-            color: var(--primary);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 1rem;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        /* Touch Device Improvements */
+        @media (hover: none) {
+            .btn:hover,
+            .nav-cta:hover,
+            .service-card:hover,
+            .devops-card:hover,
+            .global-card:hover,
+            .contact-card:hover,
+            .app-card:hover,
+            .social-links a:hover,
+            .carousel-btn:hover,
+            .back-to-top:hover {
+                transform: none;
+            }
+            
+            .btn:active,
+            .nav-cta:active,
+            .service-card:active,
+            .devops-card:active,
+            .global-card:active,
+            .contact-card:active,
+            .app-card:active,
+            .social-links a:active,
+            .carousel-btn:active,
+            .back-to-top:active {
+                transform: scale(0.98);
+            }
+        }
+        
+        /* Tablet and Desktop Responsive */
+        @media (min-width: 768px) {
+            .hero {
+                padding: 10rem 0 7rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 3.2rem;
+            }
+            
+            .hero-text .playfair {
+                font-size: 3.5rem;
+            }
+            
+            .hero-btns {
+                flex-direction: row;
+                align-items: center;
+            }
+            
+            .btn {
+                width: auto;
+            }
+            
+            .services-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .devops-grid,
+            .global-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .apps-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .hero-stats {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .section-title h2 {
+                font-size: 2.8rem;
+            }
+            
+            .footer-content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: row;
+            }
+            
+            .carousel-slide {
+                height: 400px;
+            }
+            
+            .form-row {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+            
+            .nav-links {
+                display: flex;
+                position: static;
+                flex-direction: row;
+                background: transparent;
+                backdrop-filter: none;
+                box-shadow: none;
+                padding: 0;
+                width: auto;
+                border: none;
+                max-height: none;
+                overflow: visible;
+            }
+            
+            .nav-links a {
+                font-size: 1.05rem;
+                padding: 0.5rem 0;
+                border: none;
+            }
+            
+            .nav-links a:hover {
+                padding-left: 0;
+            }
+            
+            .nav-links a::after {
+                display: block;
+            }
+            
+            .hero-content {
+                display: grid;
+                grid-template-columns: 1.1fr 0.9fr;
+                gap: 5rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 3.8rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .ai-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 5rem;
+            }
+            
+            .contact-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 5rem;
+            }
+            
+            .contact-info {
+                order: 1;
+            }
+            
+            .contact-form-container {
+                order: 2;
+            }
+            
+            .devops-grid,
+            .global-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .apps-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .hero {
+                padding: 12rem 0 8rem;
+                min-height: 100vh;
+                background-attachment: fixed;
+            }
+            
+            .tech-stack,
+            .devops,
+            .global-presence {
+                background-attachment: fixed;
+            }
+            
+            .carousel-slide {
+                height: 500px;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .hero-text h1 {
+                font-size: 4.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 3.2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 3rem;
+            }
+            
+            .carousel-slide {
+                height: 550px;
+            }
+        }
+        
+        /* Landscape Orientation Improvements */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .hero {
+                min-height: auto;
+                padding: 6rem 0 3rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-text p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-btns {
+                flex-direction: row;
+                gap: 1rem;
+            }
+            
+            .btn {
+                padding: 0.9rem 1.8rem;
+                font-size: 0.95rem;
+            }
+            
+            section {
+                padding: 3.5rem 0;
+            }
+            
+            .nav-links.active {
+                max-height: 70vh;
+            }
+        }
+        
+        /* Reduce motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Premium Header -->
+    <!-- Premium Header - Mobile Optimized -->
     <header id="header">
         <div class="container nav-container">
             <a href="#" class="logo">
@@ -1536,11 +1701,11 @@
                 <span class="logo-text">CodexWagon</span>
             </a>
             
-            <button class="mobile-menu-btn">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
             
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#ai-solutions">AI & ML</a></li>
@@ -1549,14 +1714,14 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             
-            <a href="tel:9961959788" class="nav-cta">
+            <a href="mailto:arun@codexwagon.in" class="nav-cta">
                 <i class="fas fa-phone"></i>
-                arun@codexwagon.in
+                Contact Us
             </a>
         </div>
     </header>
 
-    <!-- Luxury Hero Section - Global Focus -->
+    <!-- Luxury Hero Section - Mobile Optimized -->
     <section class="hero" id="home">
         <div class="container hero-content">
             <div class="hero-text fade-in">
@@ -1566,25 +1731,25 @@
                 </div>
                 <span class="playfair">Digital Transformation</span>
                 <h1>Enterprise-Grade Web, Mobile, Cloud & AI Solutions</h1>
-                <p>CodexWagon delivers premium digital transformation services for visionary businesses worldwide. Specializing in enterprise web development, custom mobile applications, cloud architecture, and AI integration that drive measurable business outcomes.</p>
+                <p>CodexWagon delivers premium digital transformation services for visionary businesses worldwide. Specializing in enterprise web development, custom mobile applications, cloud architecture, and AI integration.</p>
                 <div class="hero-btns">
                     <a href="#contact" class="btn btn-primary">
                         <i class="fas fa-rocket"></i>
                         Start Your Project
                     </a>
-                    <a href="tel:9961959788" class="btn btn-secondary">
+                    <a href="mailto:info@codexwagon.in" class="btn btn-secondary">
                         <i class="fas fa-phone"></i>
-                        info@codexwagon.in
+                        Contact Sales
                     </a>
                 </div>
                 <div class="hero-stats">
                     <div class="stat-item">
                         <span class="stat-number">500+</span>
-                        <span class="stat-label">Enterprise Clients</span>
+                        <span class="stat-label">Clients</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">99%</span>
-                        <span class="stat-label">Client Retention</span>
+                        <span class="stat-label">Retention</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">75+</span>
@@ -1592,15 +1757,11 @@
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">15</span>
-                        <span class="stat-label">Countries Served</span>
+                        <span class="stat-label">Countries</span>
                     </div>
                 </div>
             </div>
             <div class="hero-visual fade-in">
-                <div class="premium-badge">
-                    <i class="fas fa-bolt"></i>
-                    Cutting-Edge Technology
-                </div>
                 <div class="hero-image-container">
                     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Enterprise Digital Solutions">
                 </div>
@@ -1612,7 +1773,7 @@
         </div>
     </section>
 
-    <!-- Services Section - Global Enterprise Focus -->
+    <!-- Services Section - Mobile Optimized -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-title fade-in">
@@ -1627,12 +1788,11 @@
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <h3>Enterprise Web Development</h3>
-                    <p>Scalable, secure web applications and platforms built with cutting-edge technologies, designed for high-performance, security, and seamless user experiences across all devices.</p>
+                    <p>Scalable, secure web applications and platforms built with cutting-edge technologies for high-performance and seamless user experiences.</p>
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> React, Angular, Vue.js</li>
                         <li><i class="fas fa-check"></i> Node.js, Python, Java</li>
                         <li><i class="fas fa-check"></i> Microservices Architecture</li>
-                        <li><i class="fas fa-check"></i> Real-time Applications</li>
                     </ul>
                 </div>
                 
@@ -1641,12 +1801,11 @@
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <h3>Mobile App Development</h3>
-                    <p>Native and cross-platform mobile applications for iOS and Android, engineered for performance, intuitive user experiences, and seamless integration with enterprise systems.</p>
+                    <p>Native and cross-platform mobile applications for iOS and Android, engineered for performance and intuitive user experiences.</p>
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> iOS Swift & Android Kotlin</li>
                         <li><i class="fas fa-check"></i> React Native & Flutter</li>
                         <li><i class="fas fa-check"></i> PWA Development</li>
-                        <li><i class="fas fa-check"></i> AR/VR Integration</li>
                     </ul>
                 </div>
                 
@@ -1655,61 +1814,18 @@
                         <i class="fas fa-cloud"></i>
                     </div>
                     <h3>Cloud Solutions & Architecture</h3>
-                    <p>Comprehensive cloud strategy, migration, and management services across AWS, Azure, and Google Cloud platforms, optimized for scalability, security, and cost-efficiency.</p>
+                    <p>Comprehensive cloud strategy, migration, and management services across AWS, Azure, and Google Cloud platforms.</p>
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> AWS, Azure, GCP</li>
                         <li><i class="fas fa-check"></i> Kubernetes & Docker</li>
                         <li><i class="fas fa-check"></i> Serverless Architecture</li>
-                        <li><i class="fas fa-check"></i> Multi-cloud Strategy</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>AI & Machine Learning</h3>
-                    <p>Advanced artificial intelligence solutions including predictive analytics, natural language processing, computer vision, and custom machine learning models for business intelligence.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> TensorFlow & PyTorch</li>
-                        <li><i class="fas fa-check"></i> NLP & Chatbots</li>
-                        <li><i class="fas fa-check"></i> Computer Vision</li>
-                        <li><i class="fas fa-check"></i> Predictive Analytics</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Custom Web Applications</h3>
-                    <p>Bespoke web applications tailored to specific business needs, from complex dashboards to workflow automation systems that transform business operations.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> CRM & ERP Systems</li>
-                        <li><i class="fas fa-check"></i> Business Intelligence</li>
-                        <li><i class="fas fa-check"></i> Workflow Automation</li>
-                        <li><i class="fas fa-check"></i> E-commerce Platforms</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Cybersecurity Solutions</h3>
-                    <p>Enterprise-grade cybersecurity services including penetration testing, security audits, compliance management, and incident response to protect digital assets and data.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Security Audits</li>
-                        <li><i class="fas fa-check"></i> Penetration Testing</li>
-                        <li><i class="fas fa-check"></i> Compliance Management</li>
-                        <li><i class="fas fa-check"></i> 24/7 Monitoring</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW: AI & ML Solutions Section -->
+    <!-- AI Solutions Section - Mobile Optimized -->
     <section class="ai-solutions" id="ai-solutions">
         <div class="container">
             <div class="section-title fade-in">
@@ -1722,7 +1838,7 @@
                 <div class="ai-content fade-in">
                     <span class="playfair">AI Innovation</span>
                     <h3>Transformative Machine Learning Solutions</h3>
-                    <p>Our AI specialists develop custom machine learning models, neural networks, and deep learning solutions that solve complex business challenges and unlock new opportunities.</p>
+                    <p>Our AI specialists develop custom machine learning models, neural networks, and deep learning solutions that solve complex business challenges.</p>
                     
                     <div class="ai-features">
                         <div class="ai-feature">
@@ -1731,7 +1847,7 @@
                             </div>
                             <div class="ai-feature-text">
                                 <h4>Neural Networks & Deep Learning</h4>
-                                <p>Custom neural network architectures for image recognition, natural language processing, and predictive modeling using TensorFlow and PyTorch.</p>
+                                <p>Custom neural network architectures for image recognition, natural language processing, and predictive modeling.</p>
                             </div>
                         </div>
                         
@@ -1741,17 +1857,7 @@
                             </div>
                             <div class="ai-feature-text">
                                 <h4>Natural Language Processing</h4>
-                                <p>Advanced NLP solutions including sentiment analysis, chatbots, language translation, and text summarization using transformer models like GPT and BERT.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="ai-feature">
-                            <div class="ai-feature-icon">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                            <div class="ai-feature-text">
-                                <h4>Computer Vision Systems</h4>
-                                <p>Object detection, facial recognition, image classification, and video analytics solutions for security, retail, healthcare, and manufacturing applications.</p>
+                                <p>Advanced NLP solutions including sentiment analysis, chatbots, language translation, and text summarization.</p>
                             </div>
                         </div>
                     </div>
@@ -1766,7 +1872,7 @@
         </div>
     </section>
 
-    <!-- NEW: Tech Stack Showcase -->
+    <!-- Tech Stack Showcase - Mobile Optimized -->
     <section class="tech-stack" id="tech-stack">
         <div class="container">
             <div class="section-title fade-in">
@@ -1782,7 +1888,7 @@
                             <i class="fab fa-react"></i>
                         </div>
                         <h3>React & Next.js Ecosystem</h3>
-                        <p>Modern frontend development with React, Next.js, TypeScript, and state management libraries. We build performant, SEO-friendly applications with server-side rendering and static generation.</p>
+                        <p>Modern frontend development with React, Next.js, TypeScript, and state management libraries for performant, SEO-friendly applications.</p>
                     </div>
                     
                     <div class="tech-slide">
@@ -1790,37 +1896,19 @@
                             <i class="fab fa-node-js"></i>
                         </div>
                         <h3>Node.js & Backend Technologies</h3>
-                        <p>Scalable backend solutions using Node.js, Express, NestJS, Python Django, and Java Spring Boot. We implement microservices architecture, GraphQL APIs, and real-time features.</p>
-                    </div>
-                    
-                    <div class="tech-slide">
-                        <div class="tech-icon">
-                            <i class="fab fa-aws"></i>
-                        </div>
-                        <h3>Cloud & DevOps</h3>
-                        <p>Comprehensive cloud infrastructure on AWS, Azure, and Google Cloud with Kubernetes, Docker, Terraform, and CI/CD pipelines for automated deployment and scaling.</p>
-                    </div>
-                    
-                    <div class="tech-slide">
-                        <div class="tech-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3>Databases & Data Engineering</h3>
-                        <p>Modern database solutions including PostgreSQL, MongoDB, Redis, and Elasticsearch. We design scalable data architectures, data lakes, and real-time analytics pipelines.</p>
+                        <p>Scalable backend solutions using Node.js, Express, NestJS, Python Django, and Java Spring Boot with microservices architecture.</p>
                     </div>
                 </div>
                 
                 <div class="tech-controls">
                     <button class="tech-control active" data-slide="0"></button>
                     <button class="tech-control" data-slide="1"></button>
-                    <button class="tech-control" data-slide="2"></button>
-                    <button class="tech-control" data-slide="3"></button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW: Image Carousel Section -->
+    <!-- Image Carousel Section - Mobile Optimized -->
     <section class="image-carousel-section" id="image-carousel">
         <div class="container">
             <div class="section-title fade-in">
@@ -1835,7 +1923,7 @@
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Enterprise Dashboard">
                         <div class="carousel-overlay">
                             <h3>Enterprise Business Intelligence Dashboard</h3>
-                            <p>Real-time analytics platform with interactive visualizations, predictive insights, and AI-powered recommendations for Fortune 500 clients.</p>
+                            <p>Real-time analytics platform with interactive visualizations and AI-powered recommendations for Fortune 500 clients.</p>
                         </div>
                     </div>
                     
@@ -1843,23 +1931,7 @@
                         <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Mobile Banking App">
                         <div class="carousel-overlay">
                             <h3>Next-Gen Mobile Banking Application</h3>
-                            <p>Secure, feature-rich banking app with biometric authentication, AI-powered financial insights, and seamless payment integration for global banks.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="E-commerce Platform">
-                        <div class="carousel-overlay">
-                            <h3>Premium E-commerce Platform</h3>
-                            <p>Scalable online marketplace with AI-driven personalization, AR product visualization, and omnichannel integration for luxury retail brands.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Healthcare Platform">
-                        <div class="carousel-overlay">
-                            <h3>Healthcare Telemedicine Platform</h3>
-                            <p>HIPAA-compliant telehealth solution with video consultations, AI diagnostics, and patient management for healthcare networks.</p>
+                            <p>Secure, feature-rich banking app with biometric authentication and AI-powered financial insights.</p>
                         </div>
                     </div>
                 </div>
@@ -1876,7 +1948,7 @@
         </div>
     </section>
 
-    <!-- NEW: DevOps & Automation -->
+    <!-- DevOps Section - Mobile Optimized -->
     <section class="devops" id="devops">
         <div class="container">
             <div class="section-title fade-in">
@@ -1891,7 +1963,7 @@
                         <i class="fas fa-code-branch"></i>
                     </div>
                     <h3>CI/CD Pipelines</h3>
-                    <p>Automated continuous integration and deployment pipelines using Jenkins, GitLab CI, GitHub Actions, and CircleCI for rapid, reliable software delivery.</p>
+                    <p>Automated continuous integration and deployment pipelines for rapid, reliable software delivery.</p>
                 </div>
                 
                 <div class="devops-card fade-in">
@@ -1899,75 +1971,13 @@
                         <i class="fas fa-server"></i>
                     </div>
                     <h3>Infrastructure as Code</h3>
-                    <p>Automated infrastructure provisioning and management using Terraform, Ansible, and CloudFormation for consistent, repeatable environments.</p>
-                </div>
-                
-                <div class="devops-card fade-in">
-                    <div class="devops-icon">
-                        <i class="fas fa-ship"></i>
-                    </div>
-                    <h3>Container Orchestration</h3>
-                    <p>Scalable container management with Kubernetes, Docker Swarm, and AWS ECS for efficient deployment, scaling, and management of containerized applications.</p>
-                </div>
-                
-                <div class="devops-card fade-in">
-                    <div class="devops-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Monitoring & Observability</h3>
-                    <p>Comprehensive monitoring solutions with Prometheus, Grafana, ELK stack, and New Relic for real-time insights into application performance and infrastructure health.</p>
+                    <p>Automated infrastructure provisioning and management for consistent, repeatable environments.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW: Custom Web Apps Section -->
-    <section class="custom-apps" id="custom-apps">
-        <div class="container">
-            <div class="section-title fade-in">
-                <span class="playfair">Custom Development</span>
-                <h2>Bespoke Web Applications</h2>
-                <p>Tailor-made web applications designed to solve unique business challenges, streamline operations, and create competitive advantages.</p>
-            </div>
-            
-            <div class="apps-grid">
-                <div class="app-card fade-in">
-                    <div class="app-image">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="E-commerce Platform">
-                    </div>
-                    <div class="app-content">
-                        <h3>Enterprise E-commerce Platforms</h3>
-                        <p>Custom online storefronts with advanced inventory management, personalized shopping experiences, and seamless payment gateway integrations.</p>
-                        <a href="#contact" class="btn btn-accent">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="app-card fade-in">
-                    <div class="app-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Business Dashboard">
-                    </div>
-                    <div class="app-content">
-                        <h3>Business Intelligence Dashboards</h3>
-                        <p>Custom analytics platforms that consolidate data from multiple sources into actionable insights with real-time visualizations and reporting.</p>
-                        <a href="#contact" class="btn btn-accent">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="app-card fade-in">
-                    <div class="app-image">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Healthcare System">
-                    </div>
-                    <div class="app-content">
-                        <h3>Healthcare Management Systems</h3>
-                        <p>HIPAA-compliant healthcare platforms with patient management, appointment scheduling, telemedicine, and electronic health records.</p>
-                        <a href="#contact" class="btn btn-accent">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEW: Global Presence -->
+    <!-- Global Presence - Mobile Optimized -->
     <section class="global-presence" id="global-presence">
         <div class="container">
             <div class="section-title fade-in">
@@ -1992,19 +2002,11 @@
                     <h3>Middle East Hub</h3>
                     <p>Dubai Internet City - Strategic location serving Middle Eastern markets with localized digital solutions.</p>
                 </div>
-                
-                <div class="global-card fade-in">
-                    <div class="global-icon">
-                        <i class="fas fa-globe-americas"></i>
-                    </div>
-                    <h3>North America</h3>
-                    <p>Remote teams across US and Canada delivering 24/7 support and development for North American clients.</p>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section - Mobile Optimized -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title fade-in">
@@ -2014,44 +2016,6 @@
             </div>
             
             <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-card fade-in">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h3>Global Contact</h3>
-                        <ul class="contact-details">
-                            <li><i class="fas fa-mobile-alt"></i> <strong>Primary:</strong> <a href="tel:9961959788">support@codexwagon.in</a></li>
-                            <li><i class="fas fa-headset"></i> <strong>Support:</strong> <a href="tel:9961959788">info@codexwagon.in</a></li>
-                            <li><i class="fas fa-clock"></i> <strong>Hours:</strong> 24/7 Enterprise Support</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="contact-card fade-in">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3>Email Communications</h3>
-                        <ul class="contact-details">
-                            <li><i class="fas fa-user"></i> <strong>Executive:</strong> <a href="mailto:arun@codexwagon.in">arun@codexwagon.in</a></li>
-                            <li><i class="fas fa-building"></i> <strong>Business:</strong> <a href="mailto:info@codexwagon.in">info@codexwagon.in</a></li>
-                            <li><i class="fas fa-question-circle"></i> <strong>Support:</strong> <a href="mailto:support@codexwagon.in">support@codexwagon.in</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="contact-card fade-in">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3>Global Offices</h3>
-                        <ul class="contact-details">
-                            <li><i class="fas fa-location-dot"></i> <strong>India:</strong> Bangalore Electronic City</li>
-                            <li><i class="fas fa-location-dot"></i> <strong>UAE:</strong> Dubai Internet City</li>
-                            <li><i class="fas fa-location-dot"></i> <strong>Remote:</strong> Global Development Teams</li>
-                        </ul>
-                    </div>
-                </div>
-                
                 <div class="contact-form-container fade-in">
                     <div class="contact-form">
                         <h3>Request Enterprise Consultation</h3>
@@ -2082,8 +2046,6 @@
                                     <option value="mobile">Mobile App Development</option>
                                     <option value="cloud">Cloud Solutions</option>
                                     <option value="ai">AI & Machine Learning</option>
-                                    <option value="devops">DevOps & Automation</option>
-                                    <option value="custom">Custom Web Applications</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -2097,59 +2059,57 @@
                         </form>
                     </div>
                 </div>
+                
+                <div class="contact-info">
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Global Contact</h3>
+                        <ul class="contact-details">
+                            <li><i class="fas fa-mobile-alt"></i> <strong>Primary:</strong> <a href="mailto:support@codexwagon.in">support@codexwagon.in</a></li>
+                            <li><i class="fas fa-headset"></i> <strong>Support:</strong> <a href="mailto:info@codexwagon.in">info@codexwagon.in</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Communications</h3>
+                        <ul class="contact-details">
+                            <li><i class="fas fa-user"></i> <strong>Executive:</strong> <a href="mailto:arun@codexwagon.in">arun@codexwagon.in</a></li>
+                            <li><i class="fas fa-building"></i> <strong>Business:</strong> <a href="mailto:info@codexwagon.in">info@codexwagon.in</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Premium Footer -->
+    <!-- Premium Footer - Mobile Optimized -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
-                    <a href="#" class="logo" style="color:white; margin-bottom:2rem; display:inline-block;">
+                    <a href="#" class="logo" style="color:white; margin-bottom:1.5rem; display:inline-block;">
                         <i class="fas fa-code logo-icon"></i>
-                        <span style="background:linear-gradient(to right, #fff, var(--secondary)); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:900; font-size:2.2rem;">CodexWagon</span>
+                        <span style="background:linear-gradient(to right, #fff, var(--secondary)); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:900; font-size:2rem;">CodexWagon</span>
                     </a>
                     <p>Global digital transformation agency specializing in enterprise web development, mobile applications, cloud solutions, AI integration, and custom web applications for visionary businesses worldwide.</p>
                     <div class="social-links">
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Enterprise Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Web Development</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Cloud Solutions</a></li>
-                        <li><a href="#ai-solutions"><i class="fas fa-chevron-right"></i> AI & ML Integration</a></li>
-                        <li><a href="#devops"><i class="fas fa-chevron-right"></i> DevOps & Automation</a></li>
-                        <li><a href="#custom-apps"><i class="fas fa-chevron-right"></i> Custom Applications</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Technology Stack</h3>
-                    <ul class="footer-links">
-                        <li><a href="#tech-stack"><i class="fas fa-chevron-right"></i> React & Next.js</a></li>
-                        <li><a href="#tech-stack"><i class="fas fa-chevron-right"></i> Node.js & Backend</a></li>
-                        <li><a href="#tech-stack"><i class="fas fa-chevron-right"></i> Cloud & DevOps</a></li>
-                        <li><a href="#tech-stack"><i class="fas fa-chevron-right"></i> Databases</a></li>
-                        <li><a href="#ai-solutions"><i class="fas fa-chevron-right"></i> AI & ML Tools</a></li>
-                    </ul>
                 </div>
                 
                 <div class="footer-col">
                     <h3>Contact Information</h3>
                     <ul class="footer-links">
-                        <li><a href="tel:9961959788"><i class="fas fa-phone"></i> hello@codexwagon.in</a></li>
-                        <li><a href="mailto:arun@codexwagon.in"><i class="fas fa-envelope"></i> arun@codexwagon.in</a></li>
-                        <li><a href="mailto:info@codexwagon.in"><i class="fas fa-envelope"></i> info@codexwagon.in</a></li>
-                        <li><i class="fas fa-clock"></i> 24/7 Enterprise Support</li>
+                        <li><a href="mailto:hello@codexwagon.in"><i class="fas fa-envelope"></i> hello@codexwagon.in</a></li>
+                        <li><a href="mailto:arun@codexwagon.in"><i class="fas fa-user"></i> arun@codexwagon.in</a></li>
+                        <li><a href="mailto:info@codexwagon.in"><i class="fas fa-building"></i> info@codexwagon.in</a></li>
                     </ul>
                     
                     <div class="newsletter">
@@ -2158,6 +2118,7 @@
                             <input type="email" class="newsletter-input" placeholder="Business email">
                             <button class="newsletter-btn">
                                 <i class="fas fa-paper-plane"></i>
+                                Subscribe
                             </button>
                         </div>
                     </div>
@@ -2165,12 +2126,10 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 CodexWagon Global Digital Solutions. Enterprise Web, Mobile, Cloud & AI Agency. All rights reserved.</p>
+                <p>&copy; 2024 CodexWagon Global Digital Solutions. All rights reserved.</p>
                 <div class="footer-bottom-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
-                    <a href="#">Cookie Policy</a>
-                    <a href="#">GDPR Compliance</a>
                 </div>
             </div>
         </div>
@@ -2185,6 +2144,8 @@
     <script>
         // Header scroll effect
         const header = document.getElementById('header');
+        const backToTop = document.getElementById('backToTop');
+        
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
                 header.classList.add('scrolled');
@@ -2193,7 +2154,6 @@
             }
             
             // Back to top button visibility
-            const backToTop = document.getElementById('backToTop');
             if (window.scrollY > 500) {
                 backToTop.classList.add('visible');
             } else {
@@ -2202,27 +2162,29 @@
         });
 
         // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
         
-        mobileMenuBtn.addEventListener('click', () => {
-            const isOpen = navLinks.style.display === 'flex';
-            navLinks.style.display = isOpen ? 'none' : 'flex';
-            
-            if (!isOpen) {
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-                navLinks.style.backdropFilter = 'blur(20px)';
-                navLinks.style.padding = '2.5rem';
-                navLinks.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.1)';
-                navLinks.style.gap = '1.8rem';
-                navLinks.style.zIndex = '1000';
-                navLinks.style.borderTop = '1px solid rgba(0, 0, 0, 0.03)';
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
             }
+        });
+        
+        // Close mobile menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+            });
         });
 
         // Smooth scrolling for anchor links
@@ -2236,13 +2198,9 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 100,
+                        top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
-                    if (window.innerWidth <= 768) {
-                        navLinks.style.display = 'none';
-                    }
                 }
             });
         });
@@ -2264,6 +2222,7 @@
         // Initial check
         checkScroll();
         window.addEventListener('scroll', checkScroll);
+        window.addEventListener('resize', checkScroll);
 
         // Form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -2273,13 +2232,10 @@
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
             const email = document.getElementById('email').value;
-            const company = document.getElementById('company').value;
-            const service = document.getElementById('service').value;
-            const message = document.getElementById('message').value;
             
             // In a real application, you would send this data to your server
             // For demo purposes, we'll just show an alert
-            alert(`Thank you ${name}! Your enterprise consultation request has been received. Our team will contact you at ${phone} or ${email} within 24 hours.`);
+            alert(`Thank you ${name}! Your consultation request has been received. We'll contact you at ${phone} or ${email} within 24 hours.`);
             
             // Reset form
             this.reset();
@@ -2317,6 +2273,9 @@
                 showTechSlide(index);
                 startTechInterval();
             });
+            
+            // Add touch-friendly tap indicator
+            control.style.cursor = 'pointer';
         });
         
         function startTechInterval() {
@@ -2350,131 +2309,98 @@
             updateCarousel();
         });
         
+        // Touch swipe functionality for carousel
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        carouselTrack.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+        
+        carouselTrack.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            
+            if (touchStartX - touchEndX > swipeThreshold) {
+                // Swipe left - next slide
+                currentCarouselSlide = (currentCarouselSlide + 1) % totalCarouselSlides;
+                updateCarousel();
+            } else if (touchEndX - touchStartX > swipeThreshold) {
+                // Swipe right - previous slide
+                currentCarouselSlide = (currentCarouselSlide - 1 + totalCarouselSlides) % totalCarouselSlides;
+                updateCarousel();
+            }
+        }
+        
         // Auto-advance carousel
-        setInterval(() => {
+        let carouselInterval = setInterval(() => {
             currentCarouselSlide = (currentCarouselSlide + 1) % totalCarouselSlides;
             updateCarousel();
         }, 7000);
-
-        // Add premium animations
-        document.addEventListener('DOMContentLoaded', () => {
-            // Add parallax effect to hero background
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                const hero = document.querySelector('.hero');
-                if (hero) {
-                    hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
-                }
-                
-                const enterprise = document.querySelector('.enterprise');
-                if (enterprise) {
-                    enterprise.style.backgroundPositionY = scrolled * 0.3 + 'px';
-                }
-                
-                const techStack = document.querySelector('.tech-stack');
-                if (techStack) {
-                    techStack.style.backgroundPositionY = scrolled * 0.4 + 'px';
-                }
-                
-                const devops = document.querySelector('.devops');
-                if (devops) {
-                    devops.style.backgroundPositionY = scrolled * 0.3 + 'px';
-                }
-                
-                const globalPresence = document.querySelector('.global-presence');
-                if (globalPresence) {
-                    globalPresence.style.backgroundPositionY = scrolled * 0.4 + 'px';
-                }
-            });
+        
+        // Pause auto-advance on hover/touch
+        const imageCarousel = document.querySelector('.image-carousel');
+        imageCarousel.addEventListener('mouseenter', () => clearInterval(carouselInterval));
+        imageCarousel.addEventListener('mouseleave', () => {
+            carouselInterval = setInterval(() => {
+                currentCarouselSlide = (currentCarouselSlide + 1) % totalCarouselSlides;
+                updateCarousel();
+            }, 7000);
         });
-    </script>
-    
-    <!-- Schema.org JSON-LD for SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "CodexWagon",
-        "description": "Global digital transformation agency specializing in enterprise web development, mobile applications, cloud solutions, AI integration, and custom web applications.",
-        "url": "https://codexwagon.in",
-        "logo": "https://codexwagon.in/logo.png",
-        "telephone": "+91-9961959788",
-        "email": "arun@codexwagon.in",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Electronic City Phase 1",
-            "addressLocality": "Bangalore",
-            "addressRegion": "Karnataka",
-            "postalCode": "560100",
-            "addressCountry": "IN"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "12.9716",
-            "longitude": "77.5946"
-        },
-        "openingHours": "24/7",
-        "sameAs": [
-            "https://linkedin.com/company/codexwagon",
-            "https://twitter.com/codexwagon",
-            "https://github.com/codexwagon",
-            "https://dribbble.com/codexwagon"
-        ],
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Digital Transformation Services",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Enterprise Web Development",
-                        "description": "Scalable, secure web applications for enterprise businesses"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Mobile App Development",
-                        "description": "Native and cross-platform mobile applications"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Cloud Solutions",
-                        "description": "AWS, Azure, and Google Cloud migration and management"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "AI & Machine Learning",
-                        "description": "Artificial intelligence and machine learning solutions"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "DevOps & Automation",
-                        "description": "CI/CD pipelines, container orchestration, and infrastructure automation"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Custom Web Applications",
-                        "description": "Bespoke web applications for unique business needs"
-                    }
+        
+        // Pause on touch for mobile
+        imageCarousel.addEventListener('touchstart', () => clearInterval(carouselInterval));
+        imageCarousel.addEventListener('touchend', () => {
+            carouselInterval = setInterval(() => {
+                currentCarouselSlide = (currentCarouselSlide + 1) % totalCarouselSlides;
+                updateCarousel();
+            }, 7000);
+        });
+
+        // Improve touch interactions on mobile
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add touch feedback to buttons
+            const buttons = document.querySelectorAll('.btn, .nav-cta, .carousel-btn, .tech-control, .social-links a');
+            buttons.forEach(button => {
+                button.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                button.addEventListener('touchend', function() {
+                    this.style.transform = '';
+                });
+            });
+            
+            // Prevent zoom on double-tap
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', function(event) {
+                const now = Date.now();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
                 }
-            ]
-        }
-    }
+                lastTouchEnd = now;
+            }, false);
+            
+            // Improve font rendering on mobile
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                document.body.style.webkitFontSmoothing = 'antialiased';
+                document.body.style.mozOsxFontSmoothing = 'grayscale';
+            }
+        });
+
+        // Handle orientation changes
+        window.addEventListener('orientationchange', function() {
+            // Force a repaint to fix layout issues
+            document.body.style.display = 'none';
+            setTimeout(() => {
+                document.body.style.display = '';
+                checkScroll(); // Recheck scroll animations
+            }, 10);
+        });
     </script>
 </body>
 </html>
