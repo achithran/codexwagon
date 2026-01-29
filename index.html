@@ -1969,39 +1969,178 @@
 
     <!-- NEW: Global Presence -->
     <section class="global-presence" id="global-presence">
-        <div class="container">
-            <div class="section-title fade-in">
-                <span class="playfair">Global Reach</span>
-                <h2>International Presence</h2>
-                <p>With strategic offices across key global markets, we deliver premium digital solutions to businesses worldwide.</p>
+       <div class="training-container">
+        <div class="training-header">
+            <div class="badge">
+                <i class="fas fa-bolt"></i>
+                LIMITED SLOTS AVAILABLE
+            </div>
+            <h1>CodexWagon Training Programs</h1>
+            <p class="subtitle">Master enterprise web development, cloud architecture, AI integration, and modern DevOps with our industry-leading training programs. Limited slots available for our upcoming batches.</p>
+        </div>
+        
+        <div class="training-content">
+            <div class="training-scroller">
+                <h2 class="scroller-title">Available Training Programs</h2>
+                <div class="scroller-track" id="trainingScroller">
+                    <div class="training-item">
+                        <h3>Enterprise Web Development Mastery</h3>
+                        <p>Comprehensive training on building scalable, secure enterprise web applications using React, Node.js, and microservices architecture.</p>
+                        <div class="training-meta">
+                            <div class="training-duration">
+                                <i class="far fa-clock"></i>
+                                <span>8 Weeks • 40 Hours</span>
+                            </div>
+                            <div class="training-status status-available">
+                                <span class="pulse-dot"></span>
+                                Slots Available
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="training-item">
+                        <h3>Cloud Solutions & Architecture</h3>
+                        <p>Master AWS, Azure, and Google Cloud platforms with Kubernetes, Docker, and serverless architecture implementations.</p>
+                        <div class="training-meta">
+                            <div class="training-duration">
+                                <i class="far fa-clock"></i>
+                                <span>6 Weeks • 36 Hours</span>
+                            </div>
+                            <div class="training-status status-limited">
+                                <i class="fas fa-exclamation-circle"></i>
+                                Limited Slots
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="training-item">
+                        <h3>AI & Machine Learning Integration</h3>
+                        <p>Learn to build and deploy AI solutions with TensorFlow, PyTorch, NLP, and computer vision for real-world applications.</p>
+                        <div class="training-meta">
+                            <div class="training-duration">
+                                <i class="far fa-clock"></i>
+                                <span>10 Weeks • 50 Hours</span>
+                            </div>
+                            <div class="training-status status-available">
+                                <span class="pulse-dot"></span>
+                                Slots Available
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="training-item">
+                        <h3>Mobile App Development (iOS & Android)</h3>
+                        <p>Build native and cross-platform mobile applications using Swift, Kotlin, React Native, and Flutter with best practices.</p>
+                        <div class="training-meta">
+                            <div class="training-duration">
+                                <i class="far fa-clock"></i>
+                                <span>7 Weeks • 42 Hours</span>
+                            </div>
+                            <div class="training-status status-limited">
+                                <i class="fas fa-exclamation-circle"></i>
+                                Limited Slots
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="training-item">
+                        <h3>DevOps & Automation Engineering</h3>
+                        <p>Master CI/CD pipelines, infrastructure as code, container orchestration, and monitoring with modern DevOps tools.</p>
+                        <div class="training-meta">
+                            <div class="training-duration">
+                                <i class="far fa-clock"></i>
+                                <span>6 Weeks • 36 Hours</span>
+                            </div>
+                            <div class="training-status status-available">
+                                <span class="pulse-dot"></span>
+                                Slots Available
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="training-item">
+                        <h3>Cybersecurity for Enterprise Applications</h3>
+                        <p>Learn security best practices, penetration testing, compliance management, and incident response for enterprise systems.</p>
+                        <div class="training-meta">
+                            <div class="training-duration">
+                                <i class="far fa-clock"></i>
+                                <span>5 Weeks • 30 Hours</span>
+                            </div>
+                            <div class="training-status status-available">
+                                <span class="pulse-dot"></span>
+                                Slots Available
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
-            <div class="global-grid">
-                <div class="global-card fade-in">
-                    <div class="global-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+            <div class="booking-section">
+                <div class="availability-banner">
+                    <i class="fas fa-calendar-check"></i>
+                    <div class="availability-text">
+                        <h4>Limited Availability Alert</h4>
+                        <p>Only a few slots remaining for our upcoming training batches. Secure your spot now!</p>
                     </div>
-                    <h3>India Operations</h3>
-                    <p>Bangalore Electronic City - Our primary development hub with 150+ engineers specializing in enterprise solutions.</p>
                 </div>
                 
-                <div class="global-card fade-in">
-                    <div class="global-icon">
-                        <i class="fas fa-globe-asia"></i>
+                <h2 class="booking-title">Book Your Training Slot</h2>
+                <p class="booking-subtitle">Fill in your details to reserve your spot in our premium training programs. Our team will contact you to confirm your enrollment.</p>
+                
+                <div class="slots-info">
+                    <div>
+                        <div class="slots-count">12</div>
+                        <div class="slots-label">Slots Remaining</div>
                     </div>
-                    <h3>Middle East Hub</h3>
-                    <p>Dubai Internet City - Strategic location serving Middle Eastern markets with localized digital solutions.</p>
+                    <div class="slots-remaining">
+                        <span class="pulse-dot"></span>
+                        Limited Availability
+                    </div>
                 </div>
                 
-                <div class="global-card fade-in">
-                    <div class="global-icon">
-                        <i class="fas fa-globe-americas"></i>
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
                     </div>
-                    <h3>North America</h3>
-                    <p>Remote teams across US and Canada delivering 24/7 support and development for North American clients.</p>
-                </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your business email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="trainingProgram">Select Training Program</label>
+                        <select id="trainingProgram" class="form-control" required>
+                            <option value="">Choose a program</option>
+                            <option value="web-dev">Enterprise Web Development Mastery</option>
+                            <option value="cloud">Cloud Solutions & Architecture</option>
+                            <option value="ai-ml">AI & Machine Learning Integration</option>
+                            <option value="mobile">Mobile App Development</option>
+                            <option value="devops">DevOps & Automation Engineering</option>
+                            <option value="cybersecurity">Cybersecurity for Enterprise Apps</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-lock"></i>
+                        Secure My Slot Now
+                    </button>
+                </form>
+                
+                <a href="tel:9961959788" class="phone-link">
+                    <i class="fas fa-phone-alt"></i>
+                    Call Now: +91 99619 59788
+                </a>
             </div>
         </div>
+    </div>
+
     </section>
 
     <!-- Contact Section -->
