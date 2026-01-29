@@ -2102,6 +2102,844 @@
     </section>
 
     <!-- Premium Footer -->
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodexWagon Training Booking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Inter', sans-serif;
+        }
+        
+        :root {
+            --primary: #0A2540;
+            --primary-light: #1A365D;
+            --secondary: #D4AF37;
+            --secondary-dark: #B8941F;
+            --accent: #7C3AED;
+            --accent-light: #8B5CF6;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --light: #F8FAFC;
+            --dark: #0F172A;
+            --gray: #64748B;
+            --light-gray: #E2E8F0;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.15);
+            --border-radius: 16px;
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: var(--dark);
+        }
+        
+        .training-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .training-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .training-header h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        
+        .training-header .subtitle {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            color: var(--primary);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.25);
+            margin-bottom: 25px;
+        }
+        
+        .badge i {
+            font-size: 1.3rem;
+        }
+        
+        .training-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            padding: 20px;
+        }
+        
+        .training-scroller {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, rgba(10, 37, 64, 0.03) 0%, rgba(124, 58, 237, 0.03) 100%);
+            padding: 40px;
+        }
+        
+        .scroller-title {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .scroller-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            border-radius: 10px;
+        }
+        
+        .scroller-track {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            height: 400px;
+            overflow-y: auto;
+            padding-right: 15px;
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar */
+        .scroller-track::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .scroller-track::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+        
+        .scroller-track::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--secondary), var(--accent));
+            border-radius: 10px;
+        }
+        
+        .training-item {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--secondary);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .training-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .training-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.03) 0%, rgba(124, 58, 237, 0.03) 100%);
+            z-index: 0;
+        }
+        
+        .training-item h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .training-item p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .training-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .training-duration {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .training-status {
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .status-available {
+            background-color: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+        
+        .status-limited {
+            background-color: rgba(245, 158, 11, 0.15);
+            color: var(--warning);
+        }
+        
+        .booking-section {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .booking-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+        
+        .booking-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .booking-subtitle {
+            color: var(--gray);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 2px solid var(--light-gray);
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: white;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+        }
+        
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A2540' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+            background-size: 18px;
+            padding-right: 50px;
+        }
+        
+        .phone-link {
+            display: block;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            margin-top: 20px;
+            box-shadow: 0 8px 25px rgba(10, 37, 64, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .phone-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s ease;
+        }
+        
+        .phone-link:hover::before {
+            left: 100%;
+        }
+        
+        .phone-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(10, 37, 64, 0.3);
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+        }
+        
+        .phone-link i {
+            margin-right: 12px;
+            font-size: 1.4rem;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 18px;
+            border-radius: 12px;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            color: var(--primary);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.35);
+            background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--secondary) 100%);
+        }
+        
+        .availability-banner {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--success);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .availability-banner i {
+            font-size: 2rem;
+            color: var(--success);
+        }
+        
+        .availability-text h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        
+        .availability-text p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        .slots-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(10, 37, 64, 0.05);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+        
+        .slots-count {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+        
+        .slots-label {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+        
+        .slots-remaining {
+            font-weight: 700;
+            color: var(--success);
+            font-size: 1.1rem;
+        }
+        
+        .pulse-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: var(--success);
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
+        
+        /* Responsive design */
+        @media (max-width: 992px) {
+            .training-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .training-header h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .training-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .scroller-title {
+                font-size: 1.8rem;
+            }
+            
+            .training-item {
+                padding: 20px;
+            }
+            
+            .training-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .slots-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            body {
+                padding: 15px;
+            }
+            
+            .booking-section, .training-scroller {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="training-container">
+        <div class="training-header">
+            <div class="badge">
+                <i class="fas fa-bolt"></i>
+                LIMITED SLOTS AVAILABLE
+            </div>
+            <h1>CodexWagon Training Programs</h1>
+            <p class="subtitle">Master enterprise web development, cloud architecture, AI integration, and modern DevOps with our industry-leading training programs. Limited slots available for our upcoming batches.</p>
+        </div>
+        
+        <div class="training-content">
+            <div class="training-scroller">
+                <h2 class="scroller-title">Available Training Programs</h2>
+                <div class="scroller-track" id="trainingScroller">
+                    <div class="training-item">
+                        <h3>Enterprise Web Development Mastery</h3>
+                        <p>Comprehensive training on building scalable, secure enterprise web applications using React, Node.js, and microservices architecture.</p>
+                        <div class="training-meta">
+                            <div class="training-duration">
+                                <i class="far fa-clock"></i>
+                                <span>8 Weeks • 40 Hours</span>
+                            </div>
+                            <div class="training-status status-available">
+                                <span class="pulse-dot"></span>
+                                Slots Available
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="training-item">
+                        <h3>Cloud Solutions & Architecture</h3>
+                        <p>Master AWS, Azure, and Google Cloud platforms with Kubernetes, Docker, and serverless architecture implementations.</p>
+                        <div class="training-meta">
+                            <div class="training-duration">
+                                <i class="far fa-clock"></i>
+                                <span>6 Weeks • 36 Hours</span>
+                            </div>
+                            <div class="training-status status-limited">
+                                <i class="fas fa-exclamation-circle"></i>
+                                Limited Slots
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="training-item">
+                        <h3>AI & Machine Learning Integration</h3>
+                        <p>Learn to build and deploy AI solutions with TensorFlow, PyTorch, NLP, and computer vision for real-world applications.</p>
+                        <div class="training-meta">
+                            <div class="training-duration">
+                                <i class="far fa-clock"></i>
+                                <span>10 Weeks • 50 Hours</span>
+                            </div>
+                            <div class="training-status status-available">
+                                <span class="pulse-dot"></span>
+                                Slots Available
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="training-item">
+                        <h3>Mobile App Development (iOS & Android)</h3>
+                        <p>Build native and cross-platform mobile applications using Swift, Kotlin, React Native, and Flutter with best practices.</p>
+                        <div class="training-meta">
+                            <div class="training-duration">
+                                <i class="far fa-clock"></i>
+                                <span>7 Weeks • 42 Hours</span>
+                            </div>
+                            <div class="training-status status-limited">
+                                <i class="fas fa-exclamation-circle"></i>
+                                Limited Slots
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="training-item">
+                        <h3>DevOps & Automation Engineering</h3>
+                        <p>Master CI/CD pipelines, infrastructure as code, container orchestration, and monitoring with modern DevOps tools.</p>
+                        <div class="training-meta">
+                            <div class="training-duration">
+                                <i class="far fa-clock"></i>
+                                <span>6 Weeks • 36 Hours</span>
+                            </div>
+                            <div class="training-status status-available">
+                                <span class="pulse-dot"></span>
+                                Slots Available
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="training-item">
+                        <h3>Cybersecurity for Enterprise Applications</h3>
+                        <p>Learn security best practices, penetration testing, compliance management, and incident response for enterprise systems.</p>
+                        <div class="training-meta">
+                            <div class="training-duration">
+                                <i class="far fa-clock"></i>
+                                <span>5 Weeks • 30 Hours</span>
+                            </div>
+                            <div class="training-status status-available">
+                                <span class="pulse-dot"></span>
+                                Slots Available
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="booking-section">
+                <div class="availability-banner">
+                    <i class="fas fa-calendar-check"></i>
+                    <div class="availability-text">
+                        <h4>Limited Availability Alert</h4>
+                        <p>Only a few slots remaining for our upcoming training batches. Secure your spot now!</p>
+                    </div>
+                </div>
+                
+                <h2 class="booking-title">Book Your Training Slot</h2>
+                <p class="booking-subtitle">Fill in your details to reserve your spot in our premium training programs. Our team will contact you to confirm your enrollment.</p>
+                
+                <div class="slots-info">
+                    <div>
+                        <div class="slots-count">12</div>
+                        <div class="slots-label">Slots Remaining</div>
+                    </div>
+                    <div class="slots-remaining">
+                        <span class="pulse-dot"></span>
+                        Limited Availability
+                    </div>
+                </div>
+                
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your business email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="trainingProgram">Select Training Program</label>
+                        <select id="trainingProgram" class="form-control" required>
+                            <option value="">Choose a program</option>
+                            <option value="web-dev">Enterprise Web Development Mastery</option>
+                            <option value="cloud">Cloud Solutions & Architecture</option>
+                            <option value="ai-ml">AI & Machine Learning Integration</option>
+                            <option value="mobile">Mobile App Development</option>
+                            <option value="devops">DevOps & Automation Engineering</option>
+                            <option value="cybersecurity">Cybersecurity for Enterprise Apps</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-lock"></i>
+                        Secure My Slot Now
+                    </button>
+                </form>
+                
+                <a href="tel:9961959788" class="phone-link">
+                    <i class="fas fa-phone-alt"></i>
+                    Call Now: +91 99619 59788
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Form submission handling
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const program = document.getElementById('trainingProgram').value;
+            
+            // Get program name from select option
+            const programSelect = document.getElementById('trainingProgram');
+            const programName = programSelect.options[programSelect.selectedIndex].text;
+            
+            // In a real application, you would send this data to your server
+            // For this demo, we'll simulate a successful booking
+            const slotsCount = document.querySelector('.slots-count');
+            let currentSlots = parseInt(slotsCount.textContent);
+            
+            if (currentSlots > 0) {
+                currentSlots--;
+                slotsCount.textContent = currentSlots;
+                
+                // Update slots label if running low
+                if (currentSlots <= 5) {
+                    document.querySelector('.slots-remaining').innerHTML = 
+                        '<span class="pulse-dot"></span> Almost Full!';
+                    document.querySelector('.slots-remaining').style.color = 'var(--warning)';
+                }
+                
+                if (currentSlots === 0) {
+                    document.querySelector('.slots-remaining').innerHTML = 
+                        '<i class="fas fa-times-circle"></i> Fully Booked';
+                    document.querySelector('.slots-remaining').style.color = '#EF4444';
+                    document.querySelector('.availability-banner').innerHTML = `
+                        <i class="fas fa-calendar-times" style="color:#EF4444"></i>
+                        <div class="availability-text">
+                            <h4>Fully Booked</h4>
+                            <p>All slots for this batch have been filled. Contact us for next batch availability.</p>
+                        </div>
+                    `;
+                }
+                
+                // Show success message
+                alert(`Thank you ${name}! Your slot for "${programName}" has been reserved. We'll contact you at ${phone} or ${email} to confirm your enrollment.`);
+                
+                // Reset form
+                this.reset();
+            } else {
+                alert('Sorry, all slots have been booked! Please contact us for information about the next batch.');
+            }
+        });
+        
+        // Auto-scroll for training programs scroller
+        const scroller = document.getElementById('trainingScroller');
+        let isScrolling = true;
+        let scrollDirection = 'down';
+        
+        function autoScroll() {
+            if (!isScrolling) return;
+            
+            if (scrollDirection === 'down') {
+                if (scroller.scrollTop >= (scroller.scrollHeight - scroller.clientHeight - 10)) {
+                    scrollDirection = 'up';
+                    setTimeout(() => {
+                        smoothScrollUp();
+                    }, 2000);
+                } else {
+                    scroller.scrollTop += 1;
+                }
+            }
+        }
+        
+        function smoothScrollUp() {
+            let scrollInterval = setInterval(() => {
+                if (scroller.scrollTop <= 0) {
+                    clearInterval(scrollInterval);
+                    setTimeout(() => {
+                        scrollDirection = 'down';
+                    }, 2000);
+                } else {
+                    scroller.scrollTop -= 2;
+                }
+            }, 20);
+        }
+        
+        // Start auto-scroll
+        let scrollInterval = setInterval(autoScroll, 50);
+        
+        // Pause auto-scroll on hover
+        scroller.addEventListener('mouseenter', () => {
+            isScrolling = false;
+        });
+        
+        scroller.addEventListener('mouseleave', () => {
+            isScrolling = true;
+        });
+        
+        // Pause auto-scroll on touch for mobile
+        scroller.addEventListener('touchstart', () => {
+            isScrolling = false;
+        });
+        
+        scroller.addEventListener('touchend', () => {
+            setTimeout(() => {
+                isScrolling = true;
+            }, 3000);
+        });
+        
+        // Add click animation to training items
+        document.querySelectorAll('.training-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const programTitle = this.querySelector('h3').textContent;
+                const programSelect = document.getElementById('trainingProgram');
+                
+                // Find and select the corresponding option in the dropdown
+                for (let i = 0; i < programSelect.options.length; i++) {
+                    if (programSelect.options[i].text.includes(programTitle.split(' ')[0])) {
+                        programSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+                
+                // Scroll to booking section on mobile
+                if (window.innerWidth < 992) {
+                    document.querySelector('.booking-section').scrollIntoView({behavior: 'smooth'});
+                }
+                
+                // Highlight the selected item
+                document.querySelectorAll('.training-item').forEach(item => {
+                    item.style.borderLeft = '5px solid var(--secondary)';
+                });
+                this.style.borderLeft = '5px solid var(--accent)';
+                this.style.transform = 'scale(1.02)';
+                
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-5px)';
+                }, 300);
+            });
+        });
+        
+        // Update slots count every 30 seconds to simulate real-time updates
+        setInterval(() => {
+            const slotsCount = document.querySelector('.slots-count');
+            let currentSlots = parseInt(slotsCount.textContent);
+            
+            // Occasionally decrease slots to simulate bookings
+            if (currentSlots > 0 && Math.random() > 0.7) {
+                currentSlots--;
+                slotsCount.textContent = currentSlots;
+                
+                // Add visual feedback
+                slotsCount.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    slotsCount.style.transform = 'scale(1)';
+                }, 300);
+            }
+        }, 30000);
+    </script>
+</body>
+</html>
     <footer>
         <div class="container">
             <div class="footer-content">
