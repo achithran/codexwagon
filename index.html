@@ -31,6 +31,7 @@
             --gray: #64748B;
             --light-gray: #E2E8F0;
             --success: #10B981;
+            --warning: #F59E0B;
             --transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             --shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
             --shadow-lg: 0 25px 70px rgba(0, 0, 0, 0.12);
@@ -226,6 +227,356 @@
             background-color: rgba(0, 0, 0, 0.06);
         }
         
+        /* NEW: TRAINING ANNOUNCEMENT BAR - TOP SECTION */
+        .training-announcement {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            color: var(--primary);
+            padding: 1.2rem 0;
+            position: relative;
+            overflow: hidden;
+            z-index: 999;
+            margin-top: 80px; /* Account for fixed header */
+            box-shadow: 0 5px 25px rgba(212, 175, 55, 0.2);
+        }
+        
+        .announcement-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .announcement-content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex: 1;
+        }
+        
+        .announcement-badge {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .scrolling-news {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            height: 30px;
+        }
+        
+        .news-track {
+            display: flex;
+            gap: 3rem;
+            animation: scrollNews 30s linear infinite;
+            white-space: nowrap;
+        }
+        
+        .news-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        
+        .news-item i {
+            color: var(--accent);
+        }
+        
+        .announcement-cta {
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .announcement-cta:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes scrollNews {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        
+        /* NEW: TRAINING BOOKING SECTION - AFTER ANNOUNCEMENT */
+        .training-booking {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, rgba(10, 37, 64, 0.02) 0%, rgba(124, 58, 237, 0.02) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .training-booking::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+        
+        .training-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .training-header h1 {
+            font-size: 3.2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+        
+        .training-header p {
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .training-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            padding: 2rem;
+        }
+        
+        .training-scroller {
+            position: relative;
+            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, rgba(10, 37, 64, 0.03) 0%, rgba(124, 58, 237, 0.03) 100%);
+            padding: 3rem;
+        }
+        
+        .scroller-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .scroller-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            border-radius: 10px;
+        }
+        
+        .scroller-track {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+            scroll-behavior: smooth;
+        }
+        
+        .scroller-track::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .scroller-track::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+        
+        .scroller-track::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--secondary), var(--accent));
+            border-radius: 10px;
+        }
+        
+        .training-item {
+            background: white;
+            border-radius: var(--border-radius-sm);
+            padding: 1.8rem;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--secondary);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .training-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .training-item h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+        
+        .training-item p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .training-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .training-duration {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .training-status {
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .status-available {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+        
+        .status-limited {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--warning);
+        }
+        
+        .booking-section {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .booking-title {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .booking-subtitle {
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        
+        .slots-info {
+            background: rgba(10, 37, 64, 0.05);
+            padding: 1.5rem;
+            border-radius: var(--border-radius-sm);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .slots-count {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+        
+        .slots-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: var(--border-radius-sm);
+            border: 1px solid var(--light-gray);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+        
+        .phone-link {
+            display: block;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 1.2rem;
+            border-radius: var(--border-radius-sm);
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .phone-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(10, 37, 64, 0.2);
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 1.2rem;
+            border-radius: var(--border-radius-sm);
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            color: var(--primary);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+        }
+        
         /* Luxury Hero Section */
         .hero {
             padding: 14rem 0 10rem;
@@ -282,7 +633,7 @@
             flex-wrap: wrap;
         }
         
-        .btn {
+        .btn-hero {
             padding: 1.3rem 3rem;
             border-radius: 50px;
             font-weight: 700;
@@ -300,7 +651,7 @@
             overflow: hidden;
         }
         
-        .btn::before {
+        .btn-hero::before {
             content: '';
             position: absolute;
             top: 0;
@@ -311,7 +662,7 @@
             transition: left 0.7s ease;
         }
         
-        .btn:hover::before {
+        .btn-hero:hover::before {
             left: 100%;
         }
         
@@ -1383,6 +1734,11 @@
             .carousel-slide {
                 height: 500px;
             }
+            
+            .training-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
         }
         
         @media (max-width: 992px) {
@@ -1405,6 +1761,16 @@
             
             .carousel-slide {
                 height: 400px;
+            }
+            
+            .announcement-container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .training-header h1 {
+                font-size: 2.5rem;
             }
         }
         
@@ -1432,7 +1798,7 @@
                 align-items: stretch;
             }
             
-            .btn {
+            .btn-hero {
                 width: 100%;
                 justify-content: center;
             }
@@ -1460,6 +1826,19 @@
             
             .carousel-overlay {
                 padding: 2rem;
+            }
+            
+            .announcement-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .scrolling-news {
+                height: 60px;
+            }
+            
+            .training-announcement {
+                margin-top: 70px;
             }
         }
         
@@ -1525,6 +1904,31 @@
             gap: 10px;
             box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
         }
+        
+        .pulse-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: var(--success);
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -1556,6 +1960,183 @@
         </div>
     </header>
 
+    <!-- NEW: TRAINING ANNOUNCEMENT BAR -->
+    <div class="training-announcement">
+        <div class="container announcement-container">
+            <div class="announcement-content">
+                <div class="announcement-badge">
+                    <i class="fas fa-bolt"></i>
+                    TRAINING STARTED
+                </div>
+                <div class="scrolling-news">
+                    <div class="news-track">
+                        <div class="news-item">
+                            <i class="fas fa-rocket"></i>
+                            <span>Enterprise Web Development Mastery - Limited Slots Available!</span>
+                        </div>
+                        <div class="news-item">
+                            <i class="fas fa-cloud"></i>
+                            <span>Cloud Solutions & Architecture - Next Batch Starting Soon</span>
+                        </div>
+                        <div class="news-item">
+                            <i class="fas fa-brain"></i>
+                            <span>AI & Machine Learning Integration - Only 12 Slots Left!</span>
+                        </div>
+                        <div class="news-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mobile App Development - Enroll Now for Special Discount</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#training" class="announcement-cta">
+                <i class="fas fa-calendar-check"></i>
+                Book Your Slot
+            </a>
+        </div>
+    </div>
+
+    <!-- NEW: TRAINING BOOKING SECTION -->
+    <section class="training-booking" id="training">
+        <div class="container">
+            <div class="training-header fade-in">
+                <h1>CodexWagon Premium Training Programs</h1>
+                <p>Master enterprise technologies with our industry-leading training. Limited slots available for upcoming batches.</p>
+            </div>
+            
+            <div class="training-content">
+                <div class="training-scroller fade-in">
+                    <h2 class="scroller-title">Available Programs</h2>
+                    <div class="scroller-track" id="trainingScroller">
+                        <div class="training-item" data-program="web-dev">
+                            <h3>Enterprise Web Development Mastery</h3>
+                            <p>Build scalable, secure enterprise web applications using React, Node.js, and microservices architecture.</p>
+                            <div class="training-meta">
+                                <div class="training-duration">
+                                    <i class="far fa-clock"></i>
+                                    <span>8 Weeks • 40 Hours</span>
+                                </div>
+                                <div class="training-status status-available">
+                                    <span class="pulse-dot"></span>
+                                    Slots Available
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="training-item" data-program="cloud">
+                            <h3>Cloud Solutions & Architecture</h3>
+                            <p>Master AWS, Azure, and Google Cloud platforms with Kubernetes, Docker, and serverless architecture.</p>
+                            <div class="training-meta">
+                                <div class="training-duration">
+                                    <i class="far fa-clock"></i>
+                                    <span>6 Weeks • 36 Hours</span>
+                                </div>
+                                <div class="training-status status-limited">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    Limited Slots
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="training-item" data-program="ai-ml">
+                            <h3>AI & Machine Learning Integration</h3>
+                            <p>Learn to build and deploy AI solutions with TensorFlow, PyTorch, NLP, and computer vision.</p>
+                            <div class="training-meta">
+                                <div class="training-duration">
+                                    <i class="far fa-clock"></i>
+                                    <span>10 Weeks • 50 Hours</span>
+                                </div>
+                                <div class="training-status status-available">
+                                    <span class="pulse-dot"></span>
+                                    Slots Available
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="training-item" data-program="mobile">
+                            <h3>Mobile App Development</h3>
+                            <p>Build native and cross-platform mobile applications using Swift, Kotlin, React Native, and Flutter.</p>
+                            <div class="training-meta">
+                                <div class="training-duration">
+                                    <i class="far fa-clock"></i>
+                                    <span>7 Weeks • 42 Hours</span>
+                                </div>
+                                <div class="training-status status-limited">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    Limited Slots
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="training-item" data-program="devops">
+                            <h3>DevOps & Automation Engineering</h3>
+                            <p>Master CI/CD pipelines, infrastructure as code, container orchestration, and monitoring.</p>
+                            <div class="training-meta">
+                                <div class="training-duration">
+                                    <i class="far fa-clock"></i>
+                                    <span>6 Weeks • 36 Hours</span>
+                                </div>
+                                <div class="training-status status-available">
+                                    <span class="pulse-dot"></span>
+                                    Slots Available
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="booking-section fade-in">
+                    <h2 class="booking-title">Book Your Training Slot</h2>
+                    <p class="booking-subtitle">Fill in your details to reserve your spot. Limited seats available!</p>
+                    
+                    <div class="slots-info">
+                        <div class="slots-count">12</div>
+                        <div class="slots-label">Slots Remaining</div>
+                    </div>
+                    
+                    <form id="trainingForm">
+                        <div class="form-group">
+                            <label for="trainingName">Full Name</label>
+                            <input type="text" id="trainingName" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="trainingEmail">Email Address</label>
+                            <input type="email" id="trainingEmail" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="trainingPhone">Phone Number</label>
+                            <input type="tel" id="trainingPhone" class="form-control" placeholder="Enter your phone number" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="trainingProgram">Select Program</label>
+                            <select id="trainingProgram" class="form-control" required>
+                                <option value="">Choose a program</option>
+                                <option value="web-dev">Enterprise Web Development Mastery</option>
+                                <option value="cloud">Cloud Solutions & Architecture</option>
+                                <option value="ai-ml">AI & Machine Learning Integration</option>
+                                <option value="mobile">Mobile App Development</option>
+                                <option value="devops">DevOps & Automation Engineering</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn">
+                            <i class="fas fa-lock"></i>
+                            Secure My Slot
+                        </button>
+                    </form>
+                    
+                    <a href="tel:9961959788" class="phone-link">
+                        <i class="fas fa-phone-alt"></i>
+                        Call Now: +91 99619 59788
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Luxury Hero Section - Global Focus -->
     <section class="hero" id="home">
         <div class="container hero-content">
@@ -1568,11 +2149,11 @@
                 <h1>Enterprise-Grade Web, Mobile, Cloud & AI Solutions</h1>
                 <p>CodexWagon delivers premium digital transformation services for visionary businesses worldwide. Specializing in enterprise web development, custom mobile applications, cloud architecture, and AI integration that drive measurable business outcomes.</p>
                 <div class="hero-btns">
-                    <a href="#contact" class="btn btn-primary">
+                    <a href="#contact" class="btn-hero btn-primary">
                         <i class="fas fa-rocket"></i>
                         Start Your Project
                     </a>
-                    <a href="tel:9961959788" class="btn btn-secondary">
+                    <a href="tel:9961959788" class="btn-hero btn-secondary">
                         <i class="fas fa-phone"></i>
                         arun@codexwagon.in
                     </a>
@@ -1938,7 +2519,7 @@
                     <div class="app-content">
                         <h3>Enterprise E-commerce Platforms</h3>
                         <p>Custom online storefronts with advanced inventory management, personalized shopping experiences, and seamless payment gateway integrations.</p>
-                        <a href="#contact" class="btn btn-accent">Learn More</a>
+                        <a href="#contact" class="btn-hero btn-accent">Learn More</a>
                     </div>
                 </div>
                 
@@ -1949,7 +2530,7 @@
                     <div class="app-content">
                         <h3>Business Intelligence Dashboards</h3>
                         <p>Custom analytics platforms that consolidate data from multiple sources into actionable insights with real-time visualizations and reporting.</p>
-                        <a href="#contact" class="btn btn-accent">Learn More</a>
+                        <a href="#contact" class="btn-hero btn-accent">Learn More</a>
                     </div>
                 </div>
                 
@@ -1960,7 +2541,7 @@
                     <div class="app-content">
                         <h3>Healthcare Management Systems</h3>
                         <p>HIPAA-compliant healthcare platforms with patient management, appointment scheduling, telemedicine, and electronic health records.</p>
-                        <a href="#contact" class="btn btn-accent">Learn More</a>
+                        <a href="#contact" class="btn-hero btn-accent">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -2045,7 +2626,7 @@
                         </div>
                         <h3>Global Offices</h3>
                         <ul class="contact-details">
-                            <li><i class="fas fa-location-dot"></i> <strong>India:</strong>KM Complex Perintalmanna Malppuram, Bangalore Electronic City</li>
+                            <li><i class="fas fa-location-dot"></i> <strong>India:</strong> Bangalore Electronic City</li>
                             <li><i class="fas fa-location-dot"></i> <strong>UAE:</strong> Dubai Internet City</li>
                             <li><i class="fas fa-location-dot"></i> <strong>Remote:</strong> Global Development Teams</li>
                         </ul>
@@ -2090,7 +2671,7 @@
                                 <label for="message">Project Requirements *</label>
                                 <textarea id="message" class="form-control" required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <button type="submit" class="btn-hero btn-primary" style="width: 100%;">
                                 <i class="fas fa-paper-plane"></i>
                                 Request Consultation
                             </button>
@@ -2102,8 +2683,6 @@
     </section>
 
     <!-- Premium Footer -->
-
-    
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -2267,7 +2846,7 @@
         checkScroll();
         window.addEventListener('scroll', checkScroll);
 
-        // Form submission
+        // Form submissions
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -2275,16 +2854,80 @@
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
             const email = document.getElementById('email').value;
-            const company = document.getElementById('company').value;
-            const service = document.getElementById('service').value;
-            const message = document.getElementById('message').value;
             
-            // In a real application, you would send this data to your server
-            // For demo purposes, we'll just show an alert
             alert(`Thank you ${name}! Your enterprise consultation request has been received. Our team will contact you at ${phone} or ${email} within 24 hours.`);
             
             // Reset form
             this.reset();
+        });
+
+        // Training form submission
+        document.getElementById('trainingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('trainingName').value;
+            const email = document.getElementById('trainingEmail').value;
+            const phone = document.getElementById('trainingPhone').value;
+            const program = document.getElementById('trainingProgram').value;
+            
+            // Get program name
+            const programSelect = document.getElementById('trainingProgram');
+            const programName = programSelect.options[programSelect.selectedIndex].text;
+            
+            // Update slots counter
+            const slotsCount = document.querySelector('.slots-count');
+            let currentSlots = parseInt(slotsCount.textContent);
+            
+            if (currentSlots > 0) {
+                currentSlots--;
+                slotsCount.textContent = currentSlots;
+                
+                if (currentSlots <= 5) {
+                    slotsCount.style.color = 'var(--warning)';
+                }
+                
+                if (currentSlots === 0) {
+                    slotsCount.textContent = '0';
+                    slotsCount.style.color = '#EF4444';
+                    document.querySelector('.slots-label').textContent = 'Fully Booked!';
+                }
+                
+                // Show success message
+                alert(`Thank you ${name}! Your slot for "${programName}" has been reserved. We'll contact you at ${phone} or ${email} to confirm your enrollment.`);
+                
+                // Reset form
+                this.reset();
+            } else {
+                alert('Sorry, all slots have been booked! Please contact us for information about the next batch.');
+            }
+        });
+
+        // Click on training items to auto-select in form
+        document.querySelectorAll('.training-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const programValue = this.getAttribute('data-program');
+                const programSelect = document.getElementById('trainingProgram');
+                
+                // Find and select the corresponding option
+                for (let i = 0; i < programSelect.options.length; i++) {
+                    if (programSelect.options[i].value === programValue) {
+                        programSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+                
+                // Highlight selected item
+                document.querySelectorAll('.training-item').forEach(item => {
+                    item.style.borderLeft = '4px solid var(--secondary)';
+                });
+                this.style.borderLeft = '4px solid var(--accent)';
+                
+                // Scroll to form on mobile
+                if (window.innerWidth < 992) {
+                    document.querySelector('.booking-section').scrollIntoView({behavior: 'smooth'});
+                }
+            });
         });
 
         // Newsletter form submission
@@ -2358,34 +3001,58 @@
             updateCarousel();
         }, 7000);
 
-        // Add premium animations
+        // Auto-scroll for training programs
+        const trainingScroller = document.getElementById('trainingScroller');
+        let isScrolling = true;
+        let scrollDirection = 'down';
+        
+        function autoScrollTraining() {
+            if (!isScrolling) return;
+            
+            if (scrollDirection === 'down') {
+                if (trainingScroller.scrollTop >= (trainingScroller.scrollHeight - trainingScroller.clientHeight - 10)) {
+                    scrollDirection = 'up';
+                    setTimeout(() => {
+                        smoothScrollUpTraining();
+                    }, 2000);
+                } else {
+                    trainingScroller.scrollTop += 1;
+                }
+            }
+        }
+        
+        function smoothScrollUpTraining() {
+            let scrollInterval = setInterval(() => {
+                if (trainingScroller.scrollTop <= 0) {
+                    clearInterval(scrollInterval);
+                    setTimeout(() => {
+                        scrollDirection = 'down';
+                    }, 2000);
+                } else {
+                    trainingScroller.scrollTop -= 2;
+                }
+            }, 20);
+        }
+        
+        // Start auto-scroll
+        let trainingScrollInterval = setInterval(autoScrollTraining, 50);
+        
+        // Pause auto-scroll on hover
+        trainingScroller.addEventListener('mouseenter', () => {
+            isScrolling = false;
+        });
+        
+        trainingScroller.addEventListener('mouseleave', () => {
+            isScrolling = true;
+        });
+
+        // Add parallax effect
         document.addEventListener('DOMContentLoaded', () => {
-            // Add parallax effect to hero background
             window.addEventListener('scroll', () => {
                 const scrolled = window.pageYOffset;
                 const hero = document.querySelector('.hero');
                 if (hero) {
                     hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
-                }
-                
-                const enterprise = document.querySelector('.enterprise');
-                if (enterprise) {
-                    enterprise.style.backgroundPositionY = scrolled * 0.3 + 'px';
-                }
-                
-                const techStack = document.querySelector('.tech-stack');
-                if (techStack) {
-                    techStack.style.backgroundPositionY = scrolled * 0.4 + 'px';
-                }
-                
-                const devops = document.querySelector('.devops');
-                if (devops) {
-                    devops.style.backgroundPositionY = scrolled * 0.3 + 'px';
-                }
-                
-                const globalPresence = document.querySelector('.global-presence');
-                if (globalPresence) {
-                    globalPresence.style.backgroundPositionY = scrolled * 0.4 + 'px';
                 }
             });
         });
